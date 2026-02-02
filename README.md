@@ -52,6 +52,74 @@ access_key_secret = 你的SK
 region_id = cn-beijing
 ```
 
+## 可做的 Demo 与提示词（示例）
+
+1) 文生图（Qwen Image）
+
+- Demo：运行脚本生成图片  
+  命令：`python skills/ai/image/alicloud-ai-image-qwen-image/scripts/generate_image.py --request '{"prompt":"一张极简风格的咖啡海报","size":"1024*1024"}' --output output/ai-image-qwen-image/images/poster.png`
+- 提示词：  
+  “用 `alicloud-ai-image-qwen-image` 生成 1024*1024 海报图，主题是极简咖啡，输出文件名 poster.png。”
+
+2) 图生视频（Wan Video）
+
+- Demo：用一张参考图生成 4 秒视频（需提供可访问的图片 URL）
+- 提示词：  
+  “用 `alicloud-ai-video-wan-video`，参考图 `https://.../scene.png`，生成 4 秒 24fps 1280*720 的镜头，提示词：清晨城市延时摄影。”
+
+3) 文字转语音（Qwen TTS）
+
+- Demo：用 DashScope 生成音频  
+- 提示词：  
+  “用 `alicloud-ai-audio-tts` 把这段话合成语音，voice=Cherry，language=English，输出音频 URL。”
+
+4) 文档结构解析（DocMind）
+
+- Demo：解析 PDF 的标题/段落结构  
+  命令：`DOCMIND_FILE_URL="https://.../doc.pdf" node skills/ai/text/alicloud-ai-text-document-mind/scripts/quickstart.js`
+- 提示词：  
+  “用 `alicloud-ai-text-document-mind` 解析这个 PDF（URL: ...），拿到结构化结果。”
+
+5) 向量检索（DashVector）
+
+- Demo：创建集合、写入、查询  
+  命令：`python skills/ai/search/alicloud-ai-search-dashvector/scripts/quickstart.py`
+- 提示词：  
+  “用 `alicloud-ai-search-dashvector` 创建 dimension=768 的集合，写入 2 条文档后做 topk=5 查询。”
+
+6) OSS 上传/同步（ossutil）
+
+- Demo：上传本地文件到 OSS  
+  命令：`ossutil cp ./local.txt oss://your-bucket/path/local.txt`
+- 提示词：  
+  “用 `alicloud-storage-oss-ossutil` 把 ./local.txt 上传到 oss://xxx/path/。”
+
+7) SLS 日志排查
+
+- Demo：最近 15 分钟查 500 错误  
+  命令：`python skills/observability/sls/alicloud-observability-sls-log-query/scripts/query_logs.py --query "status:500" --last-minutes 15`
+- 提示词：  
+  “用 `alicloud-observability-sls-log-query` 查最近 15 分钟 500 错误，并按状态聚合。”
+
+8) FC 3.0 快速部署（Serverless Devs）
+
+- Demo：初始化 Python 函数并部署  
+  命令：`npx -y @serverless-devs/s init start-fc3-python && cd start-fc3-python && npx -y @serverless-devs/s deploy`
+- 提示词：  
+  “用 `alicloud-compute-fc-serverless-devs` 初始化 FC 3.0 Python 项目并部署。”
+
+9) 内容安全（Green）
+
+- Demo：通过 OpenAPI 发现/调用内容审核 API  
+- 提示词：  
+  “用 `alicloud-security-content-moderation-green` 先列出可用 API，再给我一条文本检测的最小参数示例。”
+
+10) KMS 密钥管理
+
+- Demo：列出密钥或创建密钥  
+- 提示词：  
+  “用 `alicloud-security-kms` 给出创建对称密钥的 OpenAPI 参数模板。”
+
 ## 项目结构
 
 - `skills/` — 按产品线归类的技能源目录
