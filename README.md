@@ -56,8 +56,7 @@ region_id = cn-beijing
 
 1) 文生图（Qwen Image）
 
-- Demo：运行脚本生成图片  
-  命令：`python skills/ai/image/alicloud-ai-image-qwen-image/scripts/generate_image.py --request '{"prompt":"一张极简风格的咖啡海报","size":"1024*1024"}' --output output/ai-image-qwen-image/images/poster.png`
+- Demo：生成图片  
 - 提示词：  
   “用 `alicloud-ai-image-qwen-image` 生成 1024*1024 海报图，主题是极简咖啡，输出文件名 poster.png。”
 
@@ -76,35 +75,30 @@ region_id = cn-beijing
 4) 文档结构解析（DocMind）
 
 - Demo：解析 PDF 的标题/段落结构  
-  命令：`DOCMIND_FILE_URL="https://.../doc.pdf" node skills/ai/text/alicloud-ai-text-document-mind/scripts/quickstart.js`
 - 提示词：  
   “用 `alicloud-ai-text-document-mind` 解析这个 PDF（URL: ...），拿到结构化结果。”
 
 5) 向量检索（DashVector）
 
 - Demo：创建集合、写入、查询  
-  命令：`python skills/ai/search/alicloud-ai-search-dashvector/scripts/quickstart.py`
 - 提示词：  
   “用 `alicloud-ai-search-dashvector` 创建 dimension=768 的集合，写入 2 条文档后做 topk=5 查询。”
 
 6) OSS 上传/同步（ossutil）
 
 - Demo：上传本地文件到 OSS  
-  命令：`ossutil cp ./local.txt oss://your-bucket/path/local.txt`
 - 提示词：  
   “用 `alicloud-storage-oss-ossutil` 把 ./local.txt 上传到 oss://xxx/path/。”
 
 7) SLS 日志排查
 
 - Demo：最近 15 分钟查 500 错误  
-  命令：`python skills/observability/sls/alicloud-observability-sls-log-query/scripts/query_logs.py --query "status:500" --last-minutes 15`
 - 提示词：  
   “用 `alicloud-observability-sls-log-query` 查最近 15 分钟 500 错误，并按状态聚合。”
 
 8) FC 3.0 快速部署（Serverless Devs）
 
 - Demo：初始化 Python 函数并部署  
-  命令：`npx -y @serverless-devs/s init start-fc3-python && cd start-fc3-python && npx -y @serverless-devs/s deploy`
 - 提示词：  
   “用 `alicloud-compute-fc-serverless-devs` 初始化 FC 3.0 Python 项目并部署。”
 
@@ -119,6 +113,87 @@ region_id = cn-beijing
 - Demo：列出密钥或创建密钥  
 - 提示词：  
   “用 `alicloud-security-kms` 给出创建对称密钥的 OpenAPI 参数模板。”
+
+## 组合方案（场景与提示词模板）
+
+1) 营销素材流水线（图 → 视频 → 配音 → 上传）
+
+模板：
+“按以下流程串联技能：  
+① `alicloud-ai-image-qwen-image` 生成海报图（主题：{主题}，尺寸：{尺寸}）。  
+② `alicloud-ai-video-wan-video` 基于上一步图片生成 {时长}s 视频（fps={fps}，size={尺寸}，镜头描述：{镜头描述}）。  
+③ `alicloud-ai-audio-tts` 用 voice={音色} 合成旁白（文本：{旁白文本}，语言：{语言}）。  
+④ `alicloud-storage-oss-ossutil` 上传视频与音频到 {oss路径}。  
+请输出最终资产的 URL 列表与对应说明。”
+
+2) 客服知识库检索 + 语音应答
+
+模板：
+“用 `alicloud-ai-text-document-mind` 解析文档（URL：{文档URL}）得到结构化内容；  
+再用 `alicloud-ai-search-dashvector` 建库并入库；  
+最后根据用户问题：{用户问题} 做 topk={topk} 检索并用 `alicloud-ai-audio-tts` 生成语音回答（voice={音色}，language={语言}）。  
+请返回文本答案 + 语音 URL。”
+
+3) 内容审核 + 发布
+
+模板：
+“用 `alicloud-security-content-moderation-green` 审核内容（类型：{文本|图片|视频}，内容：{内容/URL}）。  
+若通过则用 `alicloud-storage-oss-ossutil` 上传到 {oss路径} 并返回公开链接；  
+若不通过，请给出原因与建议替换文案。”
+
+4) 站点日志排障 + 自动告警
+
+模板：
+“用 `alicloud-observability-sls-log-query` 查询 {时间范围} 内的错误（query：{查询语句}），  
+按 {聚合字段} 统计并判断是否超过阈值 {阈值}；  
+若超过，调用 `alicloud-compute-fc-serverless-devs` 触发告警函数（函数名：{函数名}，参数：{告警参数}）。  
+输出统计结果与告警触发状态。”
+
+5) 多语言内容生产（生成 → 翻译 → 配音）
+
+模板：
+“用 `alicloud-ai-content-aicontent` 生成主题文案（主题：{主题}，风格：{风格}，长度：{长度}）；  
+用 `alicloud-ai-translation-anytrans` 翻译为 {目标语言}；  
+用 `alicloud-ai-audio-tts` 生成配音（voice={音色}，language={语言}）。  
+输出：原文、译文、语音 URL。”
+
+6) 训练素材清洗与归档
+
+模板：
+“对素材进行合规检查：`alicloud-security-content-moderation-green`（内容：{内容/URL}）。  
+若通过，用 `alicloud-ai-text-document-mind` 做结构化抽取（如适用）；  
+最终用 `alicloud-storage-oss-ossutil` 归档到 {oss路径}，返回归档清单与 URL。”
+
+7) 日志指标分析报表
+
+模板：
+“用 `alicloud-observability-sls-log-query` 在 {时间范围} 内执行查询：{query|analysis}，  
+按 {维度} 输出统计表；  
+再用 `alicloud-data-analytics-dataanalysisgbi` 生成可视化报表摘要（指标：{指标列表}，维度：{维度}）。  
+输出关键指标与报表摘要。”
+
+8) 业务搜索与推荐
+
+模板：
+“先用 `alicloud-ai-search-dashvector` 基于用户意图向量检索（topk={topk}，filter={过滤条件}），  
+再用 `alicloud-ai-recommend-airec` 对结果进行排序与补充推荐（策略：{策略}）。  
+输出最终推荐列表与理由。”
+
+9) 企业通话场景（呼叫中心 + 智能客服 + 语音）
+
+模板：
+“用 `alicloud-ai-cloud-call-center` 创建/路由来电（号码：{号码}，路由策略：{策略}）；  
+用 `alicloud-ai-chatbot` 给出 FAQ 命中或转人工判断；  
+用 `alicloud-ai-audio-tts` 播报回复（voice={音色}，language={语言}）。  
+输出最终话术与语音 URL。”
+
+10) 安全合规闭环（密钥 + 审计）
+
+模板：
+“用 `alicloud-security-kms` 创建/管理密钥（用途：{用途}，别名：{别名}）；  
+结合 `alicloud-observability-sls-log-query` 查询 {时间范围} 内的安全审计日志（query：{查询语句}）；  
+如发现异常，给出处理建议或触发告警（函数：{函数名}）。  
+输出密钥状态、审计结果与处置建议。”
 
 ## 项目结构
 
