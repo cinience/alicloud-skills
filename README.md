@@ -52,7 +52,7 @@ access_key_secret = 你的SK
 region_id = cn-beijing
 ```
 
-## 可做的 Demo 与提示词（示例）
+## 独立技能与提示词（示例）
 
 1) 文生图（Qwen Image）
 
