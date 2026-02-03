@@ -14,7 +14,13 @@ Use the recommended model:
 
 ## Prerequisites
 
-- Install SDK: `python -m pip install dashscope`
+- Install SDK (recommended in a venv to avoid PEP 668 limits):
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install dashscope
+```
 - Set `DASHSCOPE_API_KEY` in your environment, or add `dashscope_api_key` to `~/.alibabacloud/credentials` (env takes precedence).
 
 ## Normalized interface (tts.generate)

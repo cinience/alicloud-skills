@@ -11,7 +11,13 @@ Category: task
 
 ## Prerequisites
 
-- 安装 SDK：`python -m pip install dashscope`
+- 安装 SDK（建议在虚拟环境中，避免 PEP 668 限制）：
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install dashscope
+```
 - 配置 `DASHSCOPE_API_KEY`（环境变量优先；或在 `~/.alibabacloud/credentials` 里设置 `dashscope_api_key`）
 
 ## 路由表（当前仓库已支持）

@@ -11,7 +11,13 @@ Category: service
 
 ## Prerequisites
 
-- 安装 SDK：`python -m pip install -U aliyun-log-python-sdk`
+- 安装 SDK（建议在虚拟环境中，避免 PEP 668 限制）：
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -U aliyun-log-python-sdk
+```
 - 配置环境变量：
   - `ALIBABA_CLOUD_ACCESS_KEY_ID`
   - `ALIBABA_CLOUD_ACCESS_KEY_SECRET`

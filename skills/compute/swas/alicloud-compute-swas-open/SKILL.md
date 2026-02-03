@@ -23,8 +23,12 @@ Category: service
 
 ### Python SDK 快速查询（实例 ID / IP / 规格）
 
+推荐使用虚拟环境（避免 PEP 668 的系统安装限制）。
+
 ```bash
-pip install alibabacloud_swas_open20200601 alibabacloud_tea_openapi alibabacloud_credentials
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install alibabacloud_swas_open20200601 alibabacloud_tea_openapi alibabacloud_credentials
 ```
 
 ```python

@@ -11,7 +11,13 @@ Use DashVector to manage collections and perform vector similarity search with o
 
 ## Prerequisites
 
-- Install SDK: `python -m pip install dashvector`
+- Install SDK (recommended in a venv to avoid PEP 668 limits):
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install dashvector
+```
 - Provide credentials and endpoint via environment variables:
   - `DASHVECTOR_API_KEY`
   - `DASHVECTOR_ENDPOINT` (cluster endpoint)

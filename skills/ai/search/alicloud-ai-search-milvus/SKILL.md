@@ -11,7 +11,13 @@ This skill uses standard PyMilvus APIs to connect to AliCloud Milvus and run vec
 
 ## Prerequisites
 
-- Install SDK: `python -m pip install --upgrade pymilvus`
+- Install SDK (recommended in a venv to avoid PEP 668 limits):
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pymilvus
+```
 - Provide connection via environment variables:
   - `MILVUS_URI` (e.g. `http://<host>:19530`)
   - `MILVUS_TOKEN` (`<username>:<password>`)

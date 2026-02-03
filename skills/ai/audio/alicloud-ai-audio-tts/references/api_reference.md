@@ -3,7 +3,9 @@
 ## Install
 
 ```bash
-pip install dashscope
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install dashscope
 ```
 
 ## Environment

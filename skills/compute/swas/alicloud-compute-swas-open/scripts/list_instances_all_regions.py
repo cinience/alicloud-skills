@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import sys
 
 from alibabacloud_swas_open20200601.client import Client as SwasClient
 from alibabacloud_swas_open20200601 import models as swas_models
@@ -63,8 +64,15 @@ def main() -> int:
     args = parser.parse_args()
 
     records = []
+    failed_regions: list[tuple[str, str]] = []
     for region_id in list_regions():
-        for inst in list_instances(region_id):
+        try:
+            instances = list_instances(region_id)
+        except Exception as exc:
+            failed_regions.append((region_id, str(exc)))
+            print(f"Warning: failed to query region {region_id}: {exc}", file=sys.stderr)
+            continue
+        for inst in instances:
             records.append(to_record(region_id, inst))
 
     if args.json:
@@ -98,6 +106,11 @@ def main() -> int:
             f.write(output)
     else:
         print(output)
+
+    if failed_regions:
+        print("\nFailed regions:", file=sys.stderr)
+        for region_id, err in failed_regions:
+            print(f"- {region_id}: {err}", file=sys.stderr)
 
     return 0
 

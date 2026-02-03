@@ -40,8 +40,12 @@ Prefer the Python SDK for all examples and execution.
 
 ### Python SDK quickstart (list instances)
 
+推荐使用虚拟环境（避免 PEP 668 的系统安装限制）。
+
 ```bash
-pip install alibabacloud_ecs20140526 alibabacloud_tea_openapi alibabacloud_credentials
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install alibabacloud_ecs20140526 alibabacloud_tea_openapi alibabacloud_credentials
 ```
 
 ```python

@@ -11,7 +11,13 @@ Use the ha3engine SDK to push documents and execute HA/SQL searches. This skill 
 
 ## Prerequisites
 
-- Install SDK: `python -m pip install alibabacloud-ha3engine`
+- Install SDK (recommended in a venv to avoid PEP 668 limits):
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install alibabacloud-ha3engine
+```
 - Provide connection config via environment variables:
   - `OPENSEARCH_ENDPOINT` (API domain)
   - `OPENSEARCH_INSTANCE_ID`
