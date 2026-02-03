@@ -32,6 +32,7 @@ npx skillfish add cinience/alicloud-skills --all -y
 export ALICLOUD_ACCESS_KEY_ID="你的AK"
 export ALICLOUD_ACCESS_KEY_SECRET="你的SK"
 export ALICLOUD_REGION_ID="cn-beijing"
+export DASHSCOPE_API_KEY="你的DashScope API Key"
 ```
 
 或者使用标准 CLI/SDK 配置文件：
