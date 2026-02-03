@@ -12,6 +12,8 @@ pip install dashscope
 export DASHSCOPE_API_KEY=your_key
 ```
 
+If env vars are not set, you can also place `dashscope_api_key` under `[default]` in `~/.alibabacloud/credentials`.
+
 ## Suggested mapping
 
 ```python

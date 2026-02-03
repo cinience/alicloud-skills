@@ -37,7 +37,7 @@ ossutil config
 配置项主要包括：
 - `AccessKey ID`
 - `AccessKey Secret`
-- `Region`（默认 `cn-hangzhou`）
+- `Region`（示例默认 `cn-hangzhou`；未确定最合理 Region 时需询问）
 - `Endpoint`（可选；未指定时按 Region 自动推导）
 
 ## AccessKey 配置提示
@@ -52,7 +52,9 @@ export ALICLOUD_ACCESS_KEY_SECRET="你的SK"
 export ALICLOUD_REGION_ID="cn-beijing"
 ```
 
-或使用标准配置文件：
+`ALICLOUD_REGION_ID` 可作为默认 Region；未设置时可选择最合理 Region，无法判断则询问用户。
+
+或使用标准共享凭证文件：
 
 `~/.alibabacloud/credentials`
 
@@ -63,12 +65,6 @@ access_key_id = 你的AK
 access_key_secret = 你的SK
 ```
 
-`~/.alibabacloud/config`
-
-```ini
-[default]
-region_id = cn-beijing
-```
 
 ## 命令结构（2.0）
 

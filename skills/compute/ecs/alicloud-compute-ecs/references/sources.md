@@ -1,0 +1,17 @@
+- OpenAPI product page: `https://api.aliyun.com/product/Ecs`
+- API list (metadata): `https://api.aliyun.com/meta/v1/products/Ecs/versions/2014-05-26/api-docs.json`
+- API overview: `https://www.alibabacloud.com/help/en/ecs/developer-reference/api-ecs-2014-05-26-overview`
+- Endpoints: `https://www.alibabacloud.com/help/en/ecs/developer-reference/endpoints`
+- DescribeInstances: `https://www.alibabacloud.com/help/en/ecs/developer-reference/describeinstances`
+- StartInstance: `https://www.alibabacloud.com/help/en/ecs/developer-reference/startinstance`
+- StopInstance: `https://www.alibabacloud.com/help/en/ecs/developer-reference/stopinstance`
+- CreateSnapshot: `https://www.alibabacloud.com/help/en/ecs/developer-reference/createsnapshot`
+- DescribeSnapshots: `https://www.alibabacloud.com/help/en/ecs/developer-reference/describesnapshots`
+- AttachDisk: `https://www.alibabacloud.com/help/en/ecs/developer-reference/attachdisk`
+- CreateImage: `https://www.alibabacloud.com/help/en/ecs/developer-reference/createimage`
+- DescribeImages: `https://www.alibabacloud.com/help/id/ecs/developer-reference/describeimages`
+- CreateSecurityGroup: `https://www.alibabacloud.com/help/en/ecs/developer-reference/createsecuritygroup`
+- AuthorizeSecurityGroup: `https://www.alibabacloud.com/help/en/ecs/developer-reference/authorizesecuritygroup`
+- CreateNetworkInterface: `https://www.alibabacloud.com/help/en/ecs/developer-reference/createnetworkinterface`
+- CreateKeyPair: `https://www.alibabacloud.com/help/en/ecs/developer-reference/createkeypair`
+- RunCommand: `https://www.alibabacloud.com/help/en/ecs/developer-reference/runcommand`

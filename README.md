@@ -16,12 +16,6 @@ Cloud Mind：把世界级云基建，折叠进你的AI对话框。
 npx skillfish add cinience/alicloud-skills --all -y --force
 ```
 
-安装全部并跳过确认（不覆盖已有技能）：
-
-```bash
-npx skillfish add cinience/alicloud-skills --all -y
-```
-
 如果仍出现选择界面，按 `a` 全选后回车提交。
 
 建议使用 RAM 用户/角色并遵循最小权限原则，避免在代码或命令行中明文暴露 AK。
@@ -35,7 +29,9 @@ export ALICLOUD_REGION_ID="cn-beijing"
 export DASHSCOPE_API_KEY="你的DashScope API Key"
 ```
 
-或者使用标准 CLI/SDK 配置文件：
+环境变量优先生效；若未设置环境变量，才会读取 `~/.alibabacloud/credentials`。`ALICLOUD_REGION_ID` 可作为默认 Region；未设置时可在执行时选择最合理的 Region，无法判断则需要询问用户。
+
+若未设置环境变量，可使用标准 CLI/SDK 配置文件：
 
 `~/.alibabacloud/credentials`
 
@@ -44,14 +40,9 @@ export DASHSCOPE_API_KEY="你的DashScope API Key"
 type = access_key
 access_key_id = 你的AK
 access_key_secret = 你的SK
+dashscope_api_key = 你的DashScope API Key
 ```
 
-`~/.alibabacloud/config`
-
-```ini
-[default]
-region_id = cn-beijing
-```
 
 ## 独立技能与提示词（示例）
 
@@ -235,6 +226,7 @@ region_id = cn-beijing
 
 位于 `skills/compute/`：
 
+- `ecs/alicloud-compute-ecs`
 - `fc/alicloud-compute-fc-serverless-devs`
 - `fc/alicloud-compute-fc-agentrun`
 - `swas/alicloud-compute-swas-open`
@@ -280,6 +272,7 @@ region_id = cn-beijing
 | ai/video | alicloud-ai-video-wan-video | `skills/ai/video/alicloud-ai-video-wan-video` |
 | backup/alicloud-backup-bdrc | alicloud-backup-bdrc | `skills/backup/alicloud-backup-bdrc` |
 | backup/alicloud-backup-hbr | alicloud-backup-hbr | `skills/backup/alicloud-backup-hbr` |
+| compute/ecs | alicloud-compute-ecs | `skills/compute/ecs/alicloud-compute-ecs` |
 | compute/fc | alicloud-compute-fc-agentrun | `skills/compute/fc/alicloud-compute-fc-agentrun` |
 | compute/fc | alicloud-compute-fc-serverless-devs | `skills/compute/fc/alicloud-compute-fc-serverless-devs` |
 | compute/swas | alicloud-compute-swas-open | `skills/compute/swas/alicloud-compute-swas-open` |

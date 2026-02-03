@@ -15,7 +15,7 @@ Follow this workflow to collect products, resolve API metadata, and build summar
 - Support & Service (ListProductByGroup)
 - BSS OpenAPI (QueryProductList)
 
-Run the repo scripts:
+Run the bundled scripts (from this skill folder):
 
 ```bash
 python scripts/products_from_ticket_system.py

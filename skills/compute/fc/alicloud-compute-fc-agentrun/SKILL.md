@@ -12,7 +12,7 @@ Use AgentRun OpenAPI (ROA) to manage runtimes, sandboxes, model services, memory
 ## Prerequisites
 
 - AccessKey via RAM user (least privilege).
-- Select the correct regional endpoint (see `references/endpoints.md`).
+- Select the correct regional endpoint (see `references/endpoints.md`). If unsure, choose the most reasonable region for the task or ask the user.
 - Use OpenAPI Explorer or official SDK to avoid manual signing (ROA requires SignatureV1).
 
 ## Workflow

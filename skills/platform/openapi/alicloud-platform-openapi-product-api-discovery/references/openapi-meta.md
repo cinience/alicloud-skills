@@ -11,7 +11,7 @@ https://api.aliyun.com/meta/v1/products.json?language=EN_US
 - `language` can be `EN_US` or `ZH_CN`.
 - Response contains product codes and versions.
 
-Script: `scripts/products_from_openapi_meta.py`
+Script: `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery/scripts/products_from_openapi_meta.py`
 
 ## API list per product version
 
@@ -21,7 +21,7 @@ https://api.aliyun.com/meta/v1/products/{ProductCode}/versions/{Version}/api-doc
 
 - Response contains API names and metadata for the product/version.
 
-Script: `scripts/apis_from_openapi_meta.py`
+Script: `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery/scripts/apis_from_openapi_meta.py`
 
 ## API definition (single API)
 

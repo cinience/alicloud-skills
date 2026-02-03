@@ -12,7 +12,7 @@ Category: service
 ## Prerequisites
 
 - 准备 OSS 输入/输出地址（建议与 API 调用 region 一致）。
-- 配置 AK：`ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / `ALICLOUD_REGION_ID`。
+- 配置 AK：`ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / `ALICLOUD_REGION_ID`（`ALICLOUD_REGION_ID` 可作为默认 Region；未设置时可选择最合理 Region，无法判断则询问用户）。
 
 ## Workflow
 
@@ -34,4 +34,3 @@ Category: service
 ## References
 
 - Source list: `references/sources.md`
-

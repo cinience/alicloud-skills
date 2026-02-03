@@ -24,19 +24,21 @@ npx -y @just-every/crawl \"https://help.aliyun.com/zh/model-studio/models\" > al
 2) Rebuild summary (models + API/usage links)
 
 ```bash
-python3 scripts/alicloud/refresh_models_summary.py
+python3 skills/ai/misc/alicloud-ai-misc-crawl-and-skill/scripts/refresh_models_summary.py
 ```
 
 3) Regenerate skills (creates/updates `skills/ai/**`)
 
 ```bash
-python3 scripts/alicloud/refresh_alicloud_skills.py
+python3 skills/ai/misc/alicloud-ai-misc-crawl-and-skill/scripts/refresh_alicloud_skills.py
 ```
 
 ## Outputs
 
 - `alicloud-model-studio-models.md`: raw crawl output
-- `outputs/alicloud-model-studio-models-summary.md`: cleaned summary
+- `output/alicloud-model-studio-models-summary.md`: cleaned summary
+- `output/alicloud-model-studio-models.json`: structured model list
+- `output/alicloud-model-studio-skill-scan.md`: skill coverage report
 - `skills/ai/**`: generated skills
 
 ## Notes
@@ -46,4 +48,3 @@ python3 scripts/alicloud/refresh_alicloud_skills.py
 ## References
 
 - Source list: `references/sources.md`
-

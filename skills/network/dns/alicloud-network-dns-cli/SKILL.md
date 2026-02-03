@@ -37,6 +37,8 @@ chmod +x ~/.local/bin/aliyun
   --region cn-hangzhou
 ```
 
+Region 作为默认值配置；若不确定最合适的 Region，执行时应询问用户。
+
 ## 查询解析记录
 
 查询子域名记录：

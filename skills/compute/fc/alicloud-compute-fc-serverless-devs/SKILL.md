@@ -131,6 +131,8 @@ resources:
             path: /*
 ```
 
+`region` 为示例默认值；若未确定最合适 Region，执行时应询问用户。
+
 然后部署：
 
 ```bash

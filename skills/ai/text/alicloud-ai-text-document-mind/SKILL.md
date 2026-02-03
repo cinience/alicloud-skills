@@ -16,7 +16,7 @@ Use DocMind to extract document structure, text, and layout with async jobs.
 - Provide credentials via standard Alibaba Cloud env vars:
   - `ALICLOUD_ACCESS_KEY_ID`
   - `ALICLOUD_ACCESS_KEY_SECRET`
-  - `ALICLOUD_REGION_ID` (e.g. `cn-hangzhou`)
+  - `ALICLOUD_REGION_ID` (optional default; if unset, choose the most reasonable region for the task or ask the user)
 
 ## Quickstart (submit + poll)
 
@@ -26,12 +26,13 @@ const Credential = require('@alicloud/credentials');
 const Util = require('@alicloud/tea-util');
 
 const cred = new Credential.default();
+const regionId = process.env.ALICLOUD_REGION_ID || 'cn-hangzhou'; // Example default; choose/ask if unset.
 const client = new Client.default({
-  endpoint: 'docmind-api.cn-hangzhou.aliyuncs.com',
+  endpoint: `docmind-api.${regionId}.aliyuncs.com`,
   accessKeyId: cred.credential.accessKeyId,
   accessKeySecret: cred.credential.accessKeySecret,
   type: 'access_key',
-  regionId: process.env.ALICLOUD_REGION_ID || 'cn-hangzhou',
+  regionId,
 });
 
 async function submitByUrl(fileUrl, fileName) {

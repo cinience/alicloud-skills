@@ -12,7 +12,7 @@ Category: task
 ## Prerequisites
 
 - 安装 SDK：`python -m pip install dashscope`
-- 配置 `DASHSCOPE_API_KEY`
+- 配置 `DASHSCOPE_API_KEY`（环境变量优先；或在 `~/.alibabacloud/credentials` 里设置 `dashscope_api_key`）
 
 ## 路由表（当前仓库已支持）
 
@@ -75,7 +75,7 @@ Authorization: Bearer $DASHSCOPE_API_KEY
 
 ## 参考
 
-- 模型清单与链接：`outputs/alicloud-model-studio-models-summary.md`
+- 模型清单与链接：`output/alicloud-model-studio-models-summary.md`
 - 具体 API/参数/示例：对应子技能的 `SKILL.md` 与 `references/*.md`
 
 - 官方文档来源清单：`references/sources.md`

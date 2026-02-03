@@ -1,12 +1,12 @@
 全地域查询示例（实例列表）
 ==========================
 
-目标：在未指定 Region 的情况下，默认查询所有地域的 Supabase 实例。
+目标：在未指定 Region 的情况下，选择最合理的 Region；若无法判断，可询问用户或执行全地域查询。
 
 前置假设
 --------
 - 优先使用环境变量获取 AK/SK（`ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET`）。
-- 如果 `ALICLOUD_REGION_ID` 未设置，走“全地域查询”策略。
+- 如果 `ALICLOUD_REGION_ID` 未设置，优先选择最合理 Region；无法判断时可询问用户，或在合适场景下执行全地域查询。
 
 策略建议
 --------

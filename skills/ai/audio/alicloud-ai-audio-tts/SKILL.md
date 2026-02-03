@@ -15,7 +15,7 @@ Use the recommended model:
 ## Prerequisites
 
 - Install SDK: `python -m pip install dashscope`
-- Set `DASHSCOPE_API_KEY` in your environment.
+- Set `DASHSCOPE_API_KEY` in your environment, or add `dashscope_api_key` to `~/.alibabacloud/credentials` (env takes precedence).
 
 ## Normalized interface (tts.generate)
 
@@ -37,6 +37,8 @@ Use the recommended model:
 import os
 import dashscope
 
+# Prefer env var for auth: export DASHSCOPE_API_KEY=...
+# Or use ~/.alibabacloud/credentials with dashscope_api_key under [default].
 # Beijing region; for Singapore use: https://dashscope-intl.aliyuncs.com/api/v1
 dashscope.base_http_api_url = "https://dashscope.aliyuncs.com/api/v1"
 

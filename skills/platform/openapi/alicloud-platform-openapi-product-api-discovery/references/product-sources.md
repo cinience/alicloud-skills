@@ -8,14 +8,14 @@ Keep this file short. Update versions and endpoints from the official docs when 
 - Required: endpoint, version, access key, secret
 - Optional: `Name`, `Language`
 
-Script: `scripts/products_from_ticket_system.py`
+Script: `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery/scripts/products_from_ticket_system.py`
 
 ## Support & Service - ListProductByGroup
 
 - Action: `ListProductByGroup`
 - Required: `OpenGroupId`, endpoint, version, access key, secret
 
-Script: `scripts/products_from_support_service.py`
+Script: `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery/scripts/products_from_support_service.py`
 
 ## BSS OpenAPI - QueryProductList
 
@@ -24,4 +24,4 @@ Script: `scripts/products_from_support_service.py`
 - Version: `2017-12-14`
 - Params: `PageNum`, `PageSize`, `QueryTotalCount`
 
-Script: `scripts/products_from_bssopenapi.py`
+Script: `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery/scripts/products_from_bssopenapi.py`

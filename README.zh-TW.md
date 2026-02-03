@@ -13,12 +13,6 @@
 npx skillfish add cinience/alicloud-skills --all -y --force
 ```
 
-安裝全部並跳過確認（不覆蓋已有技能）：
-
-```bash
-npx skillfish add cinience/alicloud-skills --all -y
-```
-
 如果仍出現選擇介面，按 `a` 全選後再按 Enter 送出。
 
 建議使用 RAM 使用者/角色並遵循最小權限原則，避免在程式或命令列中明文暴露 AK。
@@ -29,9 +23,12 @@ npx skillfish add cinience/alicloud-skills --all -y
 export ALICLOUD_ACCESS_KEY_ID="你的AK"
 export ALICLOUD_ACCESS_KEY_SECRET="你的SK"
 export ALICLOUD_REGION_ID="cn-beijing"
+export DASHSCOPE_API_KEY="你的DashScope API Key"
 ```
 
-或使用標準 CLI/SDK 設定檔：
+環境變數優先生效；若未設定環境變數，才會讀取 `~/.alibabacloud/credentials`。`ALICLOUD_REGION_ID` 可作為預設 Region；未設定時可在執行時選擇最合理的 Region，無法判斷則需詢問使用者。
+
+若未設定環境變數，可使用標準 CLI/SDK 設定檔：
 
 `~/.alibabacloud/credentials`
 
@@ -40,14 +37,9 @@ export ALICLOUD_REGION_ID="cn-beijing"
 type = access_key
 access_key_id = 你的AK
 access_key_secret = 你的SK
+dashscope_api_key = 你的DashScope API Key
 ```
 
-`~/.alibabacloud/config`
-
-```ini
-[default]
-region_id = cn-beijing
-```
 
 ## 專案結構
 
@@ -88,6 +80,7 @@ region_id = cn-beijing
 
 位於 `skills/compute/`：
 
+- `ecs/alicloud-compute-ecs`
 - `fc/alicloud-compute-fc-serverless-devs`
 - `fc/alicloud-compute-fc-agentrun`
 - `swas/alicloud-compute-swas-open`
@@ -133,6 +126,7 @@ region_id = cn-beijing
 | ai/video | alicloud-ai-video-wan-video | `skills/ai/video/alicloud-ai-video-wan-video` |
 | backup/alicloud-backup-bdrc | alicloud-backup-bdrc | `skills/backup/alicloud-backup-bdrc` |
 | backup/alicloud-backup-hbr | alicloud-backup-hbr | `skills/backup/alicloud-backup-hbr` |
+| compute/ecs | alicloud-compute-ecs | `skills/compute/ecs/alicloud-compute-ecs` |
 | compute/fc | alicloud-compute-fc-agentrun | `skills/compute/fc/alicloud-compute-fc-agentrun` |
 | compute/fc | alicloud-compute-fc-serverless-devs | `skills/compute/fc/alicloud-compute-fc-serverless-devs` |
 | compute/swas | alicloud-compute-swas-open | `skills/compute/swas/alicloud-compute-swas-open` |

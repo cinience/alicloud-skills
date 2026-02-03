@@ -19,7 +19,8 @@ Use Alibaba Cloud OpenAPI (RPC) with official SDKs or OpenAPI Explorer to manage
 ## AccessKey priority (must follow)
 
 1) Environment variables: `ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / `ALICLOUD_REGION_ID`
-2) Shared config files: `~/.alibabacloud/credentials` and `~/.alibabacloud/config`
+Region policy: `ALICLOUD_REGION_ID` is an optional default. If unset, decide the most reasonable region for the task; if unclear, ask the user.
+2) Shared config file: `~/.alibabacloud/credentials`
 
 ## API discovery
 

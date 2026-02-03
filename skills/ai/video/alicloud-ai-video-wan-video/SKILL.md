@@ -19,7 +19,7 @@ Do not add date suffixes or aliases.
 ## Prerequisites
 
 - Install SDK: `python -m pip install dashscope`
-- Set `DASHSCOPE_API_KEY` in your environment.
+- Set `DASHSCOPE_API_KEY` in your environment, or add `dashscope_api_key` to `~/.alibabacloud/credentials` (env takes precedence).
 
 ## Normalized interface (video.generate)
 
@@ -48,6 +48,8 @@ Note: `wan2.6-i2v-flash` requires an input image; map `reference_image` to `img_
 import os
 from dashscope import VideoSynthesis
 
+# Prefer env var for auth: export DASHSCOPE_API_KEY=...
+# Or use ~/.alibabacloud/credentials with dashscope_api_key under [default].
 
 def generate_video(req: dict) -> dict:
     payload = {

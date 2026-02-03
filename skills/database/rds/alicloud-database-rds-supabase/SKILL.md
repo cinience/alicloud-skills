@@ -23,12 +23,14 @@ Category: service
 
 ## AccessKey 读取优先级（必须遵循）
 
-1) 环境变量（优先）：`ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / `ALICLOUD_REGION_ID`  
-2) 标准配置文件：`~/.alibabacloud/credentials` 与 `~/.alibabacloud/config`
+1) 环境变量（优先）：`ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / `ALICLOUD_REGION_ID`
+Region 规则：`ALICLOUD_REGION_ID` 作为可选默认值；若未设置，执行时应选择最合理的 Region，无法判断则主动询问。  
+2) 标准配置文件：`~/.alibabacloud/credentials`
 
 ## Region 默认策略
 
-- 如未指定 Region，默认进行全地域查询（先调 `ListRegions`，再对每个 Region 调用查询接口）。  
+- 如未指定 Region，优先选择最合理 Region；无法判断则询问用户。  
+- 仅在明确需要或用户同意时，才进行全地域查询（先调 `ListRegions`，再对每个 Region 调用查询接口）。  
 - 若用户提供 Region，则只查询指定 Region。  
 
 ## 常见操作映射

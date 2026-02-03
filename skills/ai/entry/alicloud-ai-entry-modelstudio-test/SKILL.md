@@ -12,7 +12,7 @@ Category: task
 ## Prerequisites
 
 - 安装 SDK：`python -m pip install dashscope`
-- 配置 `DASHSCOPE_API_KEY`
+- 配置 `DASHSCOPE_API_KEY`（环境变量优先；或在 `~/.alibabacloud/credentials` 里设置 `dashscope_api_key`）
 
 ## 测试矩阵（当前已支持）
 
@@ -31,7 +31,7 @@ Category: task
 
 ## 结果记录模板
 
-保存为 `outputs/alicloud-ai-entry-modelstudio-test-results.md`：
+保存为 `output/alicloud-ai-entry-modelstudio-test-results.md`：
 
 ```
 # Model Studio 技能测试结果
@@ -48,8 +48,7 @@ Category: task
 
 - 参数不确定：回到子技能 `SKILL.md` 或 `references/*.md` 查官方参数。
 - 模型不可用：先更新模型清单再重试。
-- 认证问题：检查 `DASHSCOPE_API_KEY`。
+- 认证问题：检查 `DASHSCOPE_API_KEY`（环境变量或 `~/.alibabacloud/credentials`）。
 ## References
 
 - Source list: `references/sources.md`
-

@@ -9,6 +9,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import configparser
 import json
 import os
 import sys
@@ -54,6 +55,27 @@ def _load_env() -> None:
     repo_root = _find_repo_root(Path(__file__).resolve())
     if repo_root:
         _load_dotenv(repo_root / ".env")
+
+
+def _load_dashscope_api_key_from_credentials() -> None:
+    if os.environ.get("DASHSCOPE_API_KEY"):
+        return
+    credentials_path = Path(os.path.expanduser("~/.alibabacloud/credentials"))
+    if not credentials_path.exists():
+        return
+    config = configparser.ConfigParser()
+    try:
+        config.read(credentials_path)
+    except configparser.Error:
+        return
+    profile = os.getenv("ALIBABA_CLOUD_PROFILE") or os.getenv("ALICLOUD_PROFILE") or "default"
+    if not config.has_section(profile):
+        return
+    key = config.get(profile, "dashscope_api_key", fallback="").strip()
+    if not key:
+        key = config.get(profile, "DASHSCOPE_API_KEY", fallback="").strip()
+    if key:
+        os.environ["DASHSCOPE_API_KEY"] = key
 
 
 def load_request(args: argparse.Namespace) -> dict[str, Any]:
@@ -112,9 +134,17 @@ def main() -> None:
     args = parser.parse_args()
 
     _load_env()
+    _load_dashscope_api_key_from_credentials()
     if not os.environ.get("DASHSCOPE_API_KEY"):
-        print("Error: DASHSCOPE_API_KEY is not set. Configure it in your shell or .env file.", file=sys.stderr)
+        print(
+            "Error: DASHSCOPE_API_KEY is not set. Configure it via env/.env or ~/.alibabacloud/credentials.",
+            file=sys.stderr,
+        )
         print("Example .env:\n  DASHSCOPE_API_KEY=your_key_here", file=sys.stderr)
+        print(
+            "Example credentials:\n  [default]\n  dashscope_api_key=your_key_here",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     req = load_request(args)

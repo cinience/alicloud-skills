@@ -13,12 +13,6 @@ Recommended install (all skills, skip prompts, overwrite existing):
 npx skillfish add cinience/alicloud-skills --all -y --force
 ```
 
-Install all skills and skip prompts (no overwrite):
-
-```bash
-npx skillfish add cinience/alicloud-skills --all -y
-```
-
 If you still see a selection prompt, press `a` to select all, then press Enter to submit.
 
 Use a RAM user/role with least privilege. Avoid embedding AKs in code or CLI arguments.
@@ -29,9 +23,12 @@ Configure AccessKey (recommended):
 export ALICLOUD_ACCESS_KEY_ID="your-ak"
 export ALICLOUD_ACCESS_KEY_SECRET="your-sk"
 export ALICLOUD_REGION_ID="cn-beijing"
+export DASHSCOPE_API_KEY="your-dashscope-api-key"
 ```
 
-Or use standard CLI/SDK config files:
+Environment variables take precedence. If they are not set, the CLI/SDK falls back to `~/.alibabacloud/credentials`. `ALICLOUD_REGION_ID` is an optional default region; if unset, choose the most reasonable region at execution time, and ask the user when ambiguous.
+
+If env vars are not set, use standard CLI/SDK config files:
 
 `~/.alibabacloud/credentials`
 
@@ -40,14 +37,9 @@ Or use standard CLI/SDK config files:
 type = access_key
 access_key_id = your-ak
 access_key_secret = your-sk
+dashscope_api_key = your-dashscope-api-key
 ```
 
-`~/.alibabacloud/config`
-
-```ini
-[default]
-region_id = cn-beijing
-```
 
 ## Repository Structure
 
@@ -88,6 +80,7 @@ Located in `skills/storage/`:
 
 Located in `skills/compute/`:
 
+- `ecs/alicloud-compute-ecs`
 - `fc/alicloud-compute-fc-serverless-devs`
 - `fc/alicloud-compute-fc-agentrun`
 - `swas/alicloud-compute-swas-open`
@@ -133,6 +126,7 @@ Located in `skills/observability/`:
 | ai/video | alicloud-ai-video-wan-video | `skills/ai/video/alicloud-ai-video-wan-video` |
 | backup/alicloud-backup-bdrc | alicloud-backup-bdrc | `skills/backup/alicloud-backup-bdrc` |
 | backup/alicloud-backup-hbr | alicloud-backup-hbr | `skills/backup/alicloud-backup-hbr` |
+| compute/ecs | alicloud-compute-ecs | `skills/compute/ecs/alicloud-compute-ecs` |
 | compute/fc | alicloud-compute-fc-agentrun | `skills/compute/fc/alicloud-compute-fc-agentrun` |
 | compute/fc | alicloud-compute-fc-serverless-devs | `skills/compute/fc/alicloud-compute-fc-serverless-devs` |
 | compute/swas | alicloud-compute-swas-open | `skills/compute/swas/alicloud-compute-swas-open` |

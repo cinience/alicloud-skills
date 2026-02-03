@@ -12,7 +12,7 @@ Build consistent image generation behavior for the video-agent pipeline by stand
 ## Prerequisites
 
 - Install SDK: `python -m pip install dashscope`
-- Set `DASHSCOPE_API_KEY` in your environment.
+- Set `DASHSCOPE_API_KEY` in your environment, or add `dashscope_api_key` to `~/.alibabacloud/credentials` (env takes precedence).
 
 ## Critical model name
 
@@ -87,6 +87,7 @@ import os
 from dashscope.aigc.image_generation import ImageGeneration
 
 # Prefer env var for auth: export DASHSCOPE_API_KEY=...
+# Or use ~/.alibabacloud/credentials with dashscope_api_key under [default].
 
 
 def generate_image(req: dict) -> dict:
@@ -131,7 +132,7 @@ def generate_image(req: dict) -> dict:
 
 | Error | Likely cause | Action |
 |------|--------------|--------|
-| 401/403 | Missing or invalid `DASHSCOPE_API_KEY` | Check env var and access policy. |
+| 401/403 | Missing or invalid `DASHSCOPE_API_KEY` | Check env var or `~/.alibabacloud/credentials`, and access policy. |
 | 400 | Unsupported size or bad request shape | Use common `WxH` and validate fields. |
 | 429 | Rate limit or quota | Retry with backoff, or reduce concurrency. |
 | 5xx | Transient backend errors | Retry with backoff once or twice. |
