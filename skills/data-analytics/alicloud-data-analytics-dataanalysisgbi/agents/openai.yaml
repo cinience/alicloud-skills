@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Data Analytics Dataanalysisgbi"
+  short_description: "Data analytics and BI workflows"
+  default_prompt: "Use $alicloud-data-analytics-dataanalysisgbi to complete this data-analytics task on Alibaba Cloud."

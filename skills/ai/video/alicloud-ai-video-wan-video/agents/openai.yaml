@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Video Wan Video"
+  short_description: "AI video generation and orchestration"
+  default_prompt: "Use $alicloud-ai-video-wan-video to complete this ai/video task on Alibaba Cloud."

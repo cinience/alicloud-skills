@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Text Document Mind"
+  short_description: "Document parsing and text AI workflows"
+  default_prompt: "Use $alicloud-ai-text-document-mind to complete this ai/text task on Alibaba Cloud."

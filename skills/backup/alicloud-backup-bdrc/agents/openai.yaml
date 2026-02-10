@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Backup BDRC"
+  short_description: "Backup and disaster recovery workflows"
+  default_prompt: "Use $alicloud-backup-bdrc to complete this backup task on Alibaba Cloud."

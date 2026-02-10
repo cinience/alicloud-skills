@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Security Center SAS"
+  short_description: "Host security operations workflows"
+  default_prompt: "Use $alicloud-security-center-sas to complete this security/host task on Alibaba Cloud."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Data Lake DLF"
+  short_description: "Data lake governance workflows"
+  default_prompt: "Use $alicloud-data-lake-dlf to complete this data-lake task on Alibaba Cloud."

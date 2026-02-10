@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Translation Anytrans"
+  short_description: "Machine translation task workflows"
+  default_prompt: "Use $alicloud-ai-translation-anytrans to complete this ai/translation task on Alibaba Cloud."

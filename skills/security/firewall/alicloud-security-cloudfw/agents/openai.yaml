@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Security CloudFW"
+  short_description: "Cloud firewall policy workflows"
+  default_prompt: "Use $alicloud-security-cloudfw to complete this security/firewall task on Alibaba Cloud."

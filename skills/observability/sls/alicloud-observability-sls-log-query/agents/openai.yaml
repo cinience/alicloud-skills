@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Observability SLS Log Query"
+  short_description: "Log query and troubleshooting workflows"
+  default_prompt: "Use $alicloud-observability-sls-log-query to complete this observability/sls task on Alibaba Cloud."

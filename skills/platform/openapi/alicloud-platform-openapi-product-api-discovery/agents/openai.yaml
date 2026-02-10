@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Platform OpenAPI Product API Discovery"
+  short_description: "OpenAPI product discovery workflows"
+  default_prompt: "Use $alicloud-platform-openapi-product-api-discovery to complete this platform/openapi task on Alibaba Cloud."

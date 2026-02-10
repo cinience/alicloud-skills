@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI PAI Aiworkspace"
+  short_description: "PAI AIWorkspace management workflows"
+  default_prompt: "Use $alicloud-ai-pai-aiworkspace to complete this ai/platform task on Alibaba Cloud."

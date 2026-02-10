@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Image Qwen Image"
+  short_description: "Alibaba Cloud image generation workflows"
+  default_prompt: "Use $alicloud-ai-image-qwen-image to complete this ai/image task on Alibaba Cloud."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Compute FC Serverless Devs"
+  short_description: "Function Compute deployment workflows"
+  default_prompt: "Use $alicloud-compute-fc-serverless-devs to complete this compute/fc task on Alibaba Cloud."

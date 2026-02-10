@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Compute ECS"
+  short_description: "ECS lifecycle and inventory workflows"
+  default_prompt: "Use $alicloud-compute-ecs to complete this compute/ecs task on Alibaba Cloud."

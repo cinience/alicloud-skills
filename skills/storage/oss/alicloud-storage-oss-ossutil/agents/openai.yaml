@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Storage OSS Ossutil"
+  short_description: "OSS object storage workflows"
+  default_prompt: "Use $alicloud-storage-oss-ossutil to complete this storage/oss task on Alibaba Cloud."

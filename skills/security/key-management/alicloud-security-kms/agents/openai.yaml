@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Security KMS"
+  short_description: "KMS key lifecycle management workflows"
+  default_prompt: "Use $alicloud-security-kms to complete this security/key-management task on Alibaba Cloud."

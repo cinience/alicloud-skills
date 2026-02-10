@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Audio TTS"
+  short_description: "Alibaba Cloud TTS and speech workflows"
+  default_prompt: "Use $alicloud-ai-audio-tts to complete this ai/audio task on Alibaba Cloud."

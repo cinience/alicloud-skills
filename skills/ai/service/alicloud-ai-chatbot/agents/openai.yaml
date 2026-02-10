@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Chatbot"
+  short_description: "Contact center and chatbot service workflows"
+  default_prompt: "Use $alicloud-ai-chatbot to complete this ai/service task on Alibaba Cloud."

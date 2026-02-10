@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Search DashVector"
+  short_description: "Vector retrieval and search workflows"
+  default_prompt: "Use $alicloud-ai-search-dashvector to complete this ai/search task on Alibaba Cloud."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Compute SWAS Open"
+  short_description: "Simple app server operations workflows"
+  default_prompt: "Use $alicloud-compute-swas-open to complete this compute/swas task on Alibaba Cloud."

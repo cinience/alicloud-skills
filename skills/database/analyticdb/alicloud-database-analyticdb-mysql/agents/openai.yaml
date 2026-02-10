@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Database Analyticdb Mysql"
+  short_description: "AnalyticDB MySQL management workflows"
+  default_prompt: "Use $alicloud-database-analyticdb-mysql to complete this database/analyticdb task on Alibaba Cloud."

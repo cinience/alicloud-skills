@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Image Zimage Turbo"
+  short_description: "Alibaba Cloud image generation workflows"
+  default_prompt: "Use $alicloud-ai-image-zimage-turbo to complete this ai/image task on Alibaba Cloud."

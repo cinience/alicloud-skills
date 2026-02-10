@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Media Video Translation"
+  short_description: "Media processing and video translation"
+  default_prompt: "Use $alicloud-media-video-translation to complete this media/video task on Alibaba Cloud."

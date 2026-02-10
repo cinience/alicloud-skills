@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Entry Modelstudio Test"
+  short_description: "Model Studio routing and capability entry"
+  default_prompt: "Use $alicloud-ai-entry-modelstudio-test to complete this ai/entry task on Alibaba Cloud."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Network DNS Cli"
+  short_description: "DNS record management workflows"
+  default_prompt: "Use $alicloud-network-dns-cli to complete this network/dns task on Alibaba Cloud."

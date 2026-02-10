@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Recommend AIRec"
+  short_description: "AIRec recommendation configuration workflows"
+  default_prompt: "Use $alicloud-ai-recommend-airec to complete this ai/recommendation task on Alibaba Cloud."

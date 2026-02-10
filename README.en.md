@@ -101,6 +101,51 @@ Located in `skills/observability/`:
 
 - `sls/alicloud-observability-sls-log-query`
 
+## Skill Mapping (Skill → Display Name)
+
+| Skill | Display Name |
+| --- | --- |
+| `alicloud-ai-audio-tts` | Alibaba Cloud AI Audio TTS |
+| `alicloud-ai-content-aicontent` | Alibaba Cloud AI Content Aicontent |
+| `alicloud-ai-content-aimiaobi` | Alibaba Cloud AI Content Aimiaobi |
+| `alicloud-ai-entry-modelstudio` | Alibaba Cloud AI Entry Modelstudio |
+| `alicloud-ai-entry-modelstudio-test` | Alibaba Cloud AI Entry Modelstudio Test |
+| `alicloud-ai-image-qwen-image` | Alibaba Cloud AI Image Qwen Image |
+| `alicloud-ai-image-zimage-turbo` | Alibaba Cloud AI Image Zimage Turbo |
+| `alicloud-ai-misc-crawl-and-skill` | Alibaba Cloud AI Misc Crawl And Skill |
+| `alicloud-ai-pai-aiworkspace` | Alibaba Cloud AI PAI Aiworkspace |
+| `alicloud-ai-recommend-airec` | Alibaba Cloud AI Recommend AIRec |
+| `alicloud-ai-search-dashvector` | Alibaba Cloud AI Search DashVector |
+| `alicloud-ai-search-milvus` | Alibaba Cloud AI Search Milvus |
+| `alicloud-ai-search-opensearch` | Alibaba Cloud AI Search OpenSearch |
+| `alicloud-ai-chatbot` | Alibaba Cloud AI Chatbot |
+| `alicloud-ai-cloud-call-center` | Alibaba Cloud AI Cloud Call Center |
+| `alicloud-ai-contactcenter-ai` | Alibaba Cloud AI Contactcenter AI |
+| `alicloud-ai-text-document-mind` | Alibaba Cloud AI Text Document Mind |
+| `alicloud-ai-translation-anytrans` | Alibaba Cloud AI Translation Anytrans |
+| `alicloud-ai-video-wan-video` | Alibaba Cloud AI Video Wan Video |
+| `alicloud-backup-bdrc` | Alibaba Cloud Backup BDRC |
+| `alicloud-backup-hbr` | Alibaba Cloud Backup HBR |
+| `alicloud-compute-ecs` | Alibaba Cloud Compute ECS |
+| `alicloud-compute-fc-agentrun` | Alibaba Cloud Compute FC Agentrun |
+| `alicloud-compute-fc-serverless-devs` | Alibaba Cloud Compute FC Serverless Devs |
+| `alicloud-compute-swas-open` | Alibaba Cloud Compute SWAS Open |
+| `alicloud-data-analytics-dataanalysisgbi` | Alibaba Cloud Data Analytics Dataanalysisgbi |
+| `alicloud-data-lake-dlf` | Alibaba Cloud Data Lake DLF |
+| `alicloud-data-lake-dlf-next` | Alibaba Cloud Data Lake DLF Next |
+| `alicloud-database-analyticdb-mysql` | Alibaba Cloud Database Analyticdb Mysql |
+| `alicloud-database-rds-supabase` | Alibaba Cloud Database RDS Supabase |
+| `alicloud-media-video-translation` | Alibaba Cloud Media Video Translation |
+| `alicloud-network-dns-cli` | Alibaba Cloud Network DNS Cli |
+| `alicloud-observability-sls-log-query` | Alibaba Cloud Observability SLS Log Query |
+| `alicloud-platform-openapi-product-api-discovery` | Alibaba Cloud Platform OpenAPI Product API Discovery |
+| `alicloud-security-content-moderation-green` | Alibaba Cloud Security Content Moderation Green |
+| `alicloud-security-cloudfw` | Alibaba Cloud Security CloudFW |
+| `alicloud-security-center-sas` | Alibaba Cloud Security Center SAS |
+| `alicloud-security-id-verification-cloudauth` | Alibaba Cloud Security Id Verification Cloudauth |
+| `alicloud-security-kms` | Alibaba Cloud Security KMS |
+| `alicloud-storage-oss-ossutil` | Alibaba Cloud Storage OSS Ossutil |
+
 ## Skill Index
 
 <!-- SKILL_INDEX_BEGIN -->

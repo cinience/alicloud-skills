@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Security Content Moderation Green"
+  short_description: "Content moderation and compliance workflows"
+  default_prompt: "Use $alicloud-security-content-moderation-green to complete this security/content task on Alibaba Cloud."

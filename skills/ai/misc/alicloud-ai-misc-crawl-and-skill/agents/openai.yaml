@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Misc Crawl And Skill"
+  short_description: "Model discovery and skill refresh workflows"
+  default_prompt: "Use $alicloud-ai-misc-crawl-and-skill to complete this ai/misc task on Alibaba Cloud."
