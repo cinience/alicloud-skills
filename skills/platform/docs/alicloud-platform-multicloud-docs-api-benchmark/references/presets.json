@@ -1,0 +1,39 @@
+{
+  "llm-platform": {
+    "description": "Cross-cloud LLM platform comparison preset (Model Studio/Bailian vs Bedrock/Azure OpenAI/Vertex AI/Hunyuan/Ark/Pangu).",
+    "trigger_keywords": ["百炼", "bailian", "model studio", "模型服务", "llm platform", "大模型平台"],
+    "provider_query_map": {
+      "alicloud": "百炼 model studio",
+      "aws": "amazon bedrock",
+      "azure": "azure openai ai foundry",
+      "gcp": "vertex ai",
+      "tencent": "腾讯混元",
+      "volcengine": "火山方舟",
+      "huawei": "盘古大模型 modelarts"
+    },
+    "provider_seed_links": {
+      "alicloud": [
+        "https://help.aliyun.com/zh/model-studio/"
+      ],
+      "aws": [
+        "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+      ],
+      "azure": [
+        "https://learn.microsoft.com/en-us/azure/ai-services/openai/overview",
+        "https://learn.microsoft.com/en-us/azure/ai-foundry/"
+      ],
+      "gcp": [
+        "https://cloud.google.com/vertex-ai/docs"
+      ],
+      "tencent": [
+        "https://cloud.tencent.com/product/hunyuan"
+      ],
+      "volcengine": [
+        "https://www.volcengine.com/docs/82379/1541523?lang=zh"
+      ],
+      "huawei": [
+        "https://support.huaweicloud.com/productdesc-modelarts/modelarts_01_0033.html"
+      ]
+    }
+  }
+}

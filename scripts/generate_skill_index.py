@@ -11,7 +11,6 @@ SKILLS_DIR = ROOT / "skills"
 README_FILES = [
     ROOT / "README.md",
     ROOT / "README.en.md",
-    ROOT / "README.zh-CN.md",
     ROOT / "README.zh-TW.md",
 ]
 

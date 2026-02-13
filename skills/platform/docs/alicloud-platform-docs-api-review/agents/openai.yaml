@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Docs + API Reviewer"
+  short_description: "Review latest product and API docs"
+  default_prompt: "Use $alicloud-platform-docs-api-review to review the latest Alibaba Cloud product docs and API docs for a given product name, then provide prioritized improvements."

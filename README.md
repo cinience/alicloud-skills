@@ -1,6 +1,6 @@
 # Alibaba Cloud 核心 AI Agent Skills
 
-简体中文 | [English](README.en.md) | [繁體中文](README.zh-TW.md)
+简体中文（当前） | [English](README.en.md) | [繁體中文](README.zh-TW.md)
 
 Cloud Mind：把世界级云基建，折叠进你的AI对话框。
 
@@ -105,6 +105,18 @@ dashscope_api_key = 你的DashScope API Key
 - Demo：列出密钥或创建密钥  
 - 提示词：  
   “用 `alicloud-security-kms` 给出创建对称密钥的 OpenAPI 参数模板。”
+
+11) 产品文档与 API 文档自动评审
+
+- Demo：按产品名自动抓取最新文档并给出改进建议
+- 提示词：
+  “用 `alicloud-platform-docs-api-review` 评审产品 `百炼` 的产品文档和 API 文档，输出 P0/P1/P2 改进建议与证据链接。”
+
+12) 跨云同类产品文档/API 对比
+
+- Demo：对比阿里云/AWS/Azure/GCP/腾讯云/火山引擎/华为云同类产品
+- 提示词：
+  “用 `alicloud-platform-multicloud-docs-api-benchmark` 对 `百炼` 做跨云同类产品文档/API 对比，并用 `llm-platform` 预设输出评分表与差距建议。”
 
 ## 组合方案（场景与提示词模板）
 
@@ -280,6 +292,8 @@ dashscope_api_key = 你的DashScope API Key
 
 位于 `skills/platform/`：
 
+- `docs/alicloud-platform-docs-api-review`
+- `docs/alicloud-platform-multicloud-docs-api-benchmark`
 - `openapi/alicloud-platform-openapi-product-api-discovery`
 
 位于 `skills/security/`：
@@ -334,6 +348,8 @@ dashscope_api_key = 你的DashScope API Key
 | media/video | alicloud-media-video-translation | `skills/media/video/alicloud-media-video-translation` |
 | network/dns | alicloud-network-dns-cli | `skills/network/dns/alicloud-network-dns-cli` |
 | observability/sls | alicloud-observability-sls-log-query | `skills/observability/sls/alicloud-observability-sls-log-query` |
+| platform/docs | alicloud-platform-docs-api-review | `skills/platform/docs/alicloud-platform-docs-api-review` |
+| platform/docs | alicloud-platform-multicloud-docs-api-benchmark | `skills/platform/docs/alicloud-platform-multicloud-docs-api-benchmark` |
 | platform/openapi | alicloud-platform-openapi-product-api-discovery | `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery` |
 | security/content | alicloud-security-content-moderation-green | `skills/security/content/alicloud-security-content-moderation-green` |
 | security/firewall | alicloud-security-cloudfw | `skills/security/firewall/alicloud-security-cloudfw` |

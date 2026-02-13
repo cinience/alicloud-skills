@@ -44,7 +44,7 @@ python3 skills/ai/misc/alicloud-ai-misc-crawl-and-skill/scripts/refresh_alicloud
 ## Notes
 
 - Do not invent model IDs or API endpoints; only use links present on the models page.
-- After regeneration, update `README.md`, `README.zh-CN.md`, and `README.zh-TW.md` if skills list changed.
+- After regeneration, update `README.md`, `README.en.md`, and `README.zh-TW.md` if skills list changed.
 ## References
 
 - Source list: `references/sources.md`

@@ -1,8 +1,8 @@
-# Alibaba Cloud Core Claude Skills
+# Alibaba Cloud Core AI Agent Skills
 
-English | [简体中文](README.md) | [繁體中文](README.zh-TW.md)
+English (current) | [简体中文](README.md) | [繁體中文](README.zh-TW.md)
 
-A curated collection of **Alibaba Cloud core Claude skills** covering key product lines,
+A curated collection of **Alibaba Cloud core AI Agent skills** covering key product lines,
 including Model Studio, OSS, ECS, and more.
 
 ## Quick Start
@@ -39,6 +39,18 @@ access_key_id = your-ak
 access_key_secret = your-sk
 dashscope_api_key = your-dashscope-api-key
 ```
+
+## Examples (Docs Review & Benchmark)
+
+1) Product docs + API docs review
+
+- Prompt:
+  "Use `alicloud-platform-docs-api-review` to review product docs and API docs for `Bailian`, then return prioritized P0/P1/P2 improvements with evidence links."
+
+2) Multi-cloud comparable benchmark
+
+- Prompt:
+  "Use `alicloud-platform-multicloud-docs-api-benchmark` to benchmark `Bailian` against Alibaba Cloud/AWS/Azure/GCP/Tencent Cloud/Volcano Engine/Huawei Cloud with preset `llm-platform`, and output a score table plus gap actions."
 
 
 ## Repository Structure
@@ -134,6 +146,8 @@ Located in `skills/data-analytics/`:
 
 Located in `skills/platform/`:
 
+- `docs/alicloud-platform-docs-api-review`
+- `docs/alicloud-platform-multicloud-docs-api-benchmark`
 - `openapi/alicloud-platform-openapi-product-api-discovery`
 
 Located in `skills/security/`:
@@ -189,6 +203,8 @@ Located in `skills/security/`:
 | `alicloud-media-video-translation` | Alibaba Cloud Media Video Translation |
 | `alicloud-network-dns-cli` | Alibaba Cloud Network DNS Cli |
 | `alicloud-observability-sls-log-query` | Alibaba Cloud Observability SLS Log Query |
+| `alicloud-platform-docs-api-review` | Alibaba Cloud Platform Docs API Review |
+| `alicloud-platform-multicloud-docs-api-benchmark` | Alibaba Cloud Platform Multicloud Docs API Benchmark |
 | `alicloud-platform-openapi-product-api-discovery` | Alibaba Cloud Platform OpenAPI Product API Discovery |
 | `alicloud-security-center-sas` | Alibaba Cloud Security Center SAS |
 | `alicloud-security-cloudfw` | Alibaba Cloud Security Cloudfw |
@@ -241,6 +257,8 @@ Located in `skills/security/`:
 | media/video | alicloud-media-video-translation | `skills/media/video/alicloud-media-video-translation` |
 | network/dns | alicloud-network-dns-cli | `skills/network/dns/alicloud-network-dns-cli` |
 | observability/sls | alicloud-observability-sls-log-query | `skills/observability/sls/alicloud-observability-sls-log-query` |
+| platform/docs | alicloud-platform-docs-api-review | `skills/platform/docs/alicloud-platform-docs-api-review` |
+| platform/docs | alicloud-platform-multicloud-docs-api-benchmark | `skills/platform/docs/alicloud-platform-multicloud-docs-api-benchmark` |
 | platform/openapi | alicloud-platform-openapi-product-api-discovery | `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery` |
 | security/content | alicloud-security-content-moderation-green | `skills/security/content/alicloud-security-content-moderation-green` |
 | security/firewall | alicloud-security-cloudfw | `skills/security/firewall/alicloud-security-cloudfw` |

@@ -1,8 +1,8 @@
-# Alibaba Cloud 核心 Claude Skills
+# Alibaba Cloud 核心 AI Agent Skills
 
-繁體中文 | [English](README.en.md) | [简体中文](README.md)
+繁體中文（目前） | [English](README.en.md) | [简体中文](README.md)
 
-這是一套精選的 **Alibaba Cloud 核心 Claude skills**，涵蓋關鍵產品線，
+這是一套精選的 **Alibaba Cloud 核心 AI Agent skills**，涵蓋關鍵產品線，
 包括 Model Studio、OSS、ECS 等。
 
 ## 快速開始
@@ -39,6 +39,18 @@ access_key_id = 你的AK
 access_key_secret = 你的SK
 dashscope_api_key = 你的DashScope API Key
 ```
+
+## 示例（文件評審與跨雲對比）
+
+1) 產品文件 + API 文件評審
+
+- 提示詞：
+  「用 `alicloud-platform-docs-api-review` 評審產品 `百煉` 的產品文件與 API 文件，輸出 P0/P1/P2 改進建議並附證據連結。」
+
+2) 跨雲同類產品對比
+
+- 提示詞：
+  「用 `alicloud-platform-multicloud-docs-api-benchmark` 對 `百煉` 做跨雲對比（阿里雲/AWS/Azure/GCP/騰訊雲/火山引擎/華為雲），使用 `llm-platform` 預設，輸出評分表與改進建議。」
 
 
 ## 專案結構
@@ -134,6 +146,8 @@ dashscope_api_key = 你的DashScope API Key
 
 位於 `skills/platform/`：
 
+- `docs/alicloud-platform-docs-api-review`
+- `docs/alicloud-platform-multicloud-docs-api-benchmark`
 - `openapi/alicloud-platform-openapi-product-api-discovery`
 
 位於 `skills/security/`：
@@ -188,6 +202,8 @@ dashscope_api_key = 你的DashScope API Key
 | media/video | alicloud-media-video-translation | `skills/media/video/alicloud-media-video-translation` |
 | network/dns | alicloud-network-dns-cli | `skills/network/dns/alicloud-network-dns-cli` |
 | observability/sls | alicloud-observability-sls-log-query | `skills/observability/sls/alicloud-observability-sls-log-query` |
+| platform/docs | alicloud-platform-docs-api-review | `skills/platform/docs/alicloud-platform-docs-api-review` |
+| platform/docs | alicloud-platform-multicloud-docs-api-benchmark | `skills/platform/docs/alicloud-platform-multicloud-docs-api-benchmark` |
 | platform/openapi | alicloud-platform-openapi-product-api-discovery | `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery` |
 | security/content | alicloud-security-content-moderation-green | `skills/security/content/alicloud-security-content-moderation-green` |
 | security/firewall | alicloud-security-cloudfw | `skills/security/firewall/alicloud-security-cloudfw` |

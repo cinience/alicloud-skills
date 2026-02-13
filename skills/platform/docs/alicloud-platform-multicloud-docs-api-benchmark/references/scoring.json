@@ -1,0 +1,30 @@
+{
+  "profiles": {
+    "default": {
+      "link_cap": 8,
+      "link_weight": 2,
+      "signal_weights": {
+        "overview": 12,
+        "quick_start": 15,
+        "developer_reference": 20,
+        "faq_or_troubleshooting": 12,
+        "best_practice": 12,
+        "changelog": 8
+      },
+      "api_bonus": 5
+    },
+    "llm-platform": {
+      "link_cap": 8,
+      "link_weight": 2,
+      "signal_weights": {
+        "overview": 10,
+        "quick_start": 14,
+        "developer_reference": 22,
+        "faq_or_troubleshooting": 10,
+        "best_practice": 14,
+        "changelog": 8
+      },
+      "api_bonus": 5
+    }
+  }
+}

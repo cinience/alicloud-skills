@@ -2,7 +2,7 @@
 """Generate README skill sections to avoid manual drift.
 
 Updates:
-- Included skills section in README.md / README.en.md / README.zh-CN.md / README.zh-TW.md
+- Included skills section in README.md / README.en.md / README.zh-TW.md
 - Skill mapping section in README.en.md
 """
 
@@ -16,7 +16,6 @@ SKILLS_DIR = ROOT / "skills"
 
 README_ZH = ROOT / "README.md"
 README_EN = ROOT / "README.en.md"
-README_ZH_CN = ROOT / "README.zh-CN.md"
 README_ZH_TW = ROOT / "README.zh-TW.md"
 
 INCLUDED_BEGIN = "<!-- INCLUDED_SKILLS_BEGIN -->"
@@ -191,13 +190,6 @@ def main() -> None:
         INCLUDED_BEGIN,
         INCLUDED_END,
         render_included(rows, "en"),
-    )
-    update_file(
-        README_ZH_CN,
-        "## 已包含技能（当前）",
-        INCLUDED_BEGIN,
-        INCLUDED_END,
-        render_included(rows, "zh"),
     )
     update_file(
         README_ZH_TW,

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Multi-Cloud Docs/API Benchmark"
+  short_description: "Benchmark docs and APIs across major clouds"
+  default_prompt: "Use $alicloud-platform-multicloud-docs-api-benchmark to compare product docs and API docs across Alibaba Cloud, AWS, Azure, GCP, Tencent Cloud, Volcano Engine, and Huawei Cloud, then provide prioritized improvement actions."
