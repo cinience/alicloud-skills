@@ -71,94 +71,6 @@ dashscope_api_key = your-dashscope-api-key
 
 - `modelstudio/` — symlink to `skills/ai/` (overseas brand)
 
-## Included Skills (current)
-
-
-<!-- INCLUDED_SKILLS_BEGIN -->
-Located in `skills/ai/`:
-
-- `audio/alicloud-ai-audio-tts`
-- `audio/alicloud-ai-audio-tts-realtime`
-- `audio/alicloud-ai-audio-tts-voice-clone`
-- `audio/alicloud-ai-audio-tts-voice-design`
-- `content/alicloud-ai-content-aicontent`
-- `content/alicloud-ai-content-aimiaobi`
-- `entry/alicloud-ai-entry-modelstudio`
-- `entry/alicloud-ai-entry-modelstudio-test`
-- `image/alicloud-ai-image-qwen-image`
-- `image/alicloud-ai-image-qwen-image-edit`
-- `image/alicloud-ai-image-zimage-turbo`
-- `misc/alicloud-ai-misc-crawl-and-skill`
-- `platform/alicloud-ai-pai-aiworkspace`
-- `recommendation/alicloud-ai-recommend-airec`
-- `search/alicloud-ai-search-dashvector`
-- `search/alicloud-ai-search-milvus`
-- `search/alicloud-ai-search-opensearch`
-- `service/alicloud-ai-chatbot`
-- `service/alicloud-ai-cloud-call-center`
-- `service/alicloud-ai-contactcenter-ai`
-- `text/alicloud-ai-text-document-mind`
-- `translation/alicloud-ai-translation-anytrans`
-- `video/alicloud-ai-video-wan-r2v`
-- `video/alicloud-ai-video-wan-video`
-
-Located in `skills/storage/`:
-
-- `oss/alicloud-storage-oss-ossutil`
-
-Located in `skills/compute/`:
-
-- `ecs/alicloud-compute-ecs`
-- `fc/alicloud-compute-fc-agentrun`
-- `fc/alicloud-compute-fc-serverless-devs`
-- `swas/alicloud-compute-swas-open`
-
-Located in `skills/database/`:
-
-- `analyticdb/alicloud-database-analyticdb-mysql`
-- `rds/alicloud-database-rds-supabase`
-
-Located in `skills/network/`:
-
-- `dns/alicloud-network-dns-cli`
-
-Located in `skills/media/`:
-
-- `video/alicloud-media-video-translation`
-
-Located in `skills/observability/`:
-
-- `sls/alicloud-observability-sls-log-query`
-
-Located in `skills/backup/`:
-
-- `alicloud-backup-bdrc`
-- `alicloud-backup-hbr`
-
-Located in `skills/data-lake/`:
-
-- `alicloud-data-lake-dlf`
-- `alicloud-data-lake-dlf-next`
-
-Located in `skills/data-analytics/`:
-
-- `alicloud-data-analytics-dataanalysisgbi`
-
-Located in `skills/platform/`:
-
-- `docs/alicloud-platform-docs-api-review`
-- `docs/alicloud-platform-multicloud-docs-api-benchmark`
-- `openapi/alicloud-platform-openapi-product-api-discovery`
-
-Located in `skills/security/`:
-
-- `content/alicloud-security-content-moderation-green`
-- `firewall/alicloud-security-cloudfw`
-- `host/alicloud-security-center-sas`
-- `identity/alicloud-security-id-verification-cloudauth`
-- `key-management/alicloud-security-kms`
-<!-- INCLUDED_SKILLS_END -->
-
 ## Skill Mapping (Skill → Display Name)
 
 
@@ -217,55 +129,55 @@ Located in `skills/security/`:
 ## Skill Index
 
 <!-- SKILL_INDEX_BEGIN -->
-| Category | Skill | Path |
-| --- | --- | --- |
-| ai/audio | alicloud-ai-audio-tts | `skills/ai/audio/alicloud-ai-audio-tts` |
-| ai/audio | alicloud-ai-audio-tts-realtime | `skills/ai/audio/alicloud-ai-audio-tts-realtime` |
-| ai/audio | alicloud-ai-audio-tts-voice-clone | `skills/ai/audio/alicloud-ai-audio-tts-voice-clone` |
-| ai/audio | alicloud-ai-audio-tts-voice-design | `skills/ai/audio/alicloud-ai-audio-tts-voice-design` |
-| ai/content | alicloud-ai-content-aicontent | `skills/ai/content/alicloud-ai-content-aicontent` |
-| ai/content | alicloud-ai-content-aimiaobi | `skills/ai/content/alicloud-ai-content-aimiaobi` |
-| ai/entry | alicloud-ai-entry-modelstudio | `skills/ai/entry/alicloud-ai-entry-modelstudio` |
-| ai/entry | alicloud-ai-entry-modelstudio-test | `skills/ai/entry/alicloud-ai-entry-modelstudio-test` |
-| ai/image | alicloud-ai-image-qwen-image | `skills/ai/image/alicloud-ai-image-qwen-image` |
-| ai/image | alicloud-ai-image-qwen-image-edit | `skills/ai/image/alicloud-ai-image-qwen-image-edit` |
-| ai/image | alicloud-ai-image-zimage-turbo | `skills/ai/image/alicloud-ai-image-zimage-turbo` |
-| ai/misc | alicloud-ai-misc-crawl-and-skill | `skills/ai/misc/alicloud-ai-misc-crawl-and-skill` |
-| ai/platform | alicloud-ai-pai-aiworkspace | `skills/ai/platform/alicloud-ai-pai-aiworkspace` |
-| ai/recommendation | alicloud-ai-recommend-airec | `skills/ai/recommendation/alicloud-ai-recommend-airec` |
-| ai/search | alicloud-ai-search-dashvector | `skills/ai/search/alicloud-ai-search-dashvector` |
-| ai/search | alicloud-ai-search-milvus | `skills/ai/search/alicloud-ai-search-milvus` |
-| ai/search | alicloud-ai-search-opensearch | `skills/ai/search/alicloud-ai-search-opensearch` |
-| ai/service | alicloud-ai-chatbot | `skills/ai/service/alicloud-ai-chatbot` |
-| ai/service | alicloud-ai-cloud-call-center | `skills/ai/service/alicloud-ai-cloud-call-center` |
-| ai/service | alicloud-ai-contactcenter-ai | `skills/ai/service/alicloud-ai-contactcenter-ai` |
-| ai/text | alicloud-ai-text-document-mind | `skills/ai/text/alicloud-ai-text-document-mind` |
-| ai/translation | alicloud-ai-translation-anytrans | `skills/ai/translation/alicloud-ai-translation-anytrans` |
-| ai/video | alicloud-ai-video-wan-r2v | `skills/ai/video/alicloud-ai-video-wan-r2v` |
-| ai/video | alicloud-ai-video-wan-video | `skills/ai/video/alicloud-ai-video-wan-video` |
-| backup/alicloud-backup-bdrc | alicloud-backup-bdrc | `skills/backup/alicloud-backup-bdrc` |
-| backup/alicloud-backup-hbr | alicloud-backup-hbr | `skills/backup/alicloud-backup-hbr` |
-| compute/ecs | alicloud-compute-ecs | `skills/compute/ecs/alicloud-compute-ecs` |
-| compute/fc | alicloud-compute-fc-agentrun | `skills/compute/fc/alicloud-compute-fc-agentrun` |
-| compute/fc | alicloud-compute-fc-serverless-devs | `skills/compute/fc/alicloud-compute-fc-serverless-devs` |
-| compute/swas | alicloud-compute-swas-open | `skills/compute/swas/alicloud-compute-swas-open` |
-| data-analytics/alicloud-data-analytics-dataanalysisgbi | alicloud-data-analytics-dataanalysisgbi | `skills/data-analytics/alicloud-data-analytics-dataanalysisgbi` |
-| data-lake/alicloud-data-lake-dlf | alicloud-data-lake-dlf | `skills/data-lake/alicloud-data-lake-dlf` |
-| data-lake/alicloud-data-lake-dlf-next | alicloud-data-lake-dlf-next | `skills/data-lake/alicloud-data-lake-dlf-next` |
-| database/analyticdb | alicloud-database-analyticdb-mysql | `skills/database/analyticdb/alicloud-database-analyticdb-mysql` |
-| database/rds | alicloud-database-rds-supabase | `skills/database/rds/alicloud-database-rds-supabase` |
-| media/video | alicloud-media-video-translation | `skills/media/video/alicloud-media-video-translation` |
-| network/dns | alicloud-network-dns-cli | `skills/network/dns/alicloud-network-dns-cli` |
-| observability/sls | alicloud-observability-sls-log-query | `skills/observability/sls/alicloud-observability-sls-log-query` |
-| platform/docs | alicloud-platform-docs-api-review | `skills/platform/docs/alicloud-platform-docs-api-review` |
-| platform/docs | alicloud-platform-multicloud-docs-api-benchmark | `skills/platform/docs/alicloud-platform-multicloud-docs-api-benchmark` |
-| platform/openapi | alicloud-platform-openapi-product-api-discovery | `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery` |
-| security/content | alicloud-security-content-moderation-green | `skills/security/content/alicloud-security-content-moderation-green` |
-| security/firewall | alicloud-security-cloudfw | `skills/security/firewall/alicloud-security-cloudfw` |
-| security/host | alicloud-security-center-sas | `skills/security/host/alicloud-security-center-sas` |
-| security/identity | alicloud-security-id-verification-cloudauth | `skills/security/identity/alicloud-security-id-verification-cloudauth` |
-| security/key-management | alicloud-security-kms | `skills/security/key-management/alicloud-security-kms` |
-| storage/oss | alicloud-storage-oss-ossutil | `skills/storage/oss/alicloud-storage-oss-ossutil` |
+| Category | Skill | Description | Path |
+| --- | --- | --- | --- |
+| ai/audio | alicloud-ai-audio-tts | Generate human-like speech audio with Model Studio DashScope Qwen TTS models (qwen3-tts-flash, qwen3-tts-instruct-flash). Use when converting text to speech, producing voice lines for short drama/news videos, or documenting TTS request/response fields for DashScope. | `skills/ai/audio/alicloud-ai-audio-tts` |
+| ai/audio | alicloud-ai-audio-tts-realtime | Real-time speech synthesis with Alibaba Cloud Model Studio Qwen TTS Realtime models. Use when low-latency interactive speech is required, including instruction-controlled realtime synthesis. | `skills/ai/audio/alicloud-ai-audio-tts-realtime` |
+| ai/audio | alicloud-ai-audio-tts-voice-clone | Voice cloning workflows with Alibaba Cloud Model Studio Qwen TTS VC models. Use when creating cloned voices from sample audio and synthesizing text with cloned timbre. | `skills/ai/audio/alicloud-ai-audio-tts-voice-clone` |
+| ai/audio | alicloud-ai-audio-tts-voice-design | Voice design workflows with Alibaba Cloud Model Studio Qwen TTS VD models. Use when creating custom synthetic voices from text descriptions and using them for speech synthesis. | `skills/ai/audio/alicloud-ai-audio-tts-voice-design` |
+| ai/content | alicloud-ai-content-aicontent | Manage Alibaba Cloud AIContent (AiContent) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/ai/content/alicloud-ai-content-aicontent` |
+| ai/content | alicloud-ai-content-aimiaobi | Manage Alibaba Cloud Quan Miao (AiMiaoBi) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/ai/content/alicloud-ai-content-aimiaobi` |
+| ai/entry | alicloud-ai-entry-modelstudio | Route Alibaba Cloud Model Studio requests to the right local skill (Qwen Image, Qwen Image Edit, Wan Video, Wan R2V, Qwen TTS and advanced TTS variants). Use when the user asks for Model Studio without specifying a capability. | `skills/ai/entry/alicloud-ai-entry-modelstudio` |
+| ai/entry | alicloud-ai-entry-modelstudio-test | Run a minimal test matrix for the Model Studio skills that exist in this repo (image/video/TTS and newly added edit/realtime/voice variants). Use to execute one small request per skill and record results. | `skills/ai/entry/alicloud-ai-entry-modelstudio-test` |
+| ai/image | alicloud-ai-image-qwen-image | Generate images with Model Studio DashScope SDK using Qwen Image generation models (qwen-image-max, qwen-image-plus-2026-01-09). Use when implementing or documenting image.generate requests/responses, mapping prompt/negative_prompt/size/seed/reference_image, or integrating image generation into the video-agent pipeline. | `skills/ai/image/alicloud-ai-image-qwen-image` |
+| ai/image | alicloud-ai-image-qwen-image-edit | Edit images with Alibaba Cloud Model Studio Qwen Image Edit Max (qwen-image-edit-max). Use when modifying existing images (inpaint, replace, style transfer, local edits), preserving subject consistency, or documenting image edit request/response mappings. | `skills/ai/image/alicloud-ai-image-qwen-image-edit` |
+| ai/image | alicloud-ai-image-zimage-turbo | Generate images with Alibaba Cloud Model Studio Z-Image Turbo (z-image-turbo) via DashScope multimodal-generation API. Use when creating text-to-image outputs, controlling size/seed/prompt_extend, or documenting request/response mapping for Z-Image. | `skills/ai/image/alicloud-ai-image-zimage-turbo` |
+| ai/misc | alicloud-ai-misc-crawl-and-skill | Refresh the Model Studio models crawl and regenerate derived summaries and `skills/ai/**` skills. Use when the models list or generated skills must be updated. | `skills/ai/misc/alicloud-ai-misc-crawl-and-skill` |
+| ai/platform | alicloud-ai-pai-aiworkspace | Manage Alibaba Cloud Platform for Artificial Intelligence PAI - AIWorkspace (AIWorkSpace) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/ai/platform/alicloud-ai-pai-aiworkspace` |
+| ai/recommendation | alicloud-ai-recommend-airec | Manage Alibaba Cloud AIRec (Airec) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/ai/recommendation/alicloud-ai-recommend-airec` |
+| ai/search | alicloud-ai-search-dashvector | Build vector retrieval with DashVector using the Python SDK. Use when creating collections, upserting docs, and running similarity search with filters in Claude Code/Codex. | `skills/ai/search/alicloud-ai-search-dashvector` |
+| ai/search | alicloud-ai-search-milvus | Use AliCloud Milvus (serverless) with PyMilvus to create collections, insert vectors, and run filtered similarity search. Optimized for Claude Code/Codex vector retrieval flows. | `skills/ai/search/alicloud-ai-search-milvus` |
+| ai/search | alicloud-ai-search-opensearch | Use OpenSearch vector search edition via the Python SDK (ha3engine) to push documents and run HA/SQL searches. Ideal for RAG and vector retrieval pipelines in Claude Code/Codex. | `skills/ai/search/alicloud-ai-search-opensearch` |
+| ai/service | alicloud-ai-chatbot | Manage Alibaba Cloud beebot (Chatbot) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/ai/service/alicloud-ai-chatbot` |
+| ai/service | alicloud-ai-cloud-call-center | Manage Alibaba Cloud Cloud Call Center (CCC) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/ai/service/alicloud-ai-cloud-call-center` |
+| ai/service | alicloud-ai-contactcenter-ai | Manage Alibaba Cloud Contact Center AI (ContactCenterAI) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/ai/service/alicloud-ai-contactcenter-ai` |
+| ai/text | alicloud-ai-text-document-mind | Use Document Mind (DocMind) via Node.js SDK to submit document parsing jobs and poll results. Designed for Claude Code/Codex document understanding workflows. | `skills/ai/text/alicloud-ai-text-document-mind` |
+| ai/translation | alicloud-ai-translation-anytrans | Manage Alibaba Cloud TongyiTranslate (AnyTrans) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/ai/translation/alicloud-ai-translation-anytrans` |
+| ai/video | alicloud-ai-video-wan-r2v | Generate reference-based videos with Alibaba Cloud Model Studio Wan R2V (wan2.6-r2v-flash). Use when creating multi-shot videos from reference video/image material, preserving character style, or documenting reference-to-video request/response flows. | `skills/ai/video/alicloud-ai-video-wan-r2v` |
+| ai/video | alicloud-ai-video-wan-video | Generate videos with Model Studio DashScope SDK using the wan2.6-i2v-flash model. Use when implementing or documenting video.generate requests/responses, mapping prompt/negative_prompt/duration/fps/size/seed/reference_image/motion_strength, or integrating video generation into the video-agent pipeline. | `skills/ai/video/alicloud-ai-video-wan-video` |
+| backup/alicloud-backup-bdrc | alicloud-backup-bdrc | Manage Alibaba Cloud Backup and Disaster Recovery Center (BDRC) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/backup/alicloud-backup-bdrc` |
+| backup/alicloud-backup-hbr | alicloud-backup-hbr | Manage Alibaba Cloud Cloud Backup (hbr) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/backup/alicloud-backup-hbr` |
+| compute/ecs | alicloud-compute-ecs | Manage Alibaba Cloud Elastic Compute Service (ECS) via OpenAPI/SDK. Use for listing or creating instances, starting/stopping/rebooting, managing disks/snapshots/images/security groups/key pairs/ENIs, querying status, and troubleshooting workflows for this product. | `skills/compute/ecs/alicloud-compute-ecs` |
+| compute/fc | alicloud-compute-fc-agentrun | Manage Function Compute AgentRun resources via OpenAPI (runtime, sandbox, model, memory, credentials). Use for creating runtimes/endpoints, querying status, and troubleshooting AgentRun workflows. | `skills/compute/fc/alicloud-compute-fc-agentrun` |
+| compute/fc | alicloud-compute-fc-serverless-devs | Alibaba Cloud Function Compute (FC 3.0) skill for installing and using Serverless Devs to create, deploy, invoke, and remove a Python function. Use when users need CLI-based FC quick start or Serverless Devs setup guidance. | `skills/compute/fc/alicloud-compute-fc-serverless-devs` |
+| compute/swas | alicloud-compute-swas-open | Manage Alibaba Cloud Simple Application Server (SWAS OpenAPI 2020-06-01) resources end-to-end. Use for querying instances, starting/stopping/rebooting, executing commands (cloud assistant), managing disks/snapshots/images, firewall rules/templates, key pairs, tags, monitoring, and lightweight database operations. | `skills/compute/swas/alicloud-compute-swas-open` |
+| data-analytics/alicloud-data-analytics-dataanalysisgbi | alicloud-data-analytics-dataanalysisgbi | Manage Alibaba Cloud DataAnalysisGBI (DataAnalysisGBI) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/data-analytics/alicloud-data-analytics-dataanalysisgbi` |
+| data-lake/alicloud-data-lake-dlf | alicloud-data-lake-dlf | Manage Alibaba Cloud Data Lake Formation (DataLake) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/data-lake/alicloud-data-lake-dlf` |
+| data-lake/alicloud-data-lake-dlf-next | alicloud-data-lake-dlf-next | Manage Alibaba Cloud Data Lake Formation (DlfNext) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/data-lake/alicloud-data-lake-dlf-next` |
+| database/analyticdb | alicloud-database-analyticdb-mysql | Manage Alibaba Cloud AnalyticDB for MySQL (adb) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/database/analyticdb/alicloud-database-analyticdb-mysql` |
+| database/rds | alicloud-database-rds-supabase | Manage Alibaba Cloud RDS Supabase (RDS AI Service 2025-05-07) via OpenAPI. Use for creating, starting/stopping/restarting instances, resetting passwords, querying endpoints/auth/storage, configuring auth/RAG/SSL/IP whitelist, and listing instance details or conversations. | `skills/database/rds/alicloud-database-rds-supabase` |
+| media/video | alicloud-media-video-translation | Create and manage Alibaba Cloud IMS video translation jobs via OpenAPI (subtitle/voice/face). Use when you need API-based video translation, status polling, and job management. | `skills/media/video/alicloud-media-video-translation` |
+| network/dns | alicloud-network-dns-cli | Alibaba Cloud DNS (Alidns) CLI skill. Use to query, add, and update DNS records via aliyun-cli, including CNAME setup for Function Compute custom domains. | `skills/network/dns/alicloud-network-dns-cli` |
+| observability/sls | alicloud-observability-sls-log-query | Query and troubleshoot logs in Alibaba Cloud Log Service (SLS) using query|analysis syntax and the Python SDK. Use for time-bounded log search, error investigation, and root-cause analysis workflows. | `skills/observability/sls/alicloud-observability-sls-log-query` |
+| platform/docs | alicloud-platform-docs-api-review | Automatically review latest Alibaba Cloud product docs and OpenAPI docs by product name, then output detailed prioritized improvement suggestions with evidence and scoring. Use when user asks to audit product documentation quality, API documentation quality, or wants actionable doc/API optimization recommendations. | `skills/platform/docs/alicloud-platform-docs-api-review` |
+| platform/docs | alicloud-platform-multicloud-docs-api-benchmark | Benchmark similar product documentation and API documentation across Alibaba Cloud, AWS, Azure, GCP, Tencent Cloud, Volcano Engine, and Huawei Cloud. Given one product keyword, auto-discover latest official docs/API links, score quality consistently, and output detailed prioritized improvement recommendations. | `skills/platform/docs/alicloud-platform-multicloud-docs-api-benchmark` |
+| platform/openapi | alicloud-platform-openapi-product-api-discovery | Discover and reconcile Alibaba Cloud product catalogs from Ticket System, Support & Service, and BSS OpenAPI; fetch OpenAPI product/version/API metadata; and summarize API coverage to plan new skills. Use when you need a complete product list, product-to-API mapping, or coverage/gap reports for skill generation. | `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery` |
+| security/content | alicloud-security-content-moderation-green | Manage Alibaba Cloud Content Moderation (Green) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/security/content/alicloud-security-content-moderation-green` |
+| security/firewall | alicloud-security-cloudfw | Manage Alibaba Cloud Cloud Firewall (Cloudfw) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/security/firewall/alicloud-security-cloudfw` |
+| security/host | alicloud-security-center-sas | Manage Alibaba Cloud Security Center (Sas) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/security/host/alicloud-security-center-sas` |
+| security/identity | alicloud-security-id-verification-cloudauth | Manage Alibaba Cloud ID Verification (Cloudauth) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/security/identity/alicloud-security-id-verification-cloudauth` |
+| security/key-management | alicloud-security-kms | Manage Alibaba Cloud KeyManagementService (Kms) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/security/key-management/alicloud-security-kms` |
+| storage/oss | alicloud-storage-oss-ossutil | Alibaba Cloud OSS CLI (ossutil 2.0) skill. Install, configure, and operate OSS from the command line based on the official ossutil overview. | `skills/storage/oss/alicloud-storage-oss-ossutil` |
 <!-- SKILL_INDEX_END -->
 
 Update the index by running: `scripts/update_skill_index.sh`
