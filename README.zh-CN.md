@@ -284,6 +284,7 @@ dashscope_api_key = 你的DashScope API Key
 | platform/docs | alicloud-platform-docs-api-review | 自动评审最新 Alibaba Cloud 产品文档与 OpenAPI 文档，并输出优先级建议与证据。 | `skills/platform/docs/alicloud-platform-docs-api-review` |
 | platform/docs | alicloud-platform-multicloud-docs-api-benchmark | 对阿里云及主流云厂商同类产品文档与 API 文档进行基准对比并给出改进建议。 | `skills/platform/docs/alicloud-platform-multicloud-docs-api-benchmark` |
 | platform/openapi | alicloud-platform-openapi-product-api-discovery | 发现并对齐 Alibaba Cloud 产品目录与 OpenAPI 元数据，用于覆盖分析和技能规划。 | `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery` |
+| platform/openclaw | alicloud-platform-openclaw-setup | 技能 `alicloud-platform-openclaw-setup` 的能力说明，详见对应 SKILL.md。 | `skills/platform/openclaw/alicloud-platform-openclaw-setup` |
 | security/content | alicloud-security-content-moderation-green | 通过 OpenAPI/SDK 管理 Alibaba Cloud Content Moderation (Green)，用于资源查询、创建或更新配置、状态查询与故障排查。 | `skills/security/content/alicloud-security-content-moderation-green` |
 | security/firewall | alicloud-security-cloudfw | 通过 OpenAPI/SDK 管理 Alibaba Cloud Cloud Firewall (Cloudfw)，用于资源查询、创建或更新配置、状态查询与故障排查。 | `skills/security/firewall/alicloud-security-cloudfw` |
 | security/host | alicloud-security-center-sas | 通过 OpenAPI/SDK 管理 Alibaba Cloud Security Center (Sas)，用于资源查询、创建或更新配置、状态查询与故障排查。 | `skills/security/host/alicloud-security-center-sas` |

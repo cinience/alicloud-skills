@@ -290,6 +290,8 @@ def update_readme(path: Path, rows: list[tuple[str, str, str, str]], lang: str) 
 def main() -> None:
     rows = collect_skills()
     for readme in README_FILES:
+        if not readme.exists():
+            continue
         lang = _readme_lang(readme)
         update_readme(readme, rows=rows, lang=lang)
 
