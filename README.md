@@ -227,7 +227,7 @@ Return key status, audit results, and remediation suggestions."
   - `data-lake/` — DLF
   - `database/` — AnalyticDB / RDS
   - `media/` — intelligent media creation
-  - `network/` — DNS
+  - `network/` — DNS / ALB / ESA
   - `observability/` — SLS
   - `platform/` — CLI / OpenAPI / docs workflows
   - `security/` — content moderation / firewall / host security / identity / key management
@@ -309,6 +309,7 @@ Standards and migration notes:
 | media/vod | alicloud-media-vod | 技能 `alicloud-media-vod` 的能力说明，详见对应 SKILL.md。 | `skills/media/vod/alicloud-media-vod` |
 | network/dns | alicloud-network-dns-cli | Alibaba Cloud DNS (Alidns) CLI skill. Use to query, add, and update DNS records via aliyun-cli, including CNAME setup for Function Compute custom domains. | `skills/network/dns/alicloud-network-dns-cli` |
 | network/esa | alicloud-network-esa | 技能 `alicloud-network-esa` 的能力说明，详见对应 SKILL.md。 | `skills/network/esa/alicloud-network-esa` |
+| network/slb | alicloud-network-alb | Manage and troubleshoot Alibaba Cloud ALB. Full lifecycle management for instances, listeners, server groups, forwarding rules, certificates, ACLs, security policies, health checks, and async job polling. Includes 28 CLI scripts covering CRUD, start/stop, deletion protection, and more. | `skills/network/slb/alicloud-network-alb` |
 | observability/sls | alicloud-observability-sls-log-query | Query and troubleshoot logs in Alibaba Cloud Log Service (SLS) using query|analysis syntax and the Python SDK. Use for time-bounded log search, error investigation, and root-cause analysis workflows. | `skills/observability/sls/alicloud-observability-sls-log-query` |
 | platform/cli | alicloud-platform-aliyun-cli | Generic Alibaba Cloud CLI (aliyun) workflows for install, credential/profile setup, API discovery, and cross-product OpenAPI operations. Use when tasks need command-line resource query or management on Alibaba Cloud. | `skills/platform/cli/alicloud-platform-aliyun-cli` |
 | platform/docs | alicloud-platform-docs-api-review | Automatically review latest Alibaba Cloud product docs and OpenAPI docs by product name, then output detailed prioritized improvement suggestions with evidence and scoring. Use when user asks to audit product documentation quality, API documentation quality, or wants actionable doc/API optimization recommendations. | `skills/platform/docs/alicloud-platform-docs-api-review` |

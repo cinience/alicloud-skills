@@ -223,7 +223,7 @@ dashscope_api_key = 你的DashScope API Key
   - `storage/` — OSS
   - `compute/` — ECS
   - `media/` — 智慧媒體創作
-  - `network/` — VPC / SLB / EIP
+  - `network/` — DNS / ALB（應用型負載均衡）/ ESA
   - `database/` — RDS / PolarDB / Redis
   - `security/` — RAM / KMS / WAF
   - `observability/` — SLS / ARMS / CloudMonitor
@@ -281,6 +281,7 @@ dashscope_api_key = 你的DashScope API Key
 | media/vod | alicloud-media-vod | 技能 `alicloud-media-vod` 的能力說明，詳見對應 SKILL.md。 | `skills/media/vod/alicloud-media-vod` |
 | network/dns | alicloud-network-dns-cli | Alibaba Cloud DNS（Alidns）CLI 技能，支援查詢、新增與更新 DNS 記錄。 | `skills/network/dns/alicloud-network-dns-cli` |
 | network/esa | alicloud-network-esa | 技能 `alicloud-network-esa` 的能力說明，詳見對應 SKILL.md。 | `skills/network/esa/alicloud-network-esa` |
+| network/slb | alicloud-network-alb | 管理與排障阿里雲 ALB（應用型負載均衡）。涵蓋實例、監聽、伺服器群組、轉發規則、憑證、ACL、安全策略、健康檢查及非同步任務輪詢的全生命週期管理，包含 28 個 CLI 腳本。 | `skills/network/slb/alicloud-network-alb` |
 | observability/sls | alicloud-observability-sls-log-query | 技能 `alicloud-observability-sls-log-query` 的能力說明，詳見對應 SKILL.md。 | `skills/observability/sls/alicloud-observability-sls-log-query` |
 | platform/cli | alicloud-platform-aliyun-cli | 通用 Alibaba Cloud CLI（aliyun）技能，涵蓋安裝、憑證/設定、API 探索與跨產品 OpenAPI 命令列呼叫。 | `skills/platform/cli/alicloud-platform-aliyun-cli` |
 | platform/docs | alicloud-platform-docs-api-review | 自動評審最新 Alibaba Cloud 產品文件與 OpenAPI 文件，並輸出優先級建議與證據。 | `skills/platform/docs/alicloud-platform-docs-api-review` |

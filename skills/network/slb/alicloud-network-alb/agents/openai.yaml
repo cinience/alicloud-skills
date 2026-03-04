@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Network ALB"
+  short_description: "ALB instance, listener, server group, health check, and troubleshooting workflows"
+  default_prompt: "Use $alicloud-network-alb to complete this ALB task on Alibaba Cloud."
