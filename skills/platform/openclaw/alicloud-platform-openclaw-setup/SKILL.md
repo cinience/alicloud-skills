@@ -21,7 +21,7 @@ Run this sequence in order:
 ## Prerequisites
 
 - SSH access to target Linux host (Debian/Ubuntu preferred).
-- DingTalk enterprise app credentials (`AppKey`, `AppSecret`, `AgentId`, `CorpId`) or Feishu app credentials (`App ID`, `App Secret`) or Discord bot token.
+- DingTalk enterprise app credentials (`AppKey`, `AppSecret`) for the official connector, or Feishu app credentials (`App ID`, `App Secret`), or Discord bot token.
 - DashScope API key.
 
 ## Step 1: Prepare Runtime
@@ -40,8 +40,10 @@ npm --version
 npm install -g openclaw@latest
 openclaw --version
 
-# DingTalk channel
-openclaw plugins install @soimy/dingtalk
+# DingTalk official connector
+openclaw plugins install @dingtalk-real-ai/dingtalk-connector --pin
+# or install from official GitHub repo
+openclaw plugins install https://github.com/DingTalk-Real-AI/dingtalk-openclaw-connector.git
 openclaw plugins list | grep dingtalk
 
 # Feishu channel
@@ -52,12 +54,7 @@ openclaw plugins list | grep feishu
 # Configure token in Step 3 and start gateway in Step 4
 ```
 
-If plugin dependencies are missing:
-
-```bash
-cd ~/.openclaw/extensions/dingtalk
-npm install dingtalk-stream axios form-data zod --save
-```
+If upgrading from old DingTalk plugins, uninstall legacy plugin IDs first and keep only the official connector in `plugins.allow`.
 
 ## Step 3: Auto-Discover Additional Channels from Official Docs
 
@@ -79,9 +76,26 @@ Use the exact workflow in [references/channel-discovery.md](references/channel-d
 Create or update `~/.openclaw/openclaw.json` with:
 
 - `models.providers.bailian` for DashScope endpoint and models.
-- `agents.defaults.model.primary` in `provider/model` format.
-- `channels.dingtalk`, `channels.feishu`, or `channels.discord` credentials and policy.
+- `agents.defaults.model.primary` in `provider/model` format, default to `bailian/glm-5`.
+- `models.providers.bailian.models` ordered as:
+  1) `qwen3-plus`
+  2) `glm-5`
+  3) `minimax-m2.5`
+  4) `kimi-k2.5`
+- `agents.defaults.model.fallbacks` ordered as:
+  1) `bailian/qwen3-plus`
+  2) `bailian/minimax-m2.5`
+  3) `bailian/kimi-k2.5`
+- `channels.dingtalk-connector`, `channels.feishu`, or `channels.discord` credentials and policy.
 - `plugins.allow` including installed channel plugins.
+
+Important:
+
+- Agent-level model config at `~/.openclaw/agents/main/agent/models.json` can override `~/.openclaw/openclaw.json`.
+- Keep provider definitions aligned in both files when defaults appear not to take effect.
+- Protocol must match endpoint:
+  - `api: openai-completions` -> use `https://dashscope.aliyuncs.com/compatible-mode/v1`
+  - `api: openai-responses` -> use `https://dashscope.aliyuncs.com/api/v2/apps/protocols/compatible-mode/v1`
 
 Use the full template in [references/config.md](references/config.md).
 Use DingTalk field mapping in [references/dingtalk-setup.md](references/dingtalk-setup.md).
@@ -100,6 +114,7 @@ openclaw gateway status
 If running with user-level systemd, reload after config changes:
 
 ```bash
+systemctl --user import-environment DASHSCOPE_API_KEY
 systemctl --user daemon-reload
 systemctl --user restart openclaw-gateway
 ```
@@ -116,8 +131,11 @@ Common failures:
 
 - Plugin not loaded: re-run plugin install and check `plugins.allow`.
 - Unknown model: check `agents.defaults.model.primary` format (`provider/model-id`).
-- API key error: verify `models.providers.bailian.apiKey`.
-- DingTalk no response: check app publish status and required permissions.
+- API key error: verify `models.providers.bailian.apiKey` and `DASHSCOPE_API_KEY` imported in systemd.
+- Config changed but runtime model unchanged: check and update `~/.openclaw/agents/main/agent/models.json`.
+- Empty payload / unexpected fallback: verify protocol-endpoint pair (`openai-completions` vs `openai-responses`) and clear stale session if needed.
+- DingTalk no response: use `openclaw logs --follow` and check `gateway/channels/dingtalk-connector` lines for stream reconnect or credential issues.
+- Official connector installed but old probes inconsistent: rely on runtime logs and real message send/receive as source of truth.
 - Feishu no response: check event subscription mode is WebSocket and gateway is running.
 - Discord no response: verify bot intents, token, and first-DM pairing approval.
 
@@ -147,4 +165,3 @@ Pass criteria: command exits 0 and `output/alicloud-platform-openclaw-setup/vali
 2) Run one minimal read-only query first to verify connectivity and permissions.
 3) Execute the target operation with explicit parameters and bounded scope.
 4) Verify results and save output/evidence files.
-

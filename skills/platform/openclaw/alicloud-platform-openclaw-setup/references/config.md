@@ -19,12 +19,12 @@
     "providers": {
       "bailian": {
         "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "apiKey": "<YOUR_DASHSCOPE_API_KEY>",
+        "apiKey": "${DASHSCOPE_API_KEY}",
         "api": "openai-completions",
         "models": [
           {
-            "id": "qwen3.5-plus",
-            "name": "qwen3.5-plus",
+            "id": "qwen3-plus",
+            "name": "qwen3-plus",
             "reasoning": false,
             "input": ["text", "image"],
             "cost": {"input": 0.0025, "output": 0.01, "cacheRead": 0, "cacheWrite": 0},
@@ -39,6 +39,24 @@
             "cost": {"input": 0.0025, "output": 0.01, "cacheRead": 0, "cacheWrite": 0},
             "contextWindow": 202752,
             "maxTokens": 16384
+          },
+          {
+            "id": "minimax-m2.5",
+            "name": "MiniMax-M2.5",
+            "reasoning": false,
+            "input": ["text"],
+            "cost": {"input": 0.0025, "output": 0.01, "cacheRead": 0, "cacheWrite": 0},
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "kimi-k2.5",
+            "name": "kimi-k2.5",
+            "reasoning": false,
+            "input": ["text"],
+            "cost": {"input": 0.0025, "output": 0.01, "cacheRead": 0, "cacheWrite": 0},
+            "contextWindow": 131072,
+            "maxTokens": 8192
           }
         ]
       }
@@ -46,16 +64,25 @@
   },
   "agents": {
     "defaults": {
-      "model": {"primary": "bailian/qwen3.5-plus"},
+      "model": {
+        "primary": "bailian/glm-5",
+        "fallbacks": [
+          "bailian/qwen3-plus",
+          "bailian/minimax-m2.5",
+          "bailian/kimi-k2.5"
+        ]
+      },
       "models": {
+        "bailian/qwen3-plus": {"alias": "qwen3-plus"},
         "bailian/glm-5": {"alias": "GLM-5"},
-        "bailian/qwen3.5-plus": {"alias": "qwen3.5-plus"}
+        "bailian/minimax-m2.5": {"alias": "MiniMax-M2.5"},
+        "bailian/kimi-k2.5": {"alias": "kimi-k2.5"}
       },
       "workspace": "/root/",
       "compaction": {"mode": "safeguard"},
       "maxConcurrent": 4,
       "subagents": {"maxConcurrent": 8},
-      "imageModel": {"primary": "bailian/qwen3.5-plus"},
+      "imageModel": {"primary": "bailian/qwen3-plus"},
       "memorySearch": {"enabled": false}
     }
   },
@@ -66,20 +93,14 @@
     "ownerDisplay": "raw"
   },
   "channels": {
-    "dingtalk": {
+    "dingtalk-connector": {
       "enabled": true,
       "clientId": "<APP_KEY>",
       "clientSecret": "<APP_SECRET>",
-      "robotCode": "<ROBOT_CODE_OR_APP_KEY>",
-      "corpId": "<CORP_ID>",
-      "agentId": "<AGENT_ID>",
+      "gatewayToken": "<OPENCLAW_GATEWAY_TOKEN>",
+      "sessionTimeout": 1800000,
       "dmPolicy": "open",
-      "groupPolicy": "open",
-      "allowFrom": ["*"],
-      "messageType": "card",
-      "cardTemplateId": "<TEMPLATE_ID>.schema",
-      "cardTemplateKey": "content",
-      "debug": false
+      "allowFrom": ["*"]
     },
     "feishu": {
       "enabled": true,
@@ -116,9 +137,9 @@
   },
   "plugins": {
     "enabled": true,
-    "allow": ["dingtalk"],
+    "allow": ["dingtalk-connector"],
     "entries": {
-      "dingtalk": {"enabled": true}
+      "dingtalk-connector": {"enabled": true}
     }
   }
 }
@@ -134,6 +155,11 @@
 | `apiKey` | string | DashScope API key |
 | `api` | string | API type: `openai-completions` |
 | `models` | array | Available model definitions |
+
+Protocol and endpoint pairing:
+
+- `openai-completions` -> `https://dashscope.aliyuncs.com/compatible-mode/v1`
+- `openai-responses` -> `https://dashscope.aliyuncs.com/api/v2/apps/protocols/compatible-mode/v1`
 
 ### Model Definition
 
@@ -151,13 +177,10 @@
 |-------|----------|-------------|
 | `clientId` | ✓ | AppKey from DingTalk |
 | `clientSecret` | ✓ | AppSecret from DingTalk |
-| `robotCode` | ✓ | Robot code (usually same as clientId) |
-| `corpId` | ✓ | Enterprise ID |
-| `agentId` | ✓ | Application ID |
+| `gatewayToken` | | Gateway auth token, usually `gateway.auth.token` |
+| `sessionTimeout` | | Session timeout in ms, default `1800000` |
 | `dmPolicy` | | Direct message policy: `open`, `pairing`, `allowlist` |
-| `groupPolicy` | | Group chat policy: `open`, `allowlist` |
-| `messageType` | | Response type: `markdown`, `card` |
-| `cardTemplateId` | | AI card template ID (if using card) |
+| `allowFrom` | | Allowlist for `dmPolicy: open`, usually `["*"]` |
 
 ## Feishu Channel Configuration
 
@@ -193,6 +216,7 @@
 | File | Path | Description |
 |------|------|-------------|
 | Main config | `~/.openclaw/openclaw.json` | Primary configuration |
+| Agent model override | `~/.openclaw/agents/main/agent/models.json` | Per-agent model/provider override (higher priority) |
 | Auth profiles | `~/.openclaw/agents/main/agent/auth-profiles.json` | Provider credentials |
 | Service file | `~/.config/systemd/user/openclaw-gateway.service` | Systemd service |
 | Logs | `/tmp/openclaw/openclaw-YYYY-MM-DD.log` | Daily log files |
@@ -201,5 +225,8 @@
 ## Notes
 
 - Keep model `id` and `agents.defaults.model.primary` aligned.
-- Use `provider/model` format, for example `bailian/qwen3.5-plus`.
+- Use `provider/model` format, for example `bailian/glm-5`.
+- If model switches do not take effect, check `~/.openclaw/agents/main/agent/models.json` override first.
+- For user-level systemd service, import env vars before restart:
+  `systemctl --user import-environment DASHSCOPE_API_KEY`
 - Store real credentials only on target hosts, not in git-tracked files.

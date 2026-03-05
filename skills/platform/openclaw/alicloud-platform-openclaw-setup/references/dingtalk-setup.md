@@ -6,9 +6,9 @@
 2. Create application
 3. Collect credentials
 4. Configure robot (Stream mode)
-5. Create AI card template
-6. Configure permissions
-7. Publish app
+5. Configure permissions
+6. Publish app
+7. Install official connector plugin
 8. Field mapping and troubleshooting
 
 ## Prerequisites
@@ -34,8 +34,6 @@ After creating the application, find these values:
 |------------|----------|
 | **ClientId (AppKey)** | Basic Info → Credentials and Basic Info |
 | **ClientSecret (AppSecret)** | Basic Info → Credentials and Basic Info |
-| **AgentId** | Basic Info → Credentials and Basic Info |
-| **CorpId** | Developer Console header (top-right) |
 
 ## Step 3: Configure Robot
 
@@ -46,17 +44,7 @@ After creating the application, find these values:
    - Message receiving mode: Stream
    - Bot name: Your bot name
 
-## Step 4: Create AI Card Template
-
-For interactive card responses:
-
-1. Go to: **Card Platform** → **AI Cards** → **My Cards**
-2. Create new card template
-3. Select: **AI Interactive Card** template
-4. Configure card layout
-5. Save and get **Card Template ID** (format: `xxxxx-xxxxx-xxxxx.schema`)
-
-## Step 5: Permission Configuration
+## Step 4: Permission Configuration
 
 Navigate to: **Permission Management** → **Permission Requests**
 
@@ -64,8 +52,10 @@ Required permissions:
 - `qyapi_chat_manage` - Group chat management
 - `qyapi_robot_sendmsg` - Robot send message
 - `Contact.User.Read` - Read user info
+- `Card.Streaming.Write` - AI card streaming write
+- `Card.Instance.Write` - AI card instance write
 
-## Step 6: Deploy & Publish
+## Step 5: Deploy & Publish
 
 1. Navigate to: **Version Management and Release**
 2. Create new version
@@ -73,16 +63,23 @@ Required permissions:
 4. Submit for review (internal apps usually auto-approve)
 5. Publish to enterprise
 
+## Step 6: Install Official OpenClaw Connector
+
+```bash
+openclaw plugins install @dingtalk-real-ai/dingtalk-connector --pin
+# or install from official GitHub repo
+openclaw plugins install https://github.com/DingTalk-Real-AI/dingtalk-openclaw-connector.git
+openclaw plugins list | grep dingtalk
+```
+
 ## Configuration Mapping
 
 | DingTalk Field | OpenClaw Config Field |
 |----------------|----------------------|
-| AppKey | `channels.dingtalk.clientId` |
-| AppSecret | `channels.dingtalk.clientSecret` |
-| AppKey (same) | `channels.dingtalk.robotCode` |
-| CorpId | `channels.dingtalk.corpId` |
-| AgentId | `channels.dingtalk.agentId` |
-| Card Template ID | `channels.dingtalk.cardTemplateId` |
+| AppKey | `channels.dingtalk-connector.clientId` |
+| AppSecret | `channels.dingtalk-connector.clientSecret` |
+| Gateway token | `channels.dingtalk-connector.gatewayToken` |
+| Session timeout (optional) | `channels.dingtalk-connector.sessionTimeout` |
 
 ## Stream Mode vs Webhook
 
@@ -93,7 +90,7 @@ Required permissions:
 | Firewall friendly | Yes | No |
 | Recommended | ✓ | |
 
-OpenClaw DingTalk plugin uses **Stream Mode** by default.
+OpenClaw official DingTalk connector uses **Stream Mode** by default.
 
 ## Troubleshooting
 
@@ -110,6 +107,6 @@ OpenClaw DingTalk plugin uses **Stream Mode** by default.
 
 ### Card not rendering
 
-1. Verify `cardTemplateId` ends with `.schema`
-2. Check card template is published
-3. Ensure `messageType` is set to `card`
+1. Verify `Card.Streaming.Write` and `Card.Instance.Write` are approved
+2. Re-publish app after permission changes
+3. Check `openclaw logs --follow` for `gateway/channels/dingtalk-connector` errors
