@@ -333,6 +333,7 @@ Standards and migration notes:
 | security/host | alicloud-security-center-sas | Manage Alibaba Cloud Security Center (Sas) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/security/host/alicloud-security-center-sas` |
 | security/identity | alicloud-security-id-verification-cloudauth | Manage Alibaba Cloud ID Verification (Cloudauth) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/security/identity/alicloud-security-id-verification-cloudauth` |
 | security/key-management | alicloud-security-kms | Manage Alibaba Cloud KeyManagementService (Kms) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/security/key-management/alicloud-security-kms` |
+| solutions/alicloud-solution-content-article-illustrator | alicloud-solution-content-article-illustrator | 技能 `alicloud-solution-content-article-illustrator` 的能力说明，详见对应 SKILL.md。 | `skills/solutions/alicloud-solution-content-article-illustrator` |
 | storage/oss | alicloud-storage-oss-ossutil | Alibaba Cloud OSS CLI (ossutil 2.0) skill. Install, configure, and operate OSS from the command line based on the official ossutil overview. | `skills/storage/oss/alicloud-storage-oss-ossutil` |
 <!-- SKILL_INDEX_END -->
 

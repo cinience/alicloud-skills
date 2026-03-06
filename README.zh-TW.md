@@ -298,6 +298,7 @@ dashscope_api_key = 你的DashScope API Key
 | security/host | alicloud-security-center-sas | 透過 OpenAPI/SDK 管理 Alibaba Cloud Security Center (Sas)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/security/host/alicloud-security-center-sas` |
 | security/identity | alicloud-security-id-verification-cloudauth | 透過 OpenAPI/SDK 管理 Alibaba Cloud ID Verification (Cloudauth)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/security/identity/alicloud-security-id-verification-cloudauth` |
 | security/key-management | alicloud-security-kms | 透過 OpenAPI/SDK 管理 Alibaba Cloud KeyManagementService (Kms)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/security/key-management/alicloud-security-kms` |
+| solutions/alicloud-solution-content-article-illustrator | alicloud-solution-content-article-illustrator | 技能 `alicloud-solution-content-article-illustrator` 的能力說明，詳見對應 SKILL.md。 | `skills/solutions/alicloud-solution-content-article-illustrator` |
 | storage/oss | alicloud-storage-oss-ossutil | Alibaba Cloud OSS CLI（ossutil 2.0）技能，支援命令列安裝、設定與 OSS 資源操作。 | `skills/storage/oss/alicloud-storage-oss-ossutil` |
 <!-- SKILL_INDEX_END -->
 

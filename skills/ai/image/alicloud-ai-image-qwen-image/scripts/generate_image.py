@@ -96,6 +96,24 @@ def resolve_reference_image(value: str) -> Any:
     return value
 
 
+def _get_field(obj: Any, key: str, default: Any = None) -> Any:
+    if obj is None:
+        return default
+    if isinstance(obj, dict):
+        return obj.get(key, default)
+    getter = getattr(obj, "get", None)
+    if callable(getter):
+        try:
+            return getter(key, default)
+        except TypeError:
+            value = getter(key)
+            return default if value is None else value
+    try:
+        return obj[key]
+    except Exception:
+        return getattr(obj, key, default)
+
+
 def call_generate(req: dict[str, Any]) -> dict[str, Any]:
     prompt = req.get("prompt")
     if not prompt:
@@ -116,7 +134,12 @@ def call_generate(req: dict[str, Any]) -> dict[str, Any]:
         seed=req.get("seed"),
     )
 
-    content = response.output["choices"][0]["message"]["content"]
+    output = _get_field(response, "output", response.output if hasattr(response, "output") else None)
+    choices = _get_field(output, "choices", [])
+    if not choices:
+        raise RuntimeError(f"No choices returned by DashScope: {response}")
+    message = _get_field(choices[0], "message", {})
+    content = _get_field(message, "content", [])
     image_url = None
     for item in content:
         if isinstance(item, dict) and item.get("image"):
@@ -126,10 +149,11 @@ def call_generate(req: dict[str, Any]) -> dict[str, Any]:
     if not image_url:
         raise RuntimeError("No image URL returned by DashScope")
 
+    usage = _get_field(response, "usage", response.usage if hasattr(response, "usage") else {})
     return {
         "image_url": image_url,
-        "width": response.usage.get("width"),
-        "height": response.usage.get("height"),
+        "width": _get_field(usage, "width"),
+        "height": _get_field(usage, "height"),
         "seed": req.get("seed"),
     }
 

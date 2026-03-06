@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Solution Content Article Illustrator"
+  short_description: "Article-to-illustrated-Markdown workflow with Qwen Image and Qwen Image Edit"
+  default_prompt: "Use $alicloud-solution-content-article-illustrator to analyze an article, generate illustrations, and write a Markdown article with local image references."
