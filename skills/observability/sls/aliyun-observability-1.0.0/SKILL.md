@@ -7,15 +7,6 @@ metadata:
       {
         "emoji": "📊",
         "requires": { "bins": ["aliyun"] },
-        "install":
-          [
-            {
-              "id": "aliyun-cli-homebrew",
-              "kind": "shell",
-              "cmd": "command -v aliyun >/dev/null 2>&1 || (command -v brew >/dev/null 2>&1 && brew install aliyun-cli)",
-              "label": "Install aliyun CLI if missing",
-            },
-          ],
       },
   }
 ---
