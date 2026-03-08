@@ -63,8 +63,8 @@ After successful execution, the environment should contain:
 - Machine group `openclaw-sls-collector`
 - Logstore index created on the target `LOGSTORE`
 - Dashboards `openclaw-audit` and `openclaw-gateway`
-- Collection config `openclaw-audit`
-- Config binding between `openclaw-audit` and `openclaw-sls-collector`
+- Collection config `openclaw-audit_${LOGSTORE}`
+- Config binding between `openclaw-audit_${LOGSTORE}` and `openclaw-sls-collector`
 
 ---
 
@@ -85,7 +85,7 @@ set -euo pipefail
 : "${ALIYUN_UID:?Please export ALIYUN_UID}"
 
 MACHINE_GROUP="openclaw-sls-collector"
-CONFIG_NAME="openclaw-audit"
+CONFIG_NAME="openclaw-audit_${LOGSTORE}"
 
 # 1) Install aliyun CLI if missing (Linux)
 if ! command -v aliyun >/dev/null 2>&1; then
@@ -207,6 +207,7 @@ fi
 # 5) Create collection config (update when already exists)
 # Render collector config strictly from references/collector-config.json
 sed \
+  -e "s/\${configName}/${CONFIG_NAME}/g" \
   -e "s/\${logstoreName}/${LOGSTORE}/g" \
   -e "s/\${region_id}/${REGION_ID}/g" \
   references/collector-config.json > /tmp/openclaw-collector-config.json
@@ -251,7 +252,7 @@ aliyun sls GetMachineGroup --project "$PROJECT" --machineGroup openclaw-sls-coll
 aliyun sls GetIndex --project "$PROJECT" --logstore "$LOGSTORE"
 aliyun sls GetDashboard --project "$PROJECT" --dashboardName openclaw-audit
 aliyun sls GetDashboard --project "$PROJECT" --dashboardName openclaw-gateway
-aliyun sls GetConfig --project "$PROJECT" --configName openclaw-audit
+aliyun sls GetConfig --project "$PROJECT" --configName "openclaw-audit_${LOGSTORE}"
 ```
 
 ---

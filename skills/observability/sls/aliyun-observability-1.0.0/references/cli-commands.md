@@ -10,6 +10,7 @@ export LOGSTORE="<your-logstore>"
 export ALIBABA_CLOUD_ACCESS_KEY_ID="<your-ak>"
 export ALIBABA_CLOUD_ACCESS_KEY_SECRET="<your-sk>"
 export ALIYUN_UID="<your-aliyun-uid>"
+CONFIG_NAME="openclaw-audit_${LOGSTORE}"
 ```
 
 ## 1. Install and Verify aliyun CLI
@@ -73,14 +74,22 @@ aliyun sls PUT "/dashboards/openclaw-gateway" --project "$PROJECT" --body "$(cat
 ## 5. Collection Config and Binding
 
 ```bash
-aliyun sls GetConfig --project "$PROJECT" --configName openclaw-audit
+CONFIG_NAME="openclaw-audit_${LOGSTORE}"
+
+sed \
+  -e "s/\${configName}/${CONFIG_NAME}/g" \
+  -e "s/\${logstoreName}/${LOGSTORE}/g" \
+  -e "s/\${region_id}/${REGION_ID}/g" \
+  references/collector-config.json > /tmp/openclaw-collector-config.json
+
+aliyun sls GetConfig --project "$PROJECT" --configName "$CONFIG_NAME"
 # Strictly render from references/collector-config.json with placeholder replacement only
 aliyun sls CreateConfig --project "$PROJECT" --body "$(cat /tmp/openclaw-collector-config.json)"
-aliyun sls UpdateConfig --project "$PROJECT" --configName openclaw-audit --body "$(cat /tmp/openclaw-collector-config.json)"
+aliyun sls UpdateConfig --project "$PROJECT" --configName "$CONFIG_NAME" --body "$(cat /tmp/openclaw-collector-config.json)"
 
 aliyun sls ApplyConfigToMachineGroup \
   --project "$PROJECT" \
   --machineGroup "openclaw-sls-collector" \
-  --configName "openclaw-audit"
+  --configName "$CONFIG_NAME"
 ```
 
