@@ -1,6 +1,6 @@
 ---
 name: aliyun-observability
-description: "Integrate Alibaba Cloud Observability (SLS): prepare aliyun CLI and LoongCollector, then create machine groups, index, dashboards, collection config, and binding."
+description: "Use this skill whenever the user asks to integrate OpenClaw with Alibaba Cloud Observability/SLS, set up SLS ingestion, create LoongCollector machine groups, create index or dashboards, or configure Logtail collection and binding. It performs an end-to-end, idempotent Linux workflow using aliyun CLI."
 metadata:
   {
     "openclaw":
@@ -13,7 +13,9 @@ metadata:
 
 # Alibaba Cloud Observability Integration (OpenClaw)
 
-When you ask OpenClaw to integrate Alibaba Cloud Observability, run this flow:
+This skill provisions Alibaba Cloud SLS observability for OpenClaw on Linux and keeps reruns safe.
+
+At a high level, execute this flow:
 
 1. Check and install `aliyun` CLI (install latest when missing)
 2. Install `LoongCollector` by project region (skip if already running)
@@ -21,6 +23,17 @@ When you ask OpenClaw to integrate Alibaba Cloud Observability, run this flow:
 4. Create `logstore` index and dashboards
 5. Create `logstore` collection config
 6. Bind the collection config to the machine group
+
+---
+
+## Capture Intent Before Execution
+
+Before running commands, make sure the user intent is complete:
+
+1. Confirm the target `PROJECT` and `LOGSTORE`.
+2. Confirm Linux host access with `sudo` available.
+3. Confirm AK/SK are already exported in environment variables.
+4. If any required input is missing, ask for it first and do not run partial setup.
 
 ---
 
@@ -42,6 +55,19 @@ Recommended optional:
 
 ---
 
+## Expected Result
+
+After successful execution, the environment should contain:
+
+- Running `LoongCollector` (or `ilogtaild`) on the host
+- Machine group `openclaw-sls-collector`
+- Logstore index created on the target `LOGSTORE`
+- Dashboards `openclaw-audit` and `openclaw-gateway`
+- Collection config `openclaw-audit`
+- Config binding between `openclaw-audit` and `openclaw-sls-collector`
+
+---
+
 ## One-Time Execution Flow (Idempotent)
 
 > The commands below are designed as "exists -> skip" and are safe to rerun.
@@ -59,12 +85,19 @@ set -euo pipefail
 MACHINE_GROUP="openclaw-sls-collector"
 CONFIG_NAME="openclaw-audit"
 
-# 1) Install aliyun CLI if missing
+# 1) Install aliyun CLI if missing (Linux)
 if ! command -v aliyun >/dev/null 2>&1; then
-  if command -v brew >/dev/null 2>&1; then
-    brew install aliyun-cli
+  if command -v apt-get >/dev/null 2>&1; then
+    sudo apt-get update
+    sudo apt-get install -y aliyun-cli
+  elif command -v dnf >/dev/null 2>&1; then
+    sudo dnf install -y aliyun-cli
+  elif command -v yum >/dev/null 2>&1; then
+    sudo yum install -y aliyun-cli
+  elif command -v zypper >/dev/null 2>&1; then
+    sudo zypper -n install aliyun-cli
   else
-    echo "aliyun CLI not found and Homebrew is unavailable. Install aliyun-cli first." >&2
+    echo "aliyun CLI not found. Install aliyun-cli manually for your Linux distribution." >&2
     exit 1
   fi
 fi
@@ -183,6 +216,17 @@ echo "OpenClaw SLS observability setup completed."
 
 ---
 
+## Response Format
+
+When this skill completes, return a concise status report with:
+
+1. Inputs used: `PROJECT`, `LOGSTORE`, resolved `REGION_ID`
+2. Created/updated resources (machine group, index, dashboards, config, binding)
+3. Any skipped steps (already existed / already running)
+4. Next verification commands for the user
+
+---
+
 ## Verification Commands
 
 ```bash
@@ -201,4 +245,8 @@ aliyun sls GetConfig --project "$PROJECT" --configName openclaw-audit
 - Index definition: `references/index.json`
 - Dashboard templates: `references/dashboard-audit.json`, `references/dashboard-gateway.json`
 - Collection config template: `references/collector-config.json`
+
+Read reference files only when needed:
+- Use `cli-commands.md` for step-by-step troubleshooting.
+- Use JSON templates when creating/updating resources.
 

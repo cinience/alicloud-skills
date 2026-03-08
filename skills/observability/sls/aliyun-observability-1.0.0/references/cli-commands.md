@@ -15,7 +15,20 @@ export ALIYUN_UID="<your-aliyun-uid>"
 ## 1. Install and Verify aliyun CLI
 
 ```bash
-command -v aliyun >/dev/null 2>&1 || brew install aliyun-cli
+if ! command -v aliyun >/dev/null 2>&1; then
+  if command -v apt-get >/dev/null 2>&1; then
+    sudo apt-get update && sudo apt-get install -y aliyun-cli
+  elif command -v dnf >/dev/null 2>&1; then
+    sudo dnf install -y aliyun-cli
+  elif command -v yum >/dev/null 2>&1; then
+    sudo yum install -y aliyun-cli
+  elif command -v zypper >/dev/null 2>&1; then
+    sudo zypper -n install aliyun-cli
+  else
+    echo "Install aliyun-cli manually for your Linux distribution." >&2
+    exit 1
+  fi
+fi
 aliyun --version
 ```
 
