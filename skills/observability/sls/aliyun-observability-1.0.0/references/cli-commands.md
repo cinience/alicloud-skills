@@ -52,6 +52,7 @@ aliyun sls CreateMachineGroup --project "$PROJECT" --body "$(cat /tmp/openclaw-m
 aliyun sls GetLogStore --project "$PROJECT" --logstore "$LOGSTORE"
 aliyun sls CreateLogStore --project "$PROJECT" --body "{\"logstoreName\":\"${LOGSTORE}\",\"ttl\":30,\"shardCount\":2}"
 
+# Strictly use references/index.json as request body
 aliyun sls GetIndex --project "$PROJECT" --logstore "$LOGSTORE"
 aliyun sls CreateIndex --project "$PROJECT" --logstore "$LOGSTORE" --body "$(cat references/index.json)"
 
@@ -59,19 +60,21 @@ aliyun sls CreateIndex --project "$PROJECT" --logstore "$LOGSTORE" --body "$(cat
 sed "s/\${logstoreName}/${LOGSTORE}/g" references/dashboard-audit.json > /tmp/openclaw-audit.json
 sed "s/\${logstoreName}/${LOGSTORE}/g" references/dashboard-gateway.json > /tmp/openclaw-gateway.json
 
-aliyun sls GetDashboard --project "$PROJECT" --dashboardName openclaw-audit
-aliyun sls CreateDashboard --project "$PROJECT" --body "$(cat /tmp/openclaw-audit.json)"
-aliyun sls UpdateDashboard --project "$PROJECT" --dashboardName openclaw-audit --body "$(cat /tmp/openclaw-audit.json)"
+# Create dashboard: project + body(detail). Update dashboard: path + project + body.
+aliyun sls GET "/dashboards/openclaw-audit" --project "$PROJECT"
+aliyun sls POST "/dashboards" --project "$PROJECT" --body "$(cat /tmp/openclaw-audit.json)"
+aliyun sls PUT "/dashboards/openclaw-audit" --project "$PROJECT" --body "$(cat /tmp/openclaw-audit.json)"
 
-aliyun sls GetDashboard --project "$PROJECT" --dashboardName openclaw-gateway
-aliyun sls CreateDashboard --project "$PROJECT" --body "$(cat /tmp/openclaw-gateway.json)"
-aliyun sls UpdateDashboard --project "$PROJECT" --dashboardName openclaw-gateway --body "$(cat /tmp/openclaw-gateway.json)"
+aliyun sls GET "/dashboards/openclaw-gateway" --project "$PROJECT"
+aliyun sls POST "/dashboards" --project "$PROJECT" --body "$(cat /tmp/openclaw-gateway.json)"
+aliyun sls PUT "/dashboards/openclaw-gateway" --project "$PROJECT" --body "$(cat /tmp/openclaw-gateway.json)"
 ```
 
 ## 5. Collection Config and Binding
 
 ```bash
 aliyun sls GetConfig --project "$PROJECT" --configName openclaw-audit
+# Strictly render from references/collector-config.json with placeholder replacement only
 aliyun sls CreateConfig --project "$PROJECT" --body "$(cat /tmp/openclaw-collector-config.json)"
 aliyun sls UpdateConfig --project "$PROJECT" --configName openclaw-audit --body "$(cat /tmp/openclaw-collector-config.json)"
 

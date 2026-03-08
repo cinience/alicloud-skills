@@ -71,6 +71,8 @@ After successful execution, the environment should contain:
 ## One-Time Execution Flow (Idempotent)
 
 > The commands below are designed as "exists -> skip" and are safe to rerun.
+> Strict template mode: for index/config/dashboard payloads, always read from files in `references/`.
+> Do not handcraft or simplify JSON bodies beyond required placeholder replacement.
 
 ```bash
 set -euo pipefail
@@ -171,28 +173,39 @@ if ! aliyun sls GetLogStore --project "$PROJECT" --logstore "$LOGSTORE" >/dev/nu
 fi
 
 if ! aliyun sls GetIndex --project "$PROJECT" --logstore "$LOGSTORE" >/dev/null 2>&1; then
+  # Use the index template as-is from references/index.json
   aliyun sls CreateIndex \
     --project "$PROJECT" \
     --logstore "$LOGSTORE" \
     --body "$(cat references/index.json)"
 fi
 
-for DASHBOARD_FILE in references/dashboard-audit.json references/dashboard-gateway.json; do
-  DASHBOARD_NAME="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1], "r", encoding="utf-8"))["title"])' "$DASHBOARD_FILE")"
-  sed "s/\${logstoreName}/${LOGSTORE}/g" "$DASHBOARD_FILE" > "/tmp/${DASHBOARD_NAME}.json"
-  if aliyun sls GetDashboard --project "$PROJECT" --dashboardName "$DASHBOARD_NAME" >/dev/null 2>&1; then
-    aliyun sls UpdateDashboard \
-      --project "$PROJECT" \
-      --dashboardName "$DASHBOARD_NAME" \
-      --body "$(cat "/tmp/${DASHBOARD_NAME}.json")"
-  else
-    aliyun sls CreateDashboard \
-      --project "$PROJECT" \
-      --body "$(cat "/tmp/${DASHBOARD_NAME}.json")"
-  fi
-done
+sed "s/\${logstoreName}/${LOGSTORE}/g" references/dashboard-audit.json > /tmp/openclaw-audit-dashboard.json
+sed "s/\${logstoreName}/${LOGSTORE}/g" references/dashboard-gateway.json > /tmp/openclaw-gateway-dashboard.json
+
+# Create dashboard uses project + body(detail). Update uses path + project + body.
+if aliyun sls GET "/dashboards/openclaw-audit" --project "$PROJECT" >/dev/null 2>&1; then
+  aliyun sls PUT "/dashboards/openclaw-audit" \
+    --project "$PROJECT" \
+    --body "$(cat /tmp/openclaw-audit-dashboard.json)"
+else
+  aliyun sls POST "/dashboards" \
+    --project "$PROJECT" \
+    --body "$(cat /tmp/openclaw-audit-dashboard.json)"
+fi
+
+if aliyun sls GET "/dashboards/openclaw-gateway" --project "$PROJECT" >/dev/null 2>&1; then
+  aliyun sls PUT "/dashboards/openclaw-gateway" \
+    --project "$PROJECT" \
+    --body "$(cat /tmp/openclaw-gateway-dashboard.json)"
+else
+  aliyun sls POST "/dashboards" \
+    --project "$PROJECT" \
+    --body "$(cat /tmp/openclaw-gateway-dashboard.json)"
+fi
 
 # 5) Create collection config (update when already exists)
+# Render collector config strictly from references/collector-config.json
 sed \
   -e "s/\${logstoreName}/${LOGSTORE}/g" \
   -e "s/\${region_id}/${REGION_ID}/g" \
