@@ -12,12 +12,6 @@ AI云：把世界级云基础设施带进你的 AI 对话框。
 A curated collection of **Alibaba Cloud core AI Agent skills** covering key product lines,
 including Model Studio, OSS, ECS, and more.
 
-## 内容更新机制（OpenClaw）
-
-本项目将由 **OpenClaw** 启动并持续执行以下内容机制：
-- **每日自动更新**：持续刷新技能与文档内容，保持时效性。
-- **人工审阅把关**：每次更新均进行人工复核，确保准确性、清晰度与可用性。
-
 ## Quick Start
 
 Recommended install (all skills, skip prompts, overwrite existing):
@@ -326,7 +320,6 @@ Standards and migration notes:
 | platform/docs | alicloud-platform-docs-api-review | Automatically review latest Alibaba Cloud product docs and OpenAPI docs by product name, then output detailed prioritized improvement suggestions with evidence and scoring. Use when user asks to audit product documentation quality, API documentation quality, or wants actionable doc/API optimization recommendations. | `skills/platform/docs/alicloud-platform-docs-api-review` |
 | platform/docs | alicloud-platform-multicloud-docs-api-benchmark | Benchmark similar product documentation and API documentation across Alibaba Cloud, AWS, Azure, GCP, Tencent Cloud, Volcano Engine, and Huawei Cloud. Given one product keyword, auto-discover latest official docs/API links, score quality consistently, and output detailed prioritized improvement recommendations. | `skills/platform/docs/alicloud-platform-multicloud-docs-api-benchmark` |
 | platform/openapi | alicloud-platform-openapi-product-api-discovery | Discover and reconcile Alibaba Cloud product catalogs from Ticket System, Support & Service, and BSS OpenAPI; fetch OpenAPI product/version/API metadata; and summarize API coverage to plan new skills. Use when you need a complete product list, product-to-API mapping, or coverage/gap reports for skill generation. | `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery` |
-| platform/openclaw | alicloud-platform-openclaw-setup | 技能 `alicloud-platform-openclaw-setup` 的能力说明，详见对应 SKILL.md。 | `skills/platform/openclaw/alicloud-platform-openclaw-setup` |
 | platform/skills | alicloud-skill-creator | 技能 `alicloud-skill-creator` 的能力说明，详见对应 SKILL.md。 | `skills/platform/skills/alicloud-skill-creator` |
 | security/content | alicloud-security-content-moderation-green | Manage Alibaba Cloud Content Moderation (Green) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/security/content/alicloud-security-content-moderation-green` |
 | security/firewall | alicloud-security-cloudfw | Manage Alibaba Cloud Cloud Firewall (Cloudfw) via OpenAPI/SDK. Use for listing resources, creating or updating configurations, querying status, and troubleshooting workflows for this product. | `skills/security/firewall/alicloud-security-cloudfw` |
