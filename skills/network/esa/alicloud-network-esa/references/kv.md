@@ -178,21 +178,21 @@ def batch_delete_kv(namespace: str, keys: list):
 
 ## Edge Routine 中使用 KV
 
-在 Edge Routine 代码中，可通过全局 `KV` 对象访问 KV 存储：
+在 Edge Routine 代码中，需要通过 `new EdgeKV({namespace: "..."})` 创建实例来访问 KV 存储（没有全局实例，每次需显式创建）：
 
 ```javascript
 export default {
   async fetch(request) {
-    const ns = KV.namespace("my-namespace");
+    const kv = new EdgeKV({ namespace: "my-namespace" });
 
     // 写入
-    await ns.put("key1", "value1");
+    await kv.put("key1", "value1");
 
     // 读取
-    const value = await ns.get("key1");
+    const value = await kv.get("key1");
 
     // 删除
-    await ns.delete("key1");
+    await kv.delete("key1");
 
     return new Response(value || "not found");
   },
@@ -212,7 +212,7 @@ CreateKvNamespace → PutKv / BatchPutKv → ListKvs 验证
 
 ```
 1. 通过 OpenAPI 写入配置: PutKv(namespace="config", key="feature-flags", value=json)
-2. Edge Routine 读取配置: KV.namespace("config").get("feature-flags")
+2. Edge Routine 读取配置: new EdgeKV({namespace: "config"}).get("feature-flags")
 3. 更新配置只需再次 PutKv，边缘节点自动同步
 ```
 
