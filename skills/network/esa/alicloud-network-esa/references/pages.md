@@ -1,24 +1,24 @@
-# ESA Pages — 边缘页面部署参考文档
+# ESA Pages — Edge Page Deployment Reference
 
-ESA Pages 提供快速将 HTML 页面或静态文件目录部署到边缘节点的能力。底层基于 Edge Routine，通过 Python SDK 调用 ESA OpenAPI 完成部署。
+ESA Pages provides the ability to quickly deploy HTML pages or static file directories to edge nodes. Built on Edge Routine, deployments are completed via Python SDK calling ESA OpenAPI.
 
-## 部署 HTML 页面
+## Deploy HTML Pages
 
-### 流程
+### Flow
 
 ```
-1. CreateRoutine(name)                     → 创建函数（已存在则跳过）
-2. GetRoutineStagingCodeUploadInfo(name)   → 获取 OSS 上传签名
-3. POST 代码到 OSS                          → 上传代码文件
-4. CommitRoutineStagingCode(name)          → 提交代码版本
-5. PublishRoutineCodeVersion(staging)       → 部署到测试环境
-6. PublishRoutineCodeVersion(production)    → 部署到生产环境
-7. GetRoutine(name)                        → 获取 defaultRelatedRecord 作为访问 URL
+1. CreateRoutine(name)                     → Create routine (skip if exists)
+2. GetRoutineStagingCodeUploadInfo(name)   → Get OSS upload signature
+3. POST code to OSS                        → Upload code file
+4. CommitRoutineStagingCode(name)          → Commit code version
+5. PublishRoutineCodeVersion(staging)      → Deploy to staging
+6. PublishRoutineCodeVersion(production)   → Deploy to production
+7. GetRoutine(name)                        → Get defaultRelatedRecord as access URL
 ```
 
-### 代码模板
+### Code Template
 
-HTML 内容需包装为 Edge Routine 代码：
+HTML content needs to be wrapped as Edge Routine code:
 
 ```javascript
 const html = `<html><body>Hello World</body></html>`;
@@ -36,7 +36,7 @@ export default {
 };
 ```
 
-### Python SDK 示例
+### Python SDK Example
 
 ```python
 from alibabacloud_esa20240910.client import Client as Esa20240910Client
@@ -54,10 +54,10 @@ def create_client() -> Esa20240910Client:
 
 
 def deploy_html(name: str, html: str):
-    """部署 HTML 页面到 ESA Pages"""
+    """Deploy HTML page to ESA Pages"""
     client = create_client()
 
-    # 转义模板字符串中的特殊字符
+    # Escape special characters in template string
     escaped_html = html.replace("`", "\\`").replace("$", "\\$")
     code = f'''const html = `{escaped_html}`;
 
@@ -73,20 +73,20 @@ export default {{
   }},
 }};'''
 
-    # 1. 创建函数（已存在则跳过）
+    # 1. Create routine (skip if exists)
     try:
         client.create_routine(esa_models.CreateRoutineRequest(name=name))
     except Exception as e:
         if "RoutineNameAlreadyExist" not in str(e):
             raise
 
-    # 2. 获取上传签名
+    # 2. Get upload signature
     upload_info = client.get_routine_staging_code_upload_info(
         esa_models.GetRoutineStagingCodeUploadInfoRequest(name=name)
     )
     oss = upload_info.body.oss_post_config
 
-    # 3. 上传代码到 OSS
+    # 3. Upload code to OSS
     form_data = {
         "OSSAccessKeyId": oss.ossaccess_key_id,
         "Signature": oss.signature,
@@ -97,13 +97,13 @@ export default {{
     }
     requests.post(oss.url, data=form_data, files={"file": code.encode()})
 
-    # 4. 提交代码版本
+    # 4. Commit code version
     commit = client.commit_routine_staging_code(
         esa_models.CommitRoutineStagingCodeRequest(name=name)
     )
     version = commit.body.code_version
 
-    # 5-6. 部署到 staging 和 production
+    # 5-6. Deploy to staging and production
     for env in ["staging", "production"]:
         client.publish_routine_code_version(
             esa_models.PublishRoutineCodeVersionRequest(
@@ -111,39 +111,39 @@ export default {{
             )
         )
 
-    # 7. 获取访问 URL
+    # 7. Get access URL
     routine = client.get_routine(esa_models.GetRoutineRequest(name=name))
     domain = routine.body.default_related_record
     return f"https://{domain}" if domain else None
 ```
 
-## 部署静态文件目录
+## Deploy Static File Directory
 
-### 流程
+### Flow
 
 ```
-1. CreateRoutine(name)                            → 创建函数（已存在则跳过）
-2. CreateRoutineWithAssetsCodeVersion(name)        → 创建 assets 代码版本，获取 OSS 签名
-3. 打包目录为 zip → POST zip 到 OSS                → 上传 assets
-4. 轮询 GetRoutineCodeVersionInfo(name, version)   → 等待状态变为 available
-5. CreateRoutineCodeDeployment(staging, 100%)       → 部署到测试环境
-6. CreateRoutineCodeDeployment(production, 100%)    → 部署到生产环境
-7. GetRoutine(name)                                → 获取访问 URL
+1. CreateRoutine(name)                            → Create routine (skip if exists)
+2. CreateRoutineWithAssetsCodeVersion(name)       → Create assets code version, get OSS signature
+3. Package directory as zip → POST zip to OSS     → Upload assets
+4. Poll GetRoutineCodeVersionInfo(name, version)  → Wait for available status
+5. CreateRoutineCodeDeployment(staging, 100%)     → Deploy to staging
+6. CreateRoutineCodeDeployment(production, 100%)  → Deploy to production
+7. GetRoutine(name)                               → Get access URL
 ```
 
-### zip 包结构
+### Zip Package Structure
 
-部署时创建的 zip 包结构取决于项目的 `EDGE_ROUTINE_TYPE`，共三种情况：
+The zip package structure created during deployment depends on the project's `EDGE_ROUTINE_TYPE`, with three cases:
 
-#### 1. JS_ONLY（只有入口文件）
+#### 1. JS_ONLY (entry file only)
 
 ```
 your-project.zip
 └── routine/
-    └── index.js        ← 经 esbuild 打包（或 --no-bundle 时直接读取源文件）后的代码
+    └── index.js        ← Code bundled by esbuild (or source file directly when --no-bundle)
 ```
 
-#### 2. ASSETS_ONLY（只有静态资源）
+#### 2. ASSETS_ONLY (static resources only)
 
 ```
 your-project.zip
@@ -151,29 +151,29 @@ your-project.zip
     ├── image.png
     ├── style.css
     └── subdir/
-        └── data.json   ← assets 目录下的所有文件，保持原始目录结构
+        └── data.json   ← All files under assets directory, maintaining original structure
 ```
 
-#### 3. JS_AND_ASSETS（入口文件 + 静态资源，最常见）
+#### 3. JS_AND_ASSETS (entry file + static resources, most common)
 
 ```
 your-project.zip
 ├── routine/
-│   └── index.js        ← 动态代码（打包后的 JS）
+│   └── index.js        ← Dynamic code (bundled JS)
 └── assets/
     ├── image.png
-    └── ...             ← 静态资源，保持原始目录结构
+    └── ...             ← Static resources, maintaining original structure
 ```
 
-#### 关键细节
+#### Key Details
 
-- `index.js` 的内容来源：默认通过 prodBuild（esbuild）对入口文件打包产出；如果传了 `--no-bundle`，则直接读取源文件原文
-- `assets/` 下的路径是相对于配置中 `assets.directory` 的相对路径，递归遍历所有子目录和文件
-- zip 包最终通过 `zip.toBuffer()` 转成 Buffer，上传到 OSS（先调 API 拿 OSS 临时凭证，再 POST 上传），最多重试 3 次
-- 项目类型的判断逻辑在 `checkEdgeRoutineType` 里，根据 entry 文件和 assets 目录是否实际存在来决定
-- 配置来源优先级：命令行参数 > `esa.jsonc` / `esa.toml` 配置文件
+- `index.js` content source: By default, produced by prodBuild (esbuild) bundling the entry file; if `--no-bundle` is passed, reads source file directly
+- Paths under `assets/` are relative to `assets.directory` in configuration, recursively traversing all subdirectories and files
+- Zip package is converted to Buffer via `zip.toBuffer()` and uploaded to OSS (first get OSS temporary credentials via API, then POST upload), with max 3 retries
+- Project type determination logic is in `checkEdgeRoutineType`, based on whether entry file and assets directory actually exist
+- Configuration source priority: CLI args > `esa.jsonc` / `esa.toml` config file
 
-### Python SDK 示例
+### Python SDK Example
 
 ```python
 import os
@@ -185,10 +185,10 @@ import requests
 
 
 def deploy_folder(name: str, folder_path: str, description: str = ""):
-    """部署静态目录到 ESA Pages"""
+    """Deploy static directory to ESA Pages"""
     client = create_client()
 
-    # 1. 创建函数
+    # 1. Create routine
     try:
         client.create_routine(
             esa_models.CreateRoutineRequest(name=name, description=description)
@@ -197,8 +197,8 @@ def deploy_folder(name: str, folder_path: str, description: str = ""):
         if "RoutineNameAlreadyExist" not in str(e):
             raise
 
-    # 2. 创建 assets 代码版本
-    # 注意：此 API 需通过 callApi 方式调用
+    # 2. Create assets code version
+    # Note: This API needs to be called via callApi method
     from alibabacloud_tea_openapi import models as api_models
     params = api_models.Params(
         action="CreateRoutineWithAssetsCodeVersion",
@@ -213,7 +213,7 @@ def deploy_folder(name: str, folder_path: str, description: str = ""):
     oss_config = result.get("body", {}).get("OssPostConfig", {})
     code_version = result.get("body", {}).get("CodeVersion")
 
-    # 3. 打包并上传 zip
+    # 3. Package and upload zip
     buf = io.BytesIO()
     with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as zf:
         for root, dirs, files in os.walk(folder_path):
@@ -233,7 +233,7 @@ def deploy_folder(name: str, folder_path: str, description: str = ""):
         form_data["x-oss-security-token"] = oss_config["XOssSecurityToken"]
     requests.post(oss_config["Url"], data=form_data, files={"file": buf.getvalue()})
 
-    # 4. 等待版本就绪
+    # 4. Wait for version ready
     for _ in range(300):
         info = client._client.call_api(
             api_models.Params(
@@ -251,7 +251,7 @@ def deploy_folder(name: str, folder_path: str, description: str = ""):
             raise RuntimeError(f"Build failed: {status}")
         time.sleep(1)
 
-    # 5-6. 部署
+    # 5-6. Deploy
     for env in ["staging", "production"]:
         client._client.call_api(
             api_models.Params(
@@ -266,38 +266,38 @@ def deploy_folder(name: str, folder_path: str, description: str = ""):
             {},
         )
 
-    # 7. 获取访问 URL
+    # 7. Get access URL
     routine = client.get_routine(esa_models.GetRoutineRequest(name=name))
     domain = routine.body.default_related_record
     return f"https://{domain}" if domain else None
 ```
 
-## 常见使用场景
+## Common Use Cases
 
-### 1. 部署单个 HTML 页面
+### 1. Deploy Single HTML Page
 
-适合快速原型、游戏、演示页面：
+Suitable for quick prototypes, games, demo pages:
 
 ```python
 url = deploy_html("game-2048", "<html><body>...</body></html>")
-print(f"访问地址: {url}")
+print(f"Access URL: {url}")
 ```
 
-### 2. 部署前端构建产物
+### 2. Deploy Frontend Build Output
 
-适合 React/Vue/Angular 等前端项目的 dist/build 目录：
+Suitable for React/Vue/Angular frontend projects' dist/build directories:
 
 ```python
 url = deploy_folder("my-app", "/path/to/dist")
-print(f"访问地址: {url}")
+print(f"Access URL: {url}")
 ```
 
-## 注意事项
+## Notes
 
-1. **函数名称规则**: 只能用小写字母、数字、连字符，必须以小写字母开头，长度 >= 2
-2. **同名函数**: 如果函数已存在，会复用已有函数并部署新版本代码
-3. **部署环境**: 默认同时部署到 staging 和 production
-4. **访问 URL**: 部署成功后通过 `GetRoutine` 的 `defaultRelatedRecord` 获取默认访问域名
-5. **静态目录部署**: 目录不能为空；zip 内文件统一放在 `assets/` 前缀下
-6. **HTML 转义**: 包装为 ER 代码时需转义反引号和 `$` 符号
-7. **assets 部署**: `CreateRoutineWithAssetsCodeVersion` 和 `CreateRoutineCodeDeployment` 需通过 `callApi` 方式调用（SDK 未直接封装）
+1. **Function name rules**: Only lowercase letters, numbers, hyphens; must start with lowercase letter; length >= 2
+2. **Same name function**: If function exists, reuses existing function and deploys new version code
+3. **Deployment environments**: Deploys to both staging and production by default
+4. **Access URL**: After successful deployment, get default access domain via `defaultRelatedRecord` from `GetRoutine`
+5. **Static directory deployment**: Directory cannot be empty; files in zip are placed under `assets/` prefix
+6. **HTML escaping**: When wrapping as ER code, escape backticks and `$` symbols
+7. **Assets deployment**: `CreateRoutineWithAssetsCodeVersion` and `CreateRoutineCodeDeployment` need to be called via `callApi` method (not directly wrapped by SDK)

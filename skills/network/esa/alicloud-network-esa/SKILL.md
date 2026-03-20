@@ -1,21 +1,22 @@
 ---
 name: alicloud-network-esa
-description: Manage Alibaba Cloud ESA — deploy HTML/static sites via Pages, manage Edge Routines (ER) for serverless edge functions, use Edge KV for distributed key-value storage, and handle site management, DNS records, cache rules via OpenAPI/SDK. Use when working with ESA, edge deployment, edge functions, Pages, ER, KV storage, DNS, cache, or site configuration.
+description: Manage Alibaba Cloud ESA — deploy HTML/static sites via Pages, manage Edge Routines (ER) for serverless edge functions, use Edge KV for distributed key-value storage, handle site management, DNS records, cache rules, and query traffic analytics via OpenAPI/SDK. Use when working with ESA, edge deployment, edge functions, Pages, ER, KV storage, DNS, cache, site configuration, traffic analytics, bandwidth trends, or top-N rankings.
 ---
 
 Category: service
 
-# Edge Security Acceleration (ESA) - Pages, Edge Routine, KV, Site Management & More
+# Edge Security Acceleration (ESA) - Pages, Edge Routine, KV, Site Management, Analytics & More
 
 Use Alibaba Cloud OpenAPI (RPC) with official Python SDK to manage all ESA capabilities.
 
-Alibaba Cloud ESA provides four core capabilities:
-- **Pages** — 部署 HTML 或静态目录到边缘节点（基于 Edge Routine 的快捷部署流程）
-- **Edge Routine (ER)** — Serverless 边缘函数全生命周期管理
-- **Edge KV** — 分布式边缘键值存储，支持 Namespace/Key/Value 管理
-- **Site Management** — 站点管理、DNS 记录、缓存规则、证书等
+Alibaba Cloud ESA provides five core capabilities:
+- **Pages** — Deploy HTML or static directories to edge nodes (quick deployment flow based on Edge Routine)
+- **Edge Routine (ER)** — Full lifecycle management of serverless edge functions
+- **Edge KV** — Distributed edge key-value storage with Namespace/Key/Value management
+- **Site Management** — Site management, DNS records, cache rules, certificates, etc.
+- **Analytics** — Traffic analysis, time-series trends, Top-N rankings, bandwidth statistics, request metrics
 
-统一使用 Python SDK 调用 ESA OpenAPI。
+Use Python SDK uniformly to call ESA OpenAPI.
 
 ## Prerequisites
 
@@ -39,66 +40,66 @@ def create_client(region_id: str = "cn-hangzhou") -> Esa20240910Client:
     return Esa20240910Client(config)
 ```
 
-## Pages — 边缘页面部署
+## Pages — Edge Page Deployment
 
-Pages 是基于 Edge Routine 的快捷部署流程，将 HTML 或静态目录部署到边缘。
+Pages is a quick deployment flow based on Edge Routine, deploying HTML or static directories to the edge.
 
-### 部署 HTML 页面流程
+### HTML Page Deployment Flow
 
 ```
-CreateRoutine → GetRoutineStagingCodeUploadInfo → 上传代码到OSS
+CreateRoutine → GetRoutineStagingCodeUploadInfo → Upload code to OSS
 → CommitRoutineStagingCode → PublishRoutineCodeVersion(staging)
-→ PublishRoutineCodeVersion(production) → GetRoutine(获取访问URL)
+→ PublishRoutineCodeVersion(production) → GetRoutine(get access URL)
 ```
 
-### 部署静态目录流程
+### Static Directory Deployment Flow
 
 ```
-CreateRoutine → CreateRoutineWithAssetsCodeVersion → 打包zip上传OSS
-→ 轮询 GetRoutineCodeVersionInfo(等待available)
+CreateRoutine → CreateRoutineWithAssetsCodeVersion → Package zip and upload to OSS
+→ Poll GetRoutineCodeVersionInfo(wait for available)
 → CreateRoutineCodeDeployment(staging) → CreateRoutineCodeDeployment(production)
-→ GetRoutine(获取访问URL)
+→ GetRoutine(get access URL)
 ```
 
-### zip 包结构
+### Zip Package Structure
 
-zip 包结构取决于 `EDGE_ROUTINE_TYPE`（由 `checkEdgeRoutineType` 根据 entry 文件和 assets 目录是否存在自动判断）：
+The zip package structure depends on `EDGE_ROUTINE_TYPE` (automatically determined by `checkEdgeRoutineType` based on whether entry file and assets directory exist):
 
-- **JS_ONLY**: `routine/index.js`（esbuild 打包或 `--no-bundle` 直接读取源文件）
-- **ASSETS_ONLY**: `assets/` 下所有静态文件，保持原始目录结构
-- **JS_AND_ASSETS**: `routine/index.js` + `assets/` 静态资源（最常见）
+- **JS_ONLY**: `routine/index.js` (bundled with esbuild or `--no-bundle` to read source files directly)
+- **ASSETS_ONLY**: All static files under `assets/`, maintaining original directory structure
+- **JS_AND_ASSETS**: `routine/index.js` + `assets/` static resources (most common)
 
-`assets/` 路径相对于配置中 `assets.directory`。配置优先级：命令行参数 > `esa.jsonc` / `esa.toml`。
+The `assets/` path is relative to `assets.directory` in configuration. Configuration priority: CLI args > `esa.jsonc` / `esa.toml`.
 
-### 关键注意事项
+### Key Notes
 
-- **函数名规则**: 小写字母/数字/连字符，以小写字母开头，长度 >= 2
-- **同名函数**: 若已存在则复用，部署新版本代码
-- 默认同时部署到 staging 和 production
-- 部署成功后通过 `GetRoutine` 获取 `defaultRelatedRecord` 作为访问域名
+- **Function name rules**: lowercase letters/numbers/hyphens, start with lowercase letter, length >= 2
+- **Same name function**: Reuse if exists, deploy new version code
+- Deploy to both staging and production by default
+- After successful deployment, get `defaultRelatedRecord` via `GetRoutine` as access domain
 
-详细参考: `references/pages.md`
+Detailed reference: `references/pages.md`
 
-## Edge Routine (ER) — 边缘函数
+## Edge Routine (ER) — Edge Functions
 
-通过 Python SDK 管理 Serverless 边缘函数的完整生命周期。
+Manage the complete lifecycle of serverless edge functions via Python SDK.
 
-### 核心工作流
+### Core Workflow
 
 ```
-CreateRoutine → GetRoutineStagingCodeUploadInfo → 上传代码到OSS
+CreateRoutine → GetRoutineStagingCodeUploadInfo → Upload code to OSS
 → CommitRoutineStagingCode → PublishRoutineCodeVersion
 → (CreateRoutineRoute) → GetRoutine
 ```
 
-### API 摘要
+### API Summary
 
-- **函数管理**: `CreateRoutine`, `DeleteRoutine`, `GetRoutine`, `GetRoutineUserInfo`, `ListUserRoutines`
-- **代码版本**: `GetRoutineStagingCodeUploadInfo`, `CommitRoutineStagingCode`, `PublishRoutineCodeVersion`, `DeleteRoutineCodeVersion`
-- **路由**: `CreateRoutineRoute`, `UpdateRoutineRoute`, `DeleteRoutineRoute`, `GetRoutineRoute`, `ListRoutineRoutes`, `ListSiteRoutes`
-- **关联记录**: `CreateRoutineRelatedRecord`, `DeleteRoutineRelatedRecord`, `ListRoutineRelatedRecords`
+- **Function Management**: `CreateRoutine`, `DeleteRoutine`, `GetRoutine`, `GetRoutineUserInfo`, `ListUserRoutines`
+- **Code Version**: `GetRoutineStagingCodeUploadInfo`, `CommitRoutineStagingCode`, `PublishRoutineCodeVersion`, `DeleteRoutineCodeVersion`
+- **Routes**: `CreateRoutineRoute`, `UpdateRoutineRoute`, `DeleteRoutineRoute`, `GetRoutineRoute`, `ListRoutineRoutes`, `ListSiteRoutes`
+- **Related Records**: `CreateRoutineRelatedRecord`, `DeleteRoutineRelatedRecord`, `ListRoutineRelatedRecords`
 
-### ER 代码格式
+### ER Code Format
 
 ```javascript
 export default {
@@ -110,43 +111,43 @@ export default {
 };
 ```
 
-详细参考: `references/er.md`
+Detailed reference: `references/er.md`
 
-## Edge KV — 边缘键值存储
+## Edge KV — Edge Key-Value Storage
 
-分布式边缘键值存储，可在 Edge Routine 中读写，也可通过 OpenAPI/SDK 管理。
+Distributed edge key-value storage, readable and writable in Edge Routine, also manageable via OpenAPI/SDK.
 
-### 核心概念
+### Core Concepts
 
-- **Namespace**: KV 数据的隔离容器，Key 最大 512 字符，Value 最大 2MB（高容量 25MB）
-- 支持 TTL 过期：`Expiration`（Unix 时间戳）或 `ExpirationTtl`（秒）
+- **Namespace**: Isolation container for KV data, Key max 512 chars, Value max 2MB (high capacity 25MB)
+- Supports TTL expiration: `Expiration` (Unix timestamp) or `ExpirationTtl` (seconds)
 
-### API 摘要
+### API Summary
 
 - **Namespace**: `CreateKvNamespace`, `DeleteKvNamespace`, `GetKvNamespace`, `GetKvAccount`, `DescribeKvAccountStatus`
-- **单键操作**: `PutKv`, `GetKv`, `GetKvDetail`, `DeleteKv`, `PutKvWithHighCapacity`
-- **批量操作**: `BatchPutKv`, `BatchDeleteKv`, `BatchPutKvWithHighCapacity`, `BatchDeleteKvWithHighCapacity`, `ListKvs`
+- **Single Key Operations**: `PutKv`, `GetKv`, `GetKvDetail`, `DeleteKv`, `PutKvWithHighCapacity`
+- **Batch Operations**: `BatchPutKv`, `BatchDeleteKv`, `BatchPutKvWithHighCapacity`, `BatchDeleteKvWithHighCapacity`, `ListKvs`
 
-### 快速使用
+### Quick Start
 
 ```python
 client = create_client()
 
-# 创建 namespace
+# Create namespace
 client.create_kv_namespace(esa_models.CreateKvNamespaceRequest(namespace="my-ns"))
 
-# 写入
+# Write
 client.put_kv(esa_models.PutKvRequest(namespace="my-ns", key="k1", value="v1"))
 
-# 读取
+# Read
 resp = client.get_kv(esa_models.GetKvRequest(namespace="my-ns", key="k1"))
 ```
 
-详细参考: `references/kv.md`
+Detailed reference: `references/kv.md`
 
-## Site Management — 站点管理
+## Site Management — Site Management
 
-使用 Python SDK 管理 ESA 站点、DNS 记录、缓存规则等。
+Use Python SDK to manage ESA sites, DNS records, cache rules, etc.
 
 ### API behavior notes
 
@@ -179,6 +180,72 @@ resp = client.get_kv(esa_models.GetKvRequest(namespace="my-ns", key="k1"))
 - Summarize sites by plan: `scripts/summary_sites_by_plan.py`
 - Check site status: `scripts/check_site_status.py`
 - List DNS records for a site: `scripts/list_dns_records.py`
+
+## Analytics — Traffic Analysis
+
+Query and analyze ESA site traffic data using `DescribeSiteTimeSeriesData` and `DescribeSiteTopData` APIs.
+
+### Core Features
+
+- **Time-Series Data**: Query traffic trends with configurable time granularity
+- **Top-N Rankings**: Get rankings by country/IP/host/path/status code dimensions
+- **Multiple Metrics**: Traffic, Requests, RequestTraffic, PageView
+- **Rich Dimensions**: Country, province, ISP, browser, device, host, path, status code, etc.
+
+### Two Main APIs
+
+#### 1. DescribeSiteTimeSeriesData - Time-Series Trends
+
+Query traffic trends over time, returning aggregated data points.
+
+**Time Granularity Rules:**
+
+| Time Range | Interval | Interval Value |
+|------------|----------|----------------|
+| <= 3 hours | 1 minute | `60` |
+| 3-12 hours | 5 minutes | `300` |
+| 12 hours - 1 day | 15 minutes | `900` |
+| 1-10 days | 1 hour | `3600` |
+| 10-31 days | 1 day | `86400` |
+
+#### 2. DescribeSiteTopData - Top-N Rankings
+
+Query Top-N ranking data by various dimensions.
+
+**Limit Options:** `5`, `10`, `150`
+
+### Available Metrics (FieldName)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `Traffic` | int | Response traffic from ESA to client (bytes) |
+| `Requests` | int | Number of requests |
+| `RequestTraffic` | int | Client request traffic (bytes) |
+| `PageView` | int | Page views |
+
+### Available Dimensions
+
+**Geographic Dimensions:** `ClientCountryCode` (country), `ClientProvinceCode` (province), `ClientISP` (ISP), `ClientASN`
+
+**Client Info:** `ClientIP`, `ClientIPVersion`, `ClientBrowser`, `ClientDevice`, `ClientOS`
+
+**Request Details:** `ClientRequestHost`, `ClientRequestMethod`, `ClientRequestPath`, `ClientRequestProtocol`, `ClientRequestQuery`, `ClientRequestReferer`, `ClientRequestUserAgent`
+
+**Response/Cache:** `EdgeCacheStatus`, `EdgeResponseStatusCode`, `EdgeResponseContentType`, `OriginResponseStatusCode`
+
+**Others:** `ALL` (aggregated), `SiteId` (account-level query), `Version`, `ClientSSLProtocol`, `ClientXRequestedWith`
+
+### Error Handling
+
+| HTTP Code | Error Code | Description |
+|-----------|------------|-------------|
+| 400 | `InvalidParameter.TimeRange` | Time range exceeded (max 31 days) |
+| 400 | `InvalidEndTime.Mismatch` | EndTime earlier than StartTime |
+| 400 | `InvalidParameter.Field` | Invalid field name |
+| 400 | `InvalidParameter.Dimension` | Invalid dimension |
+| 400 | `InvalidTime.Malformed` | Time format error (use yyyy-MM-ddTHH:mm:ssZ) |
+
+Detailed reference: `references/time-series.md`, `references/top-data.md`, `references/fields.md`
 
 ## Common operation mapping
 
@@ -305,7 +372,7 @@ Max nesting depth: **2 levels**.
 --Rule '(not http.host in {"a.com" "b.com"})'
 ```
 
-### Key gotchas
+### Key Gotchas
 
 1. `ends_with` and `starts_with` must use **function-call syntax**, NOT infix.
 2. `matches` (regex) requires **standard plan or above**; basic plan returns `RuleRegexQuotaCheckFailed`.
@@ -315,7 +382,7 @@ Max nesting depth: **2 levels**.
 6. Use `ne` for "not equal", **never** use `not...eq`.
 7. Use `not...in` for negating set membership (not before field), not `not in`.
 
-### Plan limitations
+### Plan Limitations
 
 | Plan | eq/ne/in/starts_with/ends_with | contains | matches (regex) |
 |------|-------------------------------|----------|----------------|
@@ -372,9 +439,9 @@ If you need to save responses or generated artifacts, write them under:
 ## References
 
 ### Pages, ER & KV
-- **Pages 部署参考**: `references/pages.md`
-- **Edge Routine 参考**: `references/er.md`
-- **Edge KV 存储参考**: `references/kv.md`
+- **Pages Deployment Reference**: `references/pages.md`
+- **Edge Routine Reference**: `references/er.md`
+- **Edge KV Storage Reference**: `references/kv.md`
 
 ### Site Management
 - API overview: `references/api_overview.md`
@@ -387,3 +454,8 @@ If you need to save responses or generated artifacts, write them under:
 - **Rule expression - match fields**: `references/rule-match-fields.md`
 - **Rule expression - operators**: `references/rule-operators.md`
 - **Rule expression - examples**: `references/rule-examples.md`
+
+### Analytics
+- **Time-Series Data API**: `references/time-series.md`
+- **Top-N Data API**: `references/top-data.md`
+- **Metrics and Dimensions Reference**: `references/fields.md`
