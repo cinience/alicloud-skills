@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Code Qwen Coder"
+  short_description: "Coding and repository reasoning with Qwen Coder models"
+  default_prompt: "Use $alicloud-ai-code-qwen-coder to complete this ai/code task on Alibaba Cloud."

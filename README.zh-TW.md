@@ -247,6 +247,7 @@ dashscope_api_key = 你的DashScope API Key
 | ai/audio | alicloud-ai-audio-tts-realtime | 使用 Alibaba Cloud Model Studio Qwen TTS Realtime 模型進行即時語音合成。 | `skills/ai/audio/alicloud-ai-audio-tts-realtime` |
 | ai/audio | alicloud-ai-audio-tts-voice-clone | 使用 Alibaba Cloud Model Studio Qwen TTS VC 模型執行聲音克隆流程。 | `skills/ai/audio/alicloud-ai-audio-tts-voice-clone` |
 | ai/audio | alicloud-ai-audio-tts-voice-design | 使用 Alibaba Cloud Model Studio Qwen TTS VD 模型執行聲音設計流程。 | `skills/ai/audio/alicloud-ai-audio-tts-voice-design` |
+| ai/code | alicloud-ai-code-qwen-coder | 技能 `alicloud-ai-code-qwen-coder` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/code/alicloud-ai-code-qwen-coder` |
 | ai/content | alicloud-ai-content-aicontent | 透過 OpenAPI/SDK 管理 Alibaba Cloud AIContent (AiContent)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/content/alicloud-ai-content-aicontent` |
 | ai/content | alicloud-ai-content-aimiaobi | 透過 OpenAPI/SDK 管理 Alibaba Cloud Quan Miao (AiMiaoBi)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/content/alicloud-ai-content-aimiaobi` |
 | ai/entry | alicloud-ai-entry-modelstudio | 將 Alibaba Cloud Model Studio 請求路由到最合適的本地技能（圖像、影片、TTS、ASR 等）。 | `skills/ai/entry/alicloud-ai-entry-modelstudio` |
@@ -256,12 +257,15 @@ dashscope_api_key = 你的DashScope API Key
 | ai/image | alicloud-ai-image-zimage-turbo | 技能 `alicloud-ai-image-zimage-turbo` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/image/alicloud-ai-image-zimage-turbo` |
 | ai/misc | alicloud-ai-misc-crawl-and-skill | 刷新 Model Studio 模型抓取結果並重新產生衍生摘要與相關技能內容。 | `skills/ai/misc/alicloud-ai-misc-crawl-and-skill` |
 | ai/multimodal | alicloud-ai-multimodal-qvq | 技能 `alicloud-ai-multimodal-qvq` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/multimodal/alicloud-ai-multimodal-qvq` |
+| ai/multimodal | alicloud-ai-multimodal-qwen-ocr | 技能 `alicloud-ai-multimodal-qwen-ocr` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/multimodal/alicloud-ai-multimodal-qwen-ocr` |
 | ai/multimodal | alicloud-ai-multimodal-qwen-omni | 技能 `alicloud-ai-multimodal-qwen-omni` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/multimodal/alicloud-ai-multimodal-qwen-omni` |
 | ai/multimodal | alicloud-ai-multimodal-qwen-vl | 技能 `alicloud-ai-multimodal-qwen-vl` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/multimodal/alicloud-ai-multimodal-qwen-vl` |
 | ai/platform | alicloud-ai-pai-aiworkspace | 透過 OpenAPI/SDK 管理 Alibaba Cloud Platform for Artificial Intelligence PAI - AIWorkspace (AIWorkSpace)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/platform/alicloud-ai-pai-aiworkspace` |
 | ai/recommendation | alicloud-ai-recommend-airec | 透過 OpenAPI/SDK 管理 Alibaba Cloud AIRec (Airec)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/recommendation/alicloud-ai-recommend-airec` |
+| ai/research | alicloud-ai-research-qwen-deep-research | 技能 `alicloud-ai-research-qwen-deep-research` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/research/alicloud-ai-research-qwen-deep-research` |
 | ai/search | alicloud-ai-search-dashvector | 使用 Python SDK 建立 DashVector 向量檢索能力，支援集合建立、寫入與相似度查詢。 | `skills/ai/search/alicloud-ai-search-dashvector` |
 | ai/search | alicloud-ai-search-milvus | 使用 PyMilvus 對接 AliCloud Milvus（Serverless），用於向量寫入與相似度檢索。 | `skills/ai/search/alicloud-ai-search-milvus` |
+| ai/search | alicloud-ai-search-multimodal-embedding | 技能 `alicloud-ai-search-multimodal-embedding` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/search/alicloud-ai-search-multimodal-embedding` |
 | ai/search | alicloud-ai-search-opensearch | 透過 Python SDK（ha3engine）使用 OpenSearch 向量檢索版，支援文件寫入與檢索。 | `skills/ai/search/alicloud-ai-search-opensearch` |
 | ai/search | alicloud-ai-search-rerank | 技能 `alicloud-ai-search-rerank` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/search/alicloud-ai-search-rerank` |
 | ai/search | alicloud-ai-search-text-embedding | 技能 `alicloud-ai-search-text-embedding` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/search/alicloud-ai-search-text-embedding` |
@@ -269,7 +273,13 @@ dashscope_api_key = 你的DashScope API Key
 | ai/service | alicloud-ai-cloud-call-center | 透過 OpenAPI/SDK 管理 Alibaba Cloud Cloud Call Center (CCC)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/service/alicloud-ai-cloud-call-center` |
 | ai/service | alicloud-ai-contactcenter-ai | 透過 OpenAPI/SDK 管理 Alibaba Cloud Contact Center AI (ContactCenterAI)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/service/alicloud-ai-contactcenter-ai` |
 | ai/text | alicloud-ai-text-document-mind | 透過 Node.js SDK 使用 Document Mind（DocMind）執行文件解析任務並輪詢結果。 | `skills/ai/text/alicloud-ai-text-document-mind` |
+| ai/text | alicloud-ai-text-qwen-generation | 技能 `alicloud-ai-text-qwen-generation` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/text/alicloud-ai-text-qwen-generation` |
 | ai/translation | alicloud-ai-translation-anytrans | 透過 OpenAPI/SDK 管理 Alibaba Cloud TongyiTranslate (AnyTrans)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/translation/alicloud-ai-translation-anytrans` |
+| ai/video | alicloud-ai-video-aishi-generation | 技能 `alicloud-ai-video-aishi-generation` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/alicloud-ai-video-aishi-generation` |
+| ai/video | alicloud-ai-video-animate-anyone | 技能 `alicloud-ai-video-animate-anyone` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/alicloud-ai-video-animate-anyone` |
+| ai/video | alicloud-ai-video-digital-human | 技能 `alicloud-ai-video-digital-human` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/alicloud-ai-video-digital-human` |
+| ai/video | alicloud-ai-video-emo | 技能 `alicloud-ai-video-emo` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/alicloud-ai-video-emo` |
+| ai/video | alicloud-ai-video-retalk | 技能 `alicloud-ai-video-retalk` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/alicloud-ai-video-retalk` |
 | ai/video | alicloud-ai-video-wan-edit | 技能 `alicloud-ai-video-wan-edit` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/alicloud-ai-video-wan-edit` |
 | ai/video | alicloud-ai-video-wan-r2v | 技能 `alicloud-ai-video-wan-r2v` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/alicloud-ai-video-wan-r2v` |
 | ai/video | alicloud-ai-video-wan-video | 透過 Model Studio DashScope SDK 進行影片生成，支援時長、幀率、尺寸等參數控制。 | `skills/ai/video/alicloud-ai-video-wan-video` |

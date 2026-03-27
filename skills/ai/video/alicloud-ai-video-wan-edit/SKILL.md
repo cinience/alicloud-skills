@@ -1,6 +1,6 @@
 ---
 name: alicloud-ai-video-wan-edit
-description: Use when Alibaba Cloud Model Studio video editing models are needed for style transfer, keyframe-controlled editing, lip sync, retalk, or animation remix workflows.
+description: Use when Alibaba Cloud Model Studio Wan video editing models are needed for style transfer, keyframe-controlled editing, or animation remix workflows.
 version: 1.0.0
 ---
 
@@ -29,7 +29,6 @@ Use one of these exact model strings as needed:
 
 - Video style transformation
 - Keyframe-to-video guided editing
-- Talking-head retalk or lip-sync repair
 - Animation remix
 
 ## Quick start
@@ -41,7 +40,8 @@ python skills/ai/video/alicloud-ai-video-wan-edit/scripts/prepare_video_edit_req
 
 ## Notes
 
-- Use `skills/ai/video/alicloud-ai-video-wan-video/` for generation.
+- Use `skills/ai/video/alicloud-ai-video-wan-video/` for Wan generation.
+- Use `skills/ai/video/alicloud-ai-video-retalk/` for dedicated lip-sync replacement.
 - Use this skill only when the user wants to modify existing video material.
 
 ## References

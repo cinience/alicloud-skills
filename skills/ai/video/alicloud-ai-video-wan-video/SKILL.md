@@ -1,6 +1,6 @@
 ---
 name: alicloud-ai-video-wan-video
-description: Generate videos with Model Studio DashScope SDK using Wan i2v models (wan2.6-i2v-flash, wan2.6-i2v, wan2.6-i2v-us). Use when implementing or documenting video.generate requests/responses, mapping prompt/negative_prompt/duration/fps/size/seed/reference_image/motion_strength, or integrating video generation into the video-agent pipeline.
+description: Generate videos with Model Studio DashScope SDK using Wan video generation models (wan2.6-t2v, wan2.6-i2v-flash, wan2.6-i2v and regional variants). Use when implementing or documenting video.generate requests/responses, mapping prompt/negative_prompt/duration/fps/size/seed/reference_image/motion_strength, or integrating video generation into the video-agent pipeline.
 version: 1.0.0
 ---
 
@@ -27,12 +27,13 @@ Provide consistent video generation behavior for the video-agent pipeline by sta
 ## Critical model names
 
 Use one of these exact model strings:
+- `wan2.6-t2v`
+- `wan2.6-t2v-us`
 - `wan2.2-t2v-plus`
 - `wan2.2-t2v-flash`
 - `wan2.6-i2v-flash`
 - `wan2.6-i2v`
 - `wan2.6-i2v-us`
-- `wan2.6-t2v-us`
 - `wanx2.1-t2v-turbo`
 
 ## Prerequisites
@@ -67,7 +68,7 @@ python -m pip install dashscope
 ## Quick start (Python + DashScope SDK)
 
 Video generation is usually asynchronous. Expect a task ID and poll until completion.
-Note: Wan i2v models require an input image; pure t2v models can omit `reference_image`.
+Note: Wan i2v models require an input image; pure t2v models such as `wan2.6-t2v` can omit `reference_image`.
 
 ```python
 import os
@@ -134,6 +135,7 @@ video_url = final.output.get("video_url")
 - Store video assets in object storage and persist only URLs in metadata.
 - `reference_image` can be a URL or local path; the SDK auto-uploads local files.
 - If you get `Field required: input.img_url`, the reference image is missing or not mapped.
+- `wan2.6-t2v` and `wan2.6-t2v-us` add multi-shot narrative support and optional audio input according to the official docs.
 
 ## Size notes
 

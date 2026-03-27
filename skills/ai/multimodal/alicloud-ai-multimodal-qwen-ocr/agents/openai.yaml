@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Multimodal Qwen OCR"
+  short_description: "OCR-specialized extraction with Qwen OCR models"
+  default_prompt: "Use $alicloud-ai-multimodal-qwen-ocr to complete this ai/multimodal OCR task on Alibaba Cloud."

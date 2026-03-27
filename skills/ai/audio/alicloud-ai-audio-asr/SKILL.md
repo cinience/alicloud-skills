@@ -28,12 +28,14 @@ Use Qwen ASR for recorded audio transcription (non-realtime), including short au
 
 Use one of these exact model strings:
 - `qwen3-asr-flash`
+- `qwen3-asr-flash-2026-02-10`
 - `qwen-audio-asr`
 - `qwen3-asr-flash-filetrans`
+- `qwen3-asr-flash-filetrans-2025-11-17`
 
 Selection guidance:
-- Use `qwen3-asr-flash` or `qwen-audio-asr` for short/normal recordings (sync).
-- Use `qwen3-asr-flash-filetrans` for long-file transcription (async task workflow).
+- Use `qwen3-asr-flash`, `qwen3-asr-flash-2026-02-10`, or `qwen-audio-asr` for short/normal recordings (sync).
+- Use `qwen3-asr-flash-filetrans` or `qwen3-asr-flash-filetrans-2025-11-17` for long-file transcription (async task workflow).
 
 ## Prerequisites
 

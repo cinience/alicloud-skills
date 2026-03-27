@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Search Multimodal Embedding"
+  short_description: "Multimodal embeddings from Model Studio VL embedding models"
+  default_prompt: "Use $alicloud-ai-search-multimodal-embedding to complete this ai/search multimodal embedding task on Alibaba Cloud."

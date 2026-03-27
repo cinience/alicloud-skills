@@ -1,4 +1,4 @@
-官方文档来源（用于后续更新）
-============================
-
-- （暂无外部文档链接）
+- 模型上下架与更新（wan2.6-t2v、wan2.6-i2v-flash、wan2.6-r2v-flash）: https://help.aliyun.com/zh/model-studio/newly-released-models
+- 万相文生视频: https://help.aliyun.com/zh/model-studio/text-to-video-guide
+- 万相图生视频-基于首帧: https://help.aliyun.com/zh/model-studio/first-frame-image-to-video
+- 模型列表: https://help.aliyun.com/zh/model-studio/models

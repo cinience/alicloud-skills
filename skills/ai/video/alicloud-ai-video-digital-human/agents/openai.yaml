@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud AI Video Digital Human"
+  short_description: "Talking or singing avatar videos from image + audio"
+  default_prompt: "Use $alicloud-ai-video-digital-human to complete this ai/video digital-human task on Alibaba Cloud."

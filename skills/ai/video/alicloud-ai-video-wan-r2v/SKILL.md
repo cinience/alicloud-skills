@@ -30,6 +30,8 @@ Use one of these exact model strings:
 - `wan2.6-r2v-flash`
 - `wan2.6-r2v`
 
+Newer official releases may prefer the flash variant for lower latency and lower cost.
+
 ## Prerequisites
 
 - Install SDK in a virtual environment:

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Generate a video using DashScope (wan2.6-i2v-flash) from a normalized request.
+"""Generate a video using DashScope (Wan t2v or i2v) from a normalized request.
 
 Usage:
-  python scripts/generate_video.py --request '{"prompt":"...","reference_image":"./ref.png"}'
+  python scripts/generate_video.py --request '{"prompt":"...","model":"wan2.6-t2v"}'
+  python scripts/generate_video.py --request '{"prompt":"...","model":"wan2.6-i2v-flash","reference_image":"./ref.png"}'
   python scripts/generate_video.py --file request.json --output output/ai-video-wan-video/videos/output.mp4
 """
 
@@ -25,7 +26,7 @@ except ImportError:
     sys.exit(1)
 
 
-MODEL_NAME = "wan2.6-i2v-flash"
+MODEL_NAME = "wan2.6-t2v"
 DEFAULT_SIZE = "1280*720"
 DEFAULT_FPS = 24
 DEFAULT_DURATION = 4
@@ -98,17 +99,22 @@ def resolve_reference_image(value: str) -> Any:
     return value
 
 
+def model_requires_reference_image(model: str) -> bool:
+    return "-i2v" in model
+
+
 def call_generate(req: dict[str, Any]) -> dict[str, Any]:
     prompt = req.get("prompt")
     if not prompt:
         raise ValueError("prompt is required")
 
+    model = req.get("model", MODEL_NAME)
     reference_image = req.get("reference_image")
-    if not reference_image:
-        raise ValueError("reference_image is required for wan2.6-i2v-flash")
+    if model_requires_reference_image(model) and not reference_image:
+        raise ValueError(f"reference_image is required for {model}")
 
     payload = {
-        "model": MODEL_NAME,
+        "model": model,
         "prompt": prompt,
         "negative_prompt": req.get("negative_prompt"),
         "duration": req.get("duration", DEFAULT_DURATION),
@@ -117,8 +123,9 @@ def call_generate(req: dict[str, Any]) -> dict[str, Any]:
         "seed": req.get("seed"),
         "motion_strength": req.get("motion_strength"),
         "api_key": os.getenv("DASHSCOPE_API_KEY"),
-        "img_url": resolve_reference_image(reference_image),
     }
+    if reference_image:
+        payload["img_url"] = resolve_reference_image(reference_image)
 
     task = VideoSynthesis.async_call(**payload)
 
@@ -161,7 +168,7 @@ def download_video(video_url: str, output_path: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate video with wan2.6-i2v-flash")
+    parser = argparse.ArgumentParser(description="Generate video with Wan text-to-video or image-to-video models")
     parser.add_argument("--request", help="Inline JSON request string")
     parser.add_argument("--file", help="Path to JSON request file")
     default_output_dir = Path(os.getenv("OUTPUT_DIR", "output")) / "ai-video-wan-video" / "videos"

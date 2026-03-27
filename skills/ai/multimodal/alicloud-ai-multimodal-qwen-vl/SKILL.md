@@ -45,13 +45,14 @@ Prefer the Qwen3 VL family:
 When you need explicit "latest" routing or reproducible snapshots, use supported aliases/snapshots from the official model list, such as:
 - `qwen3-vl-plus-latest`
 - `qwen3-vl-plus-2025-12-19`
+- `qwen3-vl-flash-2026-01-22`
 - `qwen3-vl-flash-latest`
 
 Legacy names still seen in some workloads:
 - `qwen-vl-max-latest`
 - `qwen-vl-plus-latest`
-- `qwen-vl-ocr`
-- `qwen-vl-ocr-latest`
+
+For OCR-specialized extraction, prefer `skills/ai/multimodal/alicloud-ai-multimodal-qwen-ocr/` instead of using the general VL skill.
 
 ## Normalized interface (multimodal.chat)
 
