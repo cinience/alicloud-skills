@@ -38,7 +38,7 @@ Pass criteria: command exits 0 and `output/aliyun-solution-article-illustrator/c
 
 - A source Markdown article.
 - A generation backend that satisfies `references/backend-contract.md`.
-- If you want repository-default behavior, prefer `aliyun-modelstudio-qwen-image` and `aliyun-modelstudio-qwen-image-edit`.
+- If you want repository-default behavior, prefer `aliyun-qwen-image` and `aliyun-qwen-image-edit`.
 - Optional `EXTEND.md` preferences at project or user scope.
 
 ## Workflow
@@ -48,8 +48,8 @@ Pass criteria: command exits 0 and `output/aliyun-solution-article-illustrator/c
 3. Confirm settings in one batch: Type, Density, Style, optional Language, and output size.
 4. Choose or recommend a backend and build `outline.md`.
 5. Save prompt files before any generation step.
-6. Use the selected generation backend for first-pass images. Recommend `aliyun-modelstudio-qwen-image` by default.
-7. If needed, use the selected edit backend for one repair pass per image. Recommend `aliyun-modelstudio-qwen-image-edit` by default.
+6. Use the selected generation backend for first-pass images. Recommend `aliyun-qwen-image` by default.
+7. If needed, use the selected edit backend for one repair pass per image. Recommend `aliyun-qwen-image-edit` by default.
 8. Write `article.with-images.md` with relative `images/...` Markdown links.
 9. Save evidence and produce `delivery-report.md`.
 

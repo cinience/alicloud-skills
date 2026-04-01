@@ -115,13 +115,13 @@ go -C apps build -o /tmp/alicloud-skills-cli ./cmd/alicloud-skills
 #### Case A：中文闭环
 
 ```bash
-/tmp/alicloud-skills-cli -e "Use aliyun-modelstudio-tts to synthesize the exact text '欢迎使用阿里云。' with non-realtime mode, then use aliyun-modelstudio-asr with non-realtime mode to transcribe that generated audio, and finally return: input_text, asr_text, normalized_equal (true/false), plus the audio URL." --timeout-ms 180000
+/tmp/alicloud-skills-cli -e "Use aliyun-qwen-tts to synthesize the exact text '欢迎使用阿里云。' with non-realtime mode, then use aliyun-qwen-asr with non-realtime mode to transcribe that generated audio, and finally return: input_text, asr_text, normalized_equal (true/false), plus the audio URL." --timeout-ms 180000
 ```
 
 #### Case B：英文闭环
 
 ```bash
-/tmp/alicloud-skills-cli -e "Use aliyun-modelstudio-tts to synthesize the exact text 'Welcome to Alibaba Cloud.' with non-realtime mode, then use aliyun-modelstudio-asr with non-realtime mode to transcribe that generated audio, and finally return: input_text, asr_text, normalized_equal (true/false), plus the audio URL." --timeout-ms 180000
+/tmp/alicloud-skills-cli -e "Use aliyun-qwen-tts to synthesize the exact text 'Welcome to Alibaba Cloud.' with non-realtime mode, then use aliyun-qwen-asr with non-realtime mode to transcribe that generated audio, and finally return: input_text, asr_text, normalized_equal (true/false), plus the audio URL." --timeout-ms 180000
 ```
 
 通过标准：
@@ -142,12 +142,12 @@ printf '/skills\n/quit\n' | /tmp/alicloud-skills-cli
 ```
 
 通过标准：
-- 输出中包含 `aliyun-modelstudio-tts`、`aliyun-modelstudio-asr`
+- 输出中包含 `aliyun-qwen-tts`、`aliyun-qwen-asr`
 
 2) 文生图最小可用链路
 
 ```bash
-/tmp/alicloud-skills-cli -e "Use aliyun-modelstudio-qwen-image to generate a 512*512 minimalist icon about cloud and return output image url only." --timeout-ms 180000
+/tmp/alicloud-skills-cli -e "Use aliyun-qwen-image to generate a 512*512 minimalist icon about cloud and return output image url only." --timeout-ms 180000
 ```
 
 通过标准：
@@ -167,7 +167,7 @@ printf '/skills\n/quit\n' | /tmp/alicloud-skills-cli
 4) 非法模型名应可诊断
 
 ```bash
-/tmp/alicloud-skills-cli -e "Use aliyun-modelstudio-asr with model 'qwen3-asr-flash-xxx' to transcribe https://dashscope.oss-cn-beijing.aliyuncs.com/audios/welcome.mp3 and show raw error." --timeout-ms 120000
+/tmp/alicloud-skills-cli -e "Use aliyun-qwen-asr with model 'qwen3-asr-flash-xxx' to transcribe https://dashscope.oss-cn-beijing.aliyuncs.com/audios/welcome.mp3 and show raw error." --timeout-ms 120000
 ```
 
 通过标准：
@@ -185,7 +185,7 @@ env -u DASHSCOPE_API_KEY /tmp/alicloud-skills-cli -e "ping" --timeout-ms 120000
 6) 超时控制有效性
 
 ```bash
-/tmp/alicloud-skills-cli -e "Use aliyun-modelstudio-wan-video to generate a video and wait for final url." --timeout-ms 1000
+/tmp/alicloud-skills-cli -e "Use aliyun-wan-video to generate a video and wait for final url." --timeout-ms 1000
 ```
 
 通过标准：
@@ -197,7 +197,7 @@ env -u DASHSCOPE_API_KEY /tmp/alicloud-skills-cli -e "ping" --timeout-ms 120000
 
 ```bash
 for i in 1 2 3; do
-  /tmp/alicloud-skills-cli -e "Use aliyun-modelstudio-tts to synthesize 'Welcome to Alibaba Cloud.' and return only audio url." --timeout-ms 180000
+  /tmp/alicloud-skills-cli -e "Use aliyun-qwen-tts to synthesize 'Welcome to Alibaba Cloud.' and return only audio url." --timeout-ms 180000
 done
 ```
 

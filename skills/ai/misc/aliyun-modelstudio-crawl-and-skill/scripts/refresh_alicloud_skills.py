@@ -28,12 +28,12 @@ KEYWORDS = {
 }
 
 KNOWN_SKILLS = {
-    "image": "skills/ai/image/aliyun-modelstudio-qwen-image",
-    "video": "skills/ai/video/aliyun-modelstudio-wan-video",
-    "audio": "skills/ai/audio/aliyun-modelstudio-tts",
-    "embedding": "skills/ai/search/aliyun-modelstudio-text-embedding",
-    "rerank": "skills/ai/search/aliyun-modelstudio-rerank",
-    "asr": "skills/ai/audio/aliyun-modelstudio-asr",
+    "image": "skills/ai/image/aliyun-qwen-image",
+    "video": "skills/ai/video/aliyun-wan-video",
+    "audio": "skills/ai/audio/aliyun-qwen-tts",
+    "embedding": "skills/ai/search/aliyun-qwen-text-embedding",
+    "rerank": "skills/ai/search/aliyun-qwen-rerank",
+    "asr": "skills/ai/audio/aliyun-qwen-asr",
     "llm": "(missing)",
 }
 

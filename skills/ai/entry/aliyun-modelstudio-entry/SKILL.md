@@ -25,38 +25,38 @@ python -m pip install dashscope
 
 | Need | Target skill |
 | --- | --- |
-| Text generation / reasoning / tool-calling | `skills/ai/text/aliyun-modelstudio-qwen-generation/` |
-| Coding / repository reasoning | `skills/ai/code/aliyun-modelstudio-qwen-coder/` |
-| Deep multi-step research | `skills/ai/research/aliyun-modelstudio-qwen-deep-research/` |
-| Text-to-image / image generation | `skills/ai/image/aliyun-modelstudio-qwen-image/` |
-| Image editing | `skills/ai/image/aliyun-modelstudio-qwen-image-edit/` |
-| Text-to-video / image-to-video (t2v/i2v) | `skills/ai/video/aliyun-modelstudio-wan-video/` |
-| Non-Wan PixVerse video generation | `skills/ai/video/aliyun-modelstudio-aishi-generation/` |
-| Reference-to-video (r2v) | `skills/ai/video/aliyun-modelstudio-wan-r2v/` |
-| Digital human talking / singing avatar | `skills/ai/video/aliyun-modelstudio-digital-human/` |
-| Expressive portrait video (EMO) | `skills/ai/video/aliyun-modelstudio-emo/` |
-| Lightweight portrait animation (LivePortrait) | `skills/ai/video/aliyun-modelstudio-liveportrait/` |
-| Motion transfer / dancing avatar (AnimateAnyone) | `skills/ai/video/aliyun-modelstudio-animate-anyone/` |
-| Emoji / meme portrait video | `skills/ai/video/aliyun-modelstudio-emoji/` |
-| Text-to-speech (TTS) | `skills/ai/audio/aliyun-modelstudio-tts/` |
-| Speech recognition/transcription (ASR) | `skills/ai/audio/aliyun-modelstudio-asr/` |
-| Realtime speech recognition | `skills/ai/audio/aliyun-modelstudio-asr-realtime/` |
-| Realtime TTS | `skills/ai/audio/aliyun-modelstudio-tts-realtime/` |
-| Live speech translation | `skills/ai/audio/aliyun-modelstudio-livetranslate/` |
-| CosyVoice voice clone | `skills/ai/audio/aliyun-modelstudio-cosyvoice-voice-clone/` |
-| CosyVoice voice design | `skills/ai/audio/aliyun-modelstudio-cosyvoice-voice-design/` |
-| Voice clone | `skills/ai/audio/aliyun-modelstudio-tts-voice-clone/` |
-| Voice design | `skills/ai/audio/aliyun-modelstudio-tts-voice-design/` |
-| Omni multimodal interaction | `skills/ai/multimodal/aliyun-modelstudio-qwen-omni/` |
-| Visual reasoning | `skills/ai/multimodal/aliyun-modelstudio-qvq/` |
-| OCR / document parsing / table parsing | `skills/ai/multimodal/aliyun-modelstudio-qwen-ocr/` |
-| Text embeddings | `skills/ai/search/aliyun-modelstudio-text-embedding/` |
-| Multimodal embeddings | `skills/ai/search/aliyun-modelstudio-multimodal-embedding/` |
-| Rerank | `skills/ai/search/aliyun-modelstudio-rerank/` |
+| Text generation / reasoning / tool-calling | `skills/ai/text/aliyun-qwen-generation/` |
+| Coding / repository reasoning | `skills/ai/code/aliyun-qwen-coder/` |
+| Deep multi-step research | `skills/ai/research/aliyun-qwen-deep-research/` |
+| Text-to-image / image generation | `skills/ai/image/aliyun-qwen-image/` |
+| Image editing | `skills/ai/image/aliyun-qwen-image-edit/` |
+| Text-to-video / image-to-video (t2v/i2v) | `skills/ai/video/aliyun-wan-video/` |
+| Non-Wan PixVerse video generation | `skills/ai/video/aliyun-pixverse-generation/` |
+| Reference-to-video (r2v) | `skills/ai/video/aliyun-wan-r2v/` |
+| Digital human talking / singing avatar | `skills/ai/video/aliyun-wan-digital-human/` |
+| Expressive portrait video (EMO) | `skills/ai/video/aliyun-emo/` |
+| Lightweight portrait animation (LivePortrait) | `skills/ai/video/aliyun-liveportrait/` |
+| Motion transfer / dancing avatar (AnimateAnyone) | `skills/ai/video/aliyun-animate-anyone/` |
+| Emoji / meme portrait video | `skills/ai/video/aliyun-emoji/` |
+| Text-to-speech (TTS) | `skills/ai/audio/aliyun-qwen-tts/` |
+| Speech recognition/transcription (ASR) | `skills/ai/audio/aliyun-qwen-asr/` |
+| Realtime speech recognition | `skills/ai/audio/aliyun-qwen-asr-realtime/` |
+| Realtime TTS | `skills/ai/audio/aliyun-qwen-tts-realtime/` |
+| Live speech translation | `skills/ai/audio/aliyun-qwen-livetranslate/` |
+| CosyVoice voice clone | `skills/ai/audio/aliyun-cosyvoice-voice-clone/` |
+| CosyVoice voice design | `skills/ai/audio/aliyun-cosyvoice-voice-design/` |
+| Voice clone | `skills/ai/audio/aliyun-qwen-tts-voice-clone/` |
+| Voice design | `skills/ai/audio/aliyun-qwen-tts-voice-design/` |
+| Omni multimodal interaction | `skills/ai/multimodal/aliyun-qwen-omni/` |
+| Visual reasoning | `skills/ai/multimodal/aliyun-qvq/` |
+| OCR / document parsing / table parsing | `skills/ai/multimodal/aliyun-qwen-ocr/` |
+| Text embeddings | `skills/ai/search/aliyun-qwen-text-embedding/` |
+| Multimodal embeddings | `skills/ai/search/aliyun-qwen-multimodal-embedding/` |
+| Rerank | `skills/ai/search/aliyun-qwen-rerank/` |
 | Vector retrieval | `skills/ai/search/aliyun-dashvector-search/` or `skills/ai/search/aliyun-opensearch-search/` or `skills/ai/search/aliyun-milvus-search/` |
 | Document understanding | `skills/ai/text/aliyun-docmind-extract/` |
-| Video editing | `skills/ai/video/aliyun-modelstudio-wan-edit/` |
-| Video lip-sync replacement / retalk | `skills/ai/video/aliyun-modelstudio-retalk/` |
+| Video editing | `skills/ai/video/aliyun-wan-edit/` |
+| Video lip-sync replacement / retalk | `skills/ai/video/aliyun-videoretalk/` |
 | Model list crawl/update | `skills/ai/misc/aliyun-modelstudio-crawl-and-skill/` |
 
 ## When Not Matched

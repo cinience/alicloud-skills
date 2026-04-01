@@ -6,11 +6,11 @@
 
 ## 提示词样例
 
-用 `aliyun-modelstudio-qwen-image` 生成 3 张 1024x1024 的产品海报，给出每张的 prompt 和负面 prompt。
+用 `aliyun-qwen-image` 生成 3 张 1024x1024 的产品海报，给出每张的 prompt 和负面 prompt。
 
-用 `aliyun-modelstudio-wan-video` 基于上面第 1 张海报生成 6 秒视频，fps=24，size=720x1280。
+用 `aliyun-wan-video` 基于上面第 1 张海报生成 6 秒视频，fps=24，size=720x1280。
 
-用 `aliyun-modelstudio-tts` 把这段文案转成女声配音并给出保存路径：
+用 `aliyun-qwen-tts` 把这段文案转成女声配音并给出保存路径：
 “本周上新，限时 7 折，立即下单享受专属优惠。”
 
 用 `aliyun-oss-ossutil` 把生成的图片、视频、音频上传到 `oss://your-bucket/marketing/`。

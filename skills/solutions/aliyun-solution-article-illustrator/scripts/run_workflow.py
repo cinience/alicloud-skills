@@ -53,7 +53,7 @@ def render_qwen_image(repo_root: Path, prompt_path: Path, output_path: Path) -> 
 
     cmd = [
         sys.executable,
-        "skills/ai/image/aliyun-modelstudio-qwen-image/scripts/generate_image.py",
+        "skills/ai/image/aliyun-qwen-image/scripts/generate_image.py",
         "--file",
         str(request_path),
         "--output",

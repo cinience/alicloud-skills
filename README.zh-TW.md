@@ -65,19 +65,19 @@ dashscope_api_key = 你的DashScope API Key
 
 - Demo：生成圖片
 - 提示詞：
-  「用 `aliyun-modelstudio-qwen-image` 生成 1024*1024 海報圖，主題是極簡咖啡，輸出檔名 `poster.png`。」
+  「用 `aliyun-qwen-image` 生成 1024*1024 海報圖，主題是極簡咖啡，輸出檔名 `poster.png`。」
 
 2) 圖生影片（Wan Video）
 
 - Demo：用一張參考圖生成 4 秒影片（需提供可存取的圖片 URL）
 - 提示詞：
-  「用 `aliyun-modelstudio-wan-video`，參考圖 `https://.../scene.png`，生成 4 秒 24fps 1280*720 的鏡頭，提示詞：清晨城市縮時攝影。」
+  「用 `aliyun-wan-video`，參考圖 `https://.../scene.png`，生成 4 秒 24fps 1280*720 的鏡頭，提示詞：清晨城市縮時攝影。」
 
 3) 文字轉語音（Qwen TTS）
 
 - Demo：用 DashScope 生成音訊
 - 提示詞：
-  「用 `aliyun-modelstudio-tts` 把這段話合成語音，`voice=Cherry`，`language=English`，輸出音訊 URL。」
+  「用 `aliyun-qwen-tts` 把這段話合成語音，`voice=Cherry`，`language=English`，輸出音訊 URL。」
 
 4) 文件結構解析（DocMind）
 
@@ -139,9 +139,9 @@ dashscope_api_key = 你的DashScope API Key
 
 範本：
 「按以下流程串聯技能：
-1. `aliyun-modelstudio-qwen-image` 生成海報圖（主題：{主題}，尺寸：{尺寸}）。
-2. `aliyun-modelstudio-wan-video` 基於上一步圖片生成 {時長}s 影片（fps={fps}，size={尺寸}，鏡頭描述：{鏡頭描述}）。
-3. `aliyun-modelstudio-tts` 用 voice={音色} 合成旁白（文本：{旁白文本}，語言：{語言}）。
+1. `aliyun-qwen-image` 生成海報圖（主題：{主題}，尺寸：{尺寸}）。
+2. `aliyun-wan-video` 基於上一步圖片生成 {時長}s 影片（fps={fps}，size={尺寸}，鏡頭描述：{鏡頭描述}）。
+3. `aliyun-qwen-tts` 用 voice={音色} 合成旁白（文本：{旁白文本}，語言：{語言}）。
 4. `aliyun-oss-ossutil` 上傳影片與音訊到 {oss路徑}。
 請輸出最終資產 URL 清單與對應說明。」
 
@@ -150,7 +150,7 @@ dashscope_api_key = 你的DashScope API Key
 範本：
 「用 `aliyun-docmind-extract` 解析文件（URL：{文件URL}）得到結構化內容；
 再用 `aliyun-dashvector-search` 建庫並入庫；
-最後根據使用者問題：{使用者問題} 做 `topk={topk}` 檢索並用 `aliyun-modelstudio-tts` 生成語音回答（voice={音色}，language={語言}）。
+最後根據使用者問題：{使用者問題} 做 `topk={topk}` 檢索並用 `aliyun-qwen-tts` 生成語音回答（voice={音色}，language={語言}）。
 請回傳文字答案 + 語音 URL。」
 
 3) 內容審核 + 發布
@@ -173,7 +173,7 @@ dashscope_api_key = 你的DashScope API Key
 範本：
 「用 `aliyun-aicontent-generate` 生成主題文案（主題：{主題}，風格：{風格}，長度：{長度}）；
 用 `aliyun-anytrans-translate` 翻譯為 {目標語言}；
-用 `aliyun-modelstudio-tts` 生成配音（voice={音色}，language={語言}）。
+用 `aliyun-qwen-tts` 生成配音（voice={音色}，language={語言}）。
 輸出：原文、譯文、語音 URL。」
 
 6) 訓練素材清洗與歸檔
@@ -203,7 +203,7 @@ dashscope_api_key = 你的DashScope API Key
 範本：
 「用 `aliyun-ccc-manage` 建立/路由來電（號碼：{號碼}，路由策略：{策略}）；
 用 `aliyun-chatbot-manage` 給出 FAQ 命中或轉人工判斷；
-用 `aliyun-modelstudio-tts` 播報回覆（voice={音色}，language={語言}）。
+用 `aliyun-qwen-tts` 播報回覆（voice={音色}，language={語言}）。
 輸出最終話術與語音 URL。」
 
 10) 安全合規閉環（金鑰 + 稽核）
@@ -238,53 +238,53 @@ dashscope_api_key = 你的DashScope API Key
 <!-- SKILL_INDEX_BEGIN -->
 | 分類 | 技能 | 技能描述 | 路徑 |
 | --- | --- | --- | --- |
-| ai/audio | aliyun-modelstudio-asr | 使用 Alibaba Cloud Model Studio Qwen ASR 模型進行非即時語音辨識與轉寫，支援短音訊同步辨識與長音訊非同步轉寫。 | `skills/ai/audio/aliyun-modelstudio-asr` |
-| ai/audio | aliyun-modelstudio-asr-realtime | 技能 `aliyun-modelstudio-asr-realtime` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/audio/aliyun-modelstudio-asr-realtime` |
-| ai/audio | aliyun-modelstudio-cosyvoice-voice-clone | 技能 `aliyun-modelstudio-cosyvoice-voice-clone` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/audio/aliyun-modelstudio-cosyvoice-voice-clone` |
-| ai/audio | aliyun-modelstudio-cosyvoice-voice-design | 技能 `aliyun-modelstudio-cosyvoice-voice-design` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/audio/aliyun-modelstudio-cosyvoice-voice-design` |
-| ai/audio | aliyun-modelstudio-livetranslate | 技能 `aliyun-modelstudio-livetranslate` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/audio/aliyun-modelstudio-livetranslate` |
-| ai/audio | aliyun-modelstudio-tts | 使用 Model Studio DashScope Qwen TTS 模型生成人聲語音，適用於文字轉語音與配音場景。 | `skills/ai/audio/aliyun-modelstudio-tts` |
-| ai/audio | aliyun-modelstudio-tts-realtime | 使用 Alibaba Cloud Model Studio Qwen TTS Realtime 模型進行即時語音合成。 | `skills/ai/audio/aliyun-modelstudio-tts-realtime` |
-| ai/audio | aliyun-modelstudio-tts-voice-clone | 使用 Alibaba Cloud Model Studio Qwen TTS VC 模型執行聲音克隆流程。 | `skills/ai/audio/aliyun-modelstudio-tts-voice-clone` |
-| ai/audio | aliyun-modelstudio-tts-voice-design | 使用 Alibaba Cloud Model Studio Qwen TTS VD 模型執行聲音設計流程。 | `skills/ai/audio/aliyun-modelstudio-tts-voice-design` |
-| ai/code | aliyun-modelstudio-qwen-coder | 技能 `aliyun-modelstudio-qwen-coder` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/code/aliyun-modelstudio-qwen-coder` |
+| ai/audio | aliyun-qwen-asr | 使用 Alibaba Cloud Model Studio Qwen ASR 模型進行非即時語音辨識與轉寫，支援短音訊同步辨識與長音訊非同步轉寫。 | `skills/ai/audio/aliyun-qwen-asr` |
+| ai/audio | aliyun-qwen-asr-realtime | 技能 `aliyun-qwen-asr-realtime` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/audio/aliyun-qwen-asr-realtime` |
+| ai/audio | aliyun-cosyvoice-voice-clone | 技能 `aliyun-cosyvoice-voice-clone` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/audio/aliyun-cosyvoice-voice-clone` |
+| ai/audio | aliyun-cosyvoice-voice-design | 技能 `aliyun-cosyvoice-voice-design` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/audio/aliyun-cosyvoice-voice-design` |
+| ai/audio | aliyun-qwen-livetranslate | 技能 `aliyun-qwen-livetranslate` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/audio/aliyun-qwen-livetranslate` |
+| ai/audio | aliyun-qwen-tts | 使用 Model Studio DashScope Qwen TTS 模型生成人聲語音，適用於文字轉語音與配音場景。 | `skills/ai/audio/aliyun-qwen-tts` |
+| ai/audio | aliyun-qwen-tts-realtime | 使用 Alibaba Cloud Model Studio Qwen TTS Realtime 模型進行即時語音合成。 | `skills/ai/audio/aliyun-qwen-tts-realtime` |
+| ai/audio | aliyun-qwen-tts-voice-clone | 使用 Alibaba Cloud Model Studio Qwen TTS VC 模型執行聲音克隆流程。 | `skills/ai/audio/aliyun-qwen-tts-voice-clone` |
+| ai/audio | aliyun-qwen-tts-voice-design | 使用 Alibaba Cloud Model Studio Qwen TTS VD 模型執行聲音設計流程。 | `skills/ai/audio/aliyun-qwen-tts-voice-design` |
+| ai/code | aliyun-qwen-coder | 技能 `aliyun-qwen-coder` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/code/aliyun-qwen-coder` |
 | ai/content | aliyun-aicontent-generate | 透過 OpenAPI/SDK 管理 Alibaba Cloud AIContent (AiContent)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/content/aliyun-aicontent-generate` |
 | ai/content | aliyun-aimiaobi-generate | 透過 OpenAPI/SDK 管理 Alibaba Cloud Quan Miao (AiMiaoBi)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/content/aliyun-aimiaobi-generate` |
 | ai/entry | aliyun-modelstudio-entry | 將 Alibaba Cloud Model Studio 請求路由到最合適的本地技能（圖像、影片、TTS、ASR 等）。 | `skills/ai/entry/aliyun-modelstudio-entry` |
 | ai/entry | aliyun-modelstudio-entry-test | 為倉庫中的 Model Studio 技能執行最小化測試矩陣並記錄結果。 | `skills/ai/entry/aliyun-modelstudio-entry-test` |
-| ai/image | aliyun-modelstudio-qwen-image | 透過 Model Studio DashScope SDK 進行圖像生成，涵蓋 prompt、size、seed 等核心參數。 | `skills/ai/image/aliyun-modelstudio-qwen-image` |
-| ai/image | aliyun-modelstudio-qwen-image-edit | 技能 `aliyun-modelstudio-qwen-image-edit` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/image/aliyun-modelstudio-qwen-image-edit` |
-| ai/image | aliyun-modelstudio-zimage-turbo | 技能 `aliyun-modelstudio-zimage-turbo` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/image/aliyun-modelstudio-zimage-turbo` |
+| ai/image | aliyun-qwen-image | 透過 Model Studio DashScope SDK 進行圖像生成，涵蓋 prompt、size、seed 等核心參數。 | `skills/ai/image/aliyun-qwen-image` |
+| ai/image | aliyun-qwen-image-edit | 技能 `aliyun-qwen-image-edit` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/image/aliyun-qwen-image-edit` |
+| ai/image | aliyun-zimage-turbo | 技能 `aliyun-zimage-turbo` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/image/aliyun-zimage-turbo` |
 | ai/misc | aliyun-modelstudio-crawl-and-skill | 刷新 Model Studio 模型抓取結果並重新產生衍生摘要與相關技能內容。 | `skills/ai/misc/aliyun-modelstudio-crawl-and-skill` |
-| ai/multimodal | aliyun-modelstudio-qvq | 技能 `aliyun-modelstudio-qvq` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/multimodal/aliyun-modelstudio-qvq` |
-| ai/multimodal | aliyun-modelstudio-qwen-ocr | 技能 `aliyun-modelstudio-qwen-ocr` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/multimodal/aliyun-modelstudio-qwen-ocr` |
-| ai/multimodal | aliyun-modelstudio-qwen-omni | 技能 `aliyun-modelstudio-qwen-omni` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/multimodal/aliyun-modelstudio-qwen-omni` |
-| ai/multimodal | aliyun-modelstudio-qwen-vl | 技能 `aliyun-modelstudio-qwen-vl` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/multimodal/aliyun-modelstudio-qwen-vl` |
+| ai/multimodal | aliyun-qvq | 技能 `aliyun-qvq` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/multimodal/aliyun-qvq` |
+| ai/multimodal | aliyun-qwen-ocr | 技能 `aliyun-qwen-ocr` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/multimodal/aliyun-qwen-ocr` |
+| ai/multimodal | aliyun-qwen-omni | 技能 `aliyun-qwen-omni` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/multimodal/aliyun-qwen-omni` |
+| ai/multimodal | aliyun-qwen-vl | 技能 `aliyun-qwen-vl` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/multimodal/aliyun-qwen-vl` |
 | ai/platform | aliyun-pai-workspace | 透過 OpenAPI/SDK 管理 Alibaba Cloud Platform for Artificial Intelligence PAI - AIWorkspace (AIWorkSpace)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/platform/aliyun-pai-workspace` |
 | ai/recommendation | aliyun-airec-manage | 透過 OpenAPI/SDK 管理 Alibaba Cloud AIRec (Airec)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/recommendation/aliyun-airec-manage` |
-| ai/research | aliyun-modelstudio-qwen-deep-research | 技能 `aliyun-modelstudio-qwen-deep-research` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/research/aliyun-modelstudio-qwen-deep-research` |
+| ai/research | aliyun-qwen-deep-research | 技能 `aliyun-qwen-deep-research` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/research/aliyun-qwen-deep-research` |
 | ai/search | aliyun-dashvector-search | 使用 Python SDK 建立 DashVector 向量檢索能力，支援集合建立、寫入與相似度查詢。 | `skills/ai/search/aliyun-dashvector-search` |
 | ai/search | aliyun-milvus-search | 使用 PyMilvus 對接 AliCloud Milvus（Serverless），用於向量寫入與相似度檢索。 | `skills/ai/search/aliyun-milvus-search` |
-| ai/search | aliyun-modelstudio-multimodal-embedding | 技能 `aliyun-modelstudio-multimodal-embedding` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/search/aliyun-modelstudio-multimodal-embedding` |
+| ai/search | aliyun-qwen-multimodal-embedding | 技能 `aliyun-qwen-multimodal-embedding` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/search/aliyun-qwen-multimodal-embedding` |
 | ai/search | aliyun-opensearch-search | 透過 Python SDK（ha3engine）使用 OpenSearch 向量檢索版，支援文件寫入與檢索。 | `skills/ai/search/aliyun-opensearch-search` |
-| ai/search | aliyun-modelstudio-rerank | 技能 `aliyun-modelstudio-rerank` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/search/aliyun-modelstudio-rerank` |
-| ai/search | aliyun-modelstudio-text-embedding | 技能 `aliyun-modelstudio-text-embedding` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/search/aliyun-modelstudio-text-embedding` |
+| ai/search | aliyun-qwen-rerank | 技能 `aliyun-qwen-rerank` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/search/aliyun-qwen-rerank` |
+| ai/search | aliyun-qwen-text-embedding | 技能 `aliyun-qwen-text-embedding` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/search/aliyun-qwen-text-embedding` |
 | ai/service | aliyun-chatbot-manage | 透過 OpenAPI/SDK 管理 Alibaba Cloud beebot (Chatbot)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/service/aliyun-chatbot-manage` |
 | ai/service | aliyun-ccc-manage | 透過 OpenAPI/SDK 管理 Alibaba Cloud Cloud Call Center (CCC)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/service/aliyun-ccc-manage` |
 | ai/service | aliyun-ccai-manage | 透過 OpenAPI/SDK 管理 Alibaba Cloud Contact Center AI (ContactCenterAI)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/service/aliyun-ccai-manage` |
 | ai/text | aliyun-docmind-extract | 透過 Node.js SDK 使用 Document Mind（DocMind）執行文件解析任務並輪詢結果。 | `skills/ai/text/aliyun-docmind-extract` |
-| ai/text | aliyun-modelstudio-qwen-generation | 技能 `aliyun-modelstudio-qwen-generation` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/text/aliyun-modelstudio-qwen-generation` |
+| ai/text | aliyun-qwen-generation | 技能 `aliyun-qwen-generation` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/text/aliyun-qwen-generation` |
 | ai/translation | aliyun-anytrans-translate | 透過 OpenAPI/SDK 管理 Alibaba Cloud TongyiTranslate (AnyTrans)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/ai/translation/aliyun-anytrans-translate` |
-| ai/video | aliyun-modelstudio-aishi-generation | 技能 `aliyun-modelstudio-aishi-generation` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-modelstudio-aishi-generation` |
-| ai/video | aliyun-modelstudio-animate-anyone | 技能 `aliyun-modelstudio-animate-anyone` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-modelstudio-animate-anyone` |
-| ai/video | aliyun-modelstudio-digital-human | 技能 `aliyun-modelstudio-digital-human` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-modelstudio-digital-human` |
-| ai/video | aliyun-modelstudio-emo | 技能 `aliyun-modelstudio-emo` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-modelstudio-emo` |
-| ai/video | aliyun-modelstudio-emoji | 技能 `aliyun-modelstudio-emoji` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-modelstudio-emoji` |
-| ai/video | aliyun-modelstudio-liveportrait | 技能 `aliyun-modelstudio-liveportrait` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-modelstudio-liveportrait` |
-| ai/video | aliyun-modelstudio-retalk | 技能 `aliyun-modelstudio-retalk` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-modelstudio-retalk` |
-| ai/video | aliyun-modelstudio-wan-edit | 技能 `aliyun-modelstudio-wan-edit` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-modelstudio-wan-edit` |
-| ai/video | aliyun-modelstudio-wan-r2v | 技能 `aliyun-modelstudio-wan-r2v` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-modelstudio-wan-r2v` |
-| ai/video | aliyun-modelstudio-wan-video | 透過 Model Studio DashScope SDK 進行影片生成，支援時長、幀率、尺寸等參數控制。 | `skills/ai/video/aliyun-modelstudio-wan-video` |
+| ai/video | aliyun-pixverse-generation | 技能 `aliyun-pixverse-generation` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-pixverse-generation` |
+| ai/video | aliyun-animate-anyone | 技能 `aliyun-animate-anyone` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-animate-anyone` |
+| ai/video | aliyun-wan-digital-human | 技能 `aliyun-wan-digital-human` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-wan-digital-human` |
+| ai/video | aliyun-emo | 技能 `aliyun-emo` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-emo` |
+| ai/video | aliyun-emoji | 技能 `aliyun-emoji` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-emoji` |
+| ai/video | aliyun-liveportrait | 技能 `aliyun-liveportrait` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-liveportrait` |
+| ai/video | aliyun-videoretalk | 技能 `aliyun-videoretalk` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-videoretalk` |
+| ai/video | aliyun-wan-edit | 技能 `aliyun-wan-edit` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-wan-edit` |
+| ai/video | aliyun-wan-r2v | 技能 `aliyun-wan-r2v` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-wan-r2v` |
+| ai/video | aliyun-wan-video | 透過 Model Studio DashScope SDK 進行影片生成，支援時長、幀率、尺寸等參數控制。 | `skills/ai/video/aliyun-wan-video` |
 | backup/aliyun-bdrc-backup | aliyun-bdrc-backup | 透過 OpenAPI/SDK 管理 Alibaba Cloud Backup and Disaster Recovery Center (BDRC)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/backup/aliyun-bdrc-backup` |
 | backup/aliyun-hbr-backup | aliyun-hbr-backup | 透過 OpenAPI/SDK 管理 Alibaba Cloud Cloud Backup (hbr)，用於資源查詢、建立或更新配置、狀態查詢與故障排查。 | `skills/backup/aliyun-hbr-backup` |
 | compute/ecs | aliyun-ecs-manage | 技能 `aliyun-ecs-manage` 的能力說明，詳見對應 SKILL.md。 | `skills/compute/ecs/aliyun-ecs-manage` |

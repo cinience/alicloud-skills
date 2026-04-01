@@ -220,6 +220,12 @@
       "accessCount": 1,
       "lastAccessed": 1775044798074,
       "type": "directory"
+    },
+    {
+      "path": "scripts/rename_modelstudio_skills.sh",
+      "accessCount": 1,
+      "lastAccessed": 1775045617718,
+      "type": "file"
     }
   ],
   "userDirectives": []

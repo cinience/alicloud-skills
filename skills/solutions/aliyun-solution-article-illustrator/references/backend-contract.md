@@ -4,8 +4,8 @@ This solution skill recommends Alibaba Cloud backends by default, but does not h
 
 ## Recommended Defaults
 
-- Generation backend: `aliyun-modelstudio-qwen-image`
-- Edit backend: `aliyun-modelstudio-qwen-image-edit`
+- Generation backend: `aliyun-qwen-image`
+- Edit backend: `aliyun-qwen-image-edit`
 
 ## Generation Backend Requirements
 
