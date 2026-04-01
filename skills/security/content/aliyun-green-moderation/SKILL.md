@@ -1,6 +1,6 @@
 ---
 name: aliyun-green-moderation
-description: Manage Alibaba Cloud Content Moderation (Green) via OpenAPI/SDK. Use whenever the user needs content moderation resource and policy operations, including list/create/update actions, status inspection, and troubleshooting moderation workflow failures.
+description: Use when managing Alibaba Cloud Content Moderation (Green) via OpenAPI/SDK, including the user needs content moderation resource and policy operations, including list/create/update actions, status inspection, and troubleshooting moderation workflow failures.
 version: 1.0.0
 ---
 

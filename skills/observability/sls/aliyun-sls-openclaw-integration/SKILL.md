@@ -1,6 +1,6 @@
 ---
 name: aliyun-sls-openclaw-integration
-description: "Use when the user needs to integrate OpenClaw with Alibaba Cloud SLS/Observability, including collector setup, machine groups, indexes, dashboards, collection configs, or Logtail bindings on Linux."
+description: Use when the user needs to integrate OpenClaw with Alibaba Cloud SLS/Observability, including collector setup, machine groups, indexes, dashboards, collection configs, or Logtail bindings on Linux.
 metadata:
   {
     "openclaw":

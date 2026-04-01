@@ -1,6 +1,6 @@
 ---
 name: aliyun-qwen-tts-voice-clone
-description: Voice cloning workflows with Alibaba Cloud Model Studio Qwen TTS VC models. Use when creating cloned voices from sample audio and synthesizing text with cloned timbre.
+description: Use when cloning voices with Alibaba Cloud Model Studio Qwen TTS VC models. Use when creating cloned voices from sample audio and synthesizing text with cloned timbre.
 version: 1.0.0
 ---
 

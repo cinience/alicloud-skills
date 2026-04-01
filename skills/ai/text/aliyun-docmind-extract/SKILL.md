@@ -1,6 +1,6 @@
 ---
 name: aliyun-docmind-extract
-description: Use Document Mind (DocMind) via Node.js SDK to submit document parsing jobs and poll results. Designed for Claude Code/Codex document understanding workflows.
+description: Use when working with Document Mind (DocMind) via Node.js SDK to submit document parsing jobs and poll results. Designed for Claude Code/Codex document understanding workflows.
 version: 1.0.0
 ---
 

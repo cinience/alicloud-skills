@@ -1,6 +1,6 @@
 ---
 name: aliyun-oss-ossutil
-description: Alibaba Cloud OSS CLI (ossutil 2.0) skill. Install, configure, and operate OSS from the command line based on the official ossutil overview.
+description: Use when installing, configuring, or operating Alibaba Cloud OSS from the command line with ossutil 2.0, based on the official ossutil overview.
 version: 1.0.0
 ---
 

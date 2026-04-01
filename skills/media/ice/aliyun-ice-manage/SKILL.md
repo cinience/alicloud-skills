@@ -1,6 +1,6 @@
 ---
 name: aliyun-ice-manage
-description: Manage Alibaba Cloud Intelligent Cloud Editing (ICE) media workflows via OpenAPI/SDK. Use for media processing jobs, template/workflow orchestration, editing and production pipelines, and job status troubleshooting.
+description: Use when managing Alibaba Cloud Intelligent Cloud Editing (ICE) media workflows via OpenAPI/SDK, including media processing jobs, template/workflow orchestration, editing and production pipelines, and job status troubleshooting.
 version: 1.0.0
 ---
 

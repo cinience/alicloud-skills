@@ -1,6 +1,6 @@
 ---
 name: aliyun-cloudfw-manage
-description: Manage Alibaba Cloud Cloud Firewall (Cloudfw) via OpenAPI/SDK. Use whenever the user requests firewall policy/resource operations, change management, status checks, or troubleshooting Cloud Firewall API workflows.
+description: Use when managing Alibaba Cloud Cloud Firewall (Cloudfw) via OpenAPI/SDK, including the user requests firewall policy/resource operations, change management, status checks, or troubleshooting Cloud Firewall API workflows.
 version: 1.0.0
 ---
 

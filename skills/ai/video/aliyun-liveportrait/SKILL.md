@@ -1,6 +1,6 @@
 ---
 name: aliyun-liveportrait
-description: Generate lightweight talking-head portrait videos with Alibaba Cloud Model Studio LivePortrait (`liveportrait`) from a detected portrait image and speech audio. Use when you need long-form or simple broadcast-style portrait animation beyond the typical short expressive models.
+description: Use when generating lightweight talking-head portrait videos with Alibaba Cloud Model Studio LivePortrait (`liveportrait`) from a detected portrait image and speech audio. Use when you need long-form or simple broadcast-style portrait animation beyond the typical short expressive models.
 version: 1.0.0
 ---
 

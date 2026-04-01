@@ -1,6 +1,6 @@
 ---
 name: aliyun-emo
-description: Generate expressive portrait videos from a person image and speech audio with Alibaba Cloud Model Studio EMO (`emo-v1`). Use when creating non-Wan avatar clips with stronger expression style control from a detected portrait image.
+description: Use when generating expressive portrait videos from a person image and speech audio with Alibaba Cloud Model Studio EMO (`emo-v1`). Use when creating non-Wan avatar clips with stronger expression style control from a detected portrait image.
 version: 1.0.0
 ---
 

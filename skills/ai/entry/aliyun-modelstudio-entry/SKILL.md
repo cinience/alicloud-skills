@@ -1,6 +1,6 @@
 ---
 name: aliyun-modelstudio-entry
-description: Route Alibaba Cloud Model Studio requests to the right local skill (Qwen text, coder, deep research, image, video, audio, search and multimodal skills). Use when the user asks for Model Studio without specifying a capability.
+description: Use when routing Alibaba Cloud Model Studio requests to the right local skill (Qwen text, coder, deep research, image, video, audio, search and multimodal skills). Use when the user asks for Model Studio without specifying a capability.
 version: 1.0.0
 ---
 

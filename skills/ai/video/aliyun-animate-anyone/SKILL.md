@@ -1,6 +1,6 @@
 ---
 name: aliyun-animate-anyone
-description: Generate dance or motion-transfer videos with Alibaba Cloud Model Studio AnimateAnyone (`animate-anyone-gen2`) using a detected character image and an action template. Use when cloning motion from a dance/action video into a target character image.
+description: Use when generating dance or motion-transfer videos with Alibaba Cloud Model Studio AnimateAnyone (`animate-anyone-gen2`) using a detected character image and an action template. Use when cloning motion from a dance/action video into a target character image.
 version: 1.0.0
 ---
 

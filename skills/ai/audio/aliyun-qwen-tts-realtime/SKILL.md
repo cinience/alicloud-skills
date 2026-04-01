@@ -1,6 +1,6 @@
 ---
 name: aliyun-qwen-tts-realtime
-description: Real-time speech synthesis with Alibaba Cloud Model Studio Qwen TTS Realtime models. Use when low-latency interactive speech is required, including instruction-controlled realtime synthesis.
+description: Use when real-time speech synthesis is needed with Alibaba Cloud Model Studio Qwen TTS Realtime models. Use when low-latency interactive speech is required, including instruction-controlled realtime synthesis.
 version: 1.0.0
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: aliyun-ccai-manage
-description: Manage Alibaba Cloud Contact Center AI (ContactCenterAI) via OpenAPI/SDK. Use whenever the task involves Contact Center AI resource lifecycle operations, configuration changes, status queries, or troubleshooting failed ContactCenterAI API calls.
+description: Use when managing Alibaba Cloud Contact Center AI (ContactCenterAI) via OpenAPI/SDK, including the task involves Contact Center AI resource lifecycle operations, configuration changes, status queries, or troubleshooting failed ContactCenterAI API calls.
 version: 1.0.0
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: aliyun-qwen-generation
-description: Generate or reason over text with Alibaba Cloud Model Studio Qwen flagship text models (`qwen3-max`, `qwen3.5-plus`, `qwen3.5-flash`, snapshots, and compatible open-source variants). Use when building chat, agent, tool-calling, or long-context text generation workflows on Model Studio.
+description: Use when generating or reasoning over text with Alibaba Cloud Model Studio Qwen flagship text models (`qwen3-max`, `qwen3.5-plus`, `qwen3.5-flash`, snapshots, and compatible open-source variants). Use when building chat, agent, tool-calling, or long-context text generation workflows on Model Studio.
 version: 1.0.0
 ---
 

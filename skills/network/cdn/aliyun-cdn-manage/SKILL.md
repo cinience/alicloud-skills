@@ -1,6 +1,6 @@
 ---
 name: aliyun-cdn-manage
-description: Manage Alibaba Cloud CDN via OpenAPI/SDK. Use for CDN domain onboarding and lifecycle operations, cache refresh/preload, HTTPS certificate updates, and log/monitoring data queries.
+description: Use when managing Alibaba Cloud CDN via OpenAPI/SDK, including CDN domain onboarding and lifecycle operations, cache refresh/preload, HTTPS certificate updates, and log/monitoring data queries.
 version: 1.0.0
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: aliyun-ecs-manage
-description: Manage Alibaba Cloud Elastic Compute Service (ECS) via OpenAPI/SDK. Use for listing or creating instances, starting/stopping/rebooting, managing disks/snapshots/images/security groups/key pairs/ENIs, querying status, and troubleshooting workflows for this product.
+description: Use when managing Alibaba Cloud Elastic Compute Service (ECS) via OpenAPI/SDK, including listing or creating instances, starting/stopping/rebooting, managing disks/snapshots/images/security groups/key pairs/ENIs, querying status, and troubleshooting workflows for this product.
 version: 1.0.0
 ---
 

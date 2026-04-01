@@ -1,6 +1,6 @@
 ---
 name: aliyun-openclaw-setup
-description: Install and configure OpenClaw with DingTalk, Feishu, Discord, and additional channels with Bailian/DashScope models on Linux hosts. Use when provisioning a new OpenClaw node, troubleshooting gateway/channel startup, standardizing openclaw.json mapping, or automatically discovering extra channels from https://docs.openclaw.ai/channels.
+description: Use when installing or configuring OpenClaw with DingTalk, Feishu, Discord, and additional channels with Bailian/DashScope models on Linux hosts. Use when provisioning a new OpenClaw node, troubleshooting gateway/channel startup, standardizing openclaw.json mapping, or automatically discovering extra channels from https://docs.openclaw.ai/channels.
 version: 1.0.0
 ---
 

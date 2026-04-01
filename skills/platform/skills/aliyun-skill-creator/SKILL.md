@@ -1,6 +1,6 @@
 ---
 name: aliyun-skill-creator
-description: Create, migrate, and optimize skills for this alicloud-skills repository. Use whenever users ask to add a new skill, import an external skill, refactor skill structure, improve trigger descriptions, add smoke tests under tests/**, or benchmark skill quality before merge.
+description: Use when creating, migrating, or optimizing skills for this alicloud-skills repository. Use whenever users ask to add a new skill, import an external skill, refactor skill structure, improve trigger descriptions, add smoke tests under tests/**, or benchmark skill quality before merge.
 version: 1.0.0
 ---
 

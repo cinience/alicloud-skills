@@ -1,6 +1,6 @@
 ---
 name: aliyun-aimiaobi-generate
-description: Manage Alibaba Cloud Quan Miao (AiMiaoBi) via OpenAPI/SDK. Use whenever the user asks for Alibaba Cloud MiaoBi content operations, including listing resources, creating/updating configurations, querying runtime status, and diagnosing API or workflow failures.
+description: Use when managing Alibaba Cloud Quan Miao (AiMiaoBi) via OpenAPI/SDK, including the user asks for Alibaba Cloud MiaoBi content operations, including listing resources, creating/updating configurations, querying runtime status, and diagnosing API or workflow failures.
 version: 1.0.0
 ---
 

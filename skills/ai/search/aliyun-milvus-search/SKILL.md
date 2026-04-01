@@ -1,6 +1,6 @@
 ---
 name: aliyun-milvus-search
-description: Use AliCloud Milvus (serverless) with PyMilvus to create collections, insert vectors, and run filtered similarity search. Optimized for Claude Code/Codex vector retrieval flows.
+description: Use when working with AliCloud Milvus (serverless) with PyMilvus to create collections, insert vectors, and run filtered similarity search. Optimized for Claude Code/Codex vector retrieval flows.
 version: 1.0.0
 ---
 

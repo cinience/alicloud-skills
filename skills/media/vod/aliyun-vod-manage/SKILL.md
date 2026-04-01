@@ -1,6 +1,6 @@
 ---
 name: aliyun-vod-manage
-description: Manage Alibaba Cloud ApsaraVideo VOD resources and media workflows via OpenAPI/SDK. Use for upload and media asset operations, transcoding templates, playback authorization, AI processing jobs, and VOD troubleshooting.
+description: Use when managing Alibaba Cloud ApsaraVideo VOD resources and media workflows via OpenAPI/SDK, including upload and media asset operations, transcoding templates, playback authorization, AI processing jobs, and VOD troubleshooting.
 version: 1.0.0
 ---
 

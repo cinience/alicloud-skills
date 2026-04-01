@@ -1,6 +1,6 @@
 ---
 name: aliyun-alb-manage
-description: Manage and troubleshoot Alibaba Cloud ALB (Application Load Balancer). Use whenever the user asks to inspect, create, change, or debug ALB instances, listeners, server groups, rules, certificates, ACLs, security policies, or health checks in Alibaba Cloud.
+description: Use when managing and troubleshoot Alibaba Cloud ALB (Application Load Balancer), including the user asks to inspect, create, change, or debug ALB instances, listeners, server groups, rules, certificates, ACLs, security policies, or health checks in Alibaba Cloud.
 version: 1.0.0
 ---
 

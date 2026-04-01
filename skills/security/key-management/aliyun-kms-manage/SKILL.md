@@ -1,6 +1,6 @@
 ---
 name: aliyun-kms-manage
-description: Manage Alibaba Cloud Key Management Service (KMS) via OpenAPI/SDK. Use whenever the user needs key lifecycle/resource operations, policy/configuration changes, status inspection, or troubleshooting KMS API workflows.
+description: Use when managing Alibaba Cloud Key Management Service (KMS) via OpenAPI/SDK, including the user needs key lifecycle/resource operations, policy/configuration changes, status inspection, or troubleshooting KMS API workflows.
 version: 1.0.0
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: aliyun-modelstudio-entry-test
-description: Run a minimal test matrix for the Model Studio skills that exist in this repo, including image/video/audio, realtime speech, omni, visual reasoning, embedding, rerank, and edit variants. Use to execute one small request per skill and record results.
+description: Use when running a minimal test matrix for the Model Studio skills that exist in this repo, including image/video/audio, realtime speech, omni, visual reasoning, embedding, rerank, and edit variants. Use to execute one small request per skill and record results.
 version: 1.0.0
 ---
 

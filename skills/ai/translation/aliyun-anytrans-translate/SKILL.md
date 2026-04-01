@@ -1,6 +1,6 @@
 ---
 name: aliyun-anytrans-translate
-description: Manage Alibaba Cloud TongyiTranslate (AnyTrans) via OpenAPI/SDK. Use whenever the user needs translation service resource operations in Alibaba Cloud, including list/create/update actions, task status checks, and troubleshooting AnyTrans API workflows.
+description: Use when managing Alibaba Cloud TongyiTranslate (AnyTrans) via OpenAPI/SDK, including the user needs translation service resource operations in Alibaba Cloud, including list/create/update actions, task status checks, and troubleshooting AnyTrans API workflows.
 version: 1.0.0
 ---
 

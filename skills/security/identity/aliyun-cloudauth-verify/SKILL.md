@@ -1,6 +1,6 @@
 ---
 name: aliyun-cloudauth-verify
-description: Manage Alibaba Cloud ID Verification (Cloudauth) via OpenAPI/SDK. Use whenever the user is working on identity-verification resource operations, config updates, status checks, or troubleshooting Cloudauth API workflows.
+description: Use when managing Alibaba Cloud ID Verification (Cloudauth) via OpenAPI/SDK, including the user is working on identity-verification resource operations, config updates, status checks, or troubleshooting Cloudauth API workflows.
 version: 1.0.0
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: aliyun-cli-manage
-description: Alibaba Cloud generic CLI skill for installing, configuring, and using aliyun CLI to call OpenAPI actions across products. Use when users need command-line operations on Alibaba Cloud resources (list/query/create/update/delete), credential/profile setup, region/endpoint selection, or API discovery from CLI.
+description: Use when users need command-line operations on Alibaba Cloud resources (list/query/create/update/delete), credential/profile setup, region/endpoint selection, or API discovery from CLI.
 version: 1.0.0
 ---
 

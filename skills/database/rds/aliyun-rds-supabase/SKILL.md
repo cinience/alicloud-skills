@@ -1,6 +1,6 @@
 ---
 name: aliyun-rds-supabase
-description: Manage Alibaba Cloud RDS Supabase (RDS AI Service 2025-05-07) via OpenAPI. Use for creating, starting/stopping/restarting instances, resetting passwords, querying endpoints/auth/storage, configuring auth/RAG/SSL/IP whitelist, and listing instance details or conversations.
+description: Use when managing Alibaba Cloud RDS Supabase (RDS AI Service 2025-05-07) via OpenAPI, including creating, starting/stopping/restarting instances, resetting passwords, querying endpoints/auth/storage, configuring auth/RAG/SSL/IP whitelist, and listing instance details or conversations.
 version: 1.0.0
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: aliyun-sas-manage
-description: Manage Alibaba Cloud Security Center (Sas) via OpenAPI/SDK. Use whenever the user needs Security Center resource operations, configuration updates, status queries, and troubleshooting Sas API or security workflow issues.
+description: Use when managing Alibaba Cloud Security Center (Sas) via OpenAPI/SDK, including the user needs Security Center resource operations, configuration updates, status queries, and troubleshooting Sas API or security workflow issues.
 version: 1.0.0
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: aliyun-hbr-backup
-description: Manage Alibaba Cloud Cloud Backup (HBR) via OpenAPI/SDK. Use whenever the user asks for backup lifecycle operations such as resource listing, policy/config updates, job status queries, and troubleshooting HBR backup or restore workflows.
+description: Use when managing Alibaba Cloud Cloud Backup (HBR) via OpenAPI/SDK, including the user asks for backup lifecycle operations such as resource listing, policy/config updates, job status queries, and troubleshooting HBR backup or restore workflows.
 version: 1.0.0
 ---
 

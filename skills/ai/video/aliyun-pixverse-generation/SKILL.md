@@ -1,6 +1,6 @@
 ---
 name: aliyun-pixverse-generation
-description: Generate videos with Alibaba Cloud Model Studio PixVerse models (`pixverse/pixverse-v5.6-t2v`, `pixverse/pixverse-v5.6-it2v`, `pixverse/pixverse-v5.6-kf2v`, `pixverse/pixverse-v5.6-r2v`). Use when building non-Wan text-to-video, first-frame image-to-video, keyframe-to-video, or multi-image reference-to-video workflows on Model Studio.
+description: Use when generating videos with Alibaba Cloud Model Studio PixVerse models (`pixverse/pixverse-v5.6-t2v`, `pixverse/pixverse-v5.6-it2v`, `pixverse/pixverse-v5.6-kf2v`, `pixverse/pixverse-v5.6-r2v`). Use when building non-Wan text-to-video, first-frame image-to-video, keyframe-to-video, or multi-image reference-to-video workflows on Model Studio.
 version: 1.0.0
 ---
 

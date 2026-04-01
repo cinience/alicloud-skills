@@ -1,6 +1,6 @@
 ---
 name: aliyun-videoretalk
-description: Replace lip sync in existing videos with Alibaba Cloud Model Studio VideoRetalk (`videoretalk`). Use when creating dubbed videos, replacing narration, or synchronizing a talking-head video to a new speech track.
+description: Use when replacing lip sync in existing videos with Alibaba Cloud Model Studio VideoRetalk (`videoretalk`). Use when creating dubbed videos, replacing narration, or synchronizing a talking-head video to a new speech track.
 version: 1.0.0
 ---
 

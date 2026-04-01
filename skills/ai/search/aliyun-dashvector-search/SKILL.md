@@ -1,6 +1,6 @@
 ---
 name: aliyun-dashvector-search
-description: Build vector retrieval with DashVector using the Python SDK. Use when creating collections, upserting docs, and running similarity search with filters in Claude Code/Codex.
+description: Use when building vector retrieval with DashVector using the Python SDK. Use when creating collections, upserting docs, and running similarity search with filters in Claude Code/Codex.
 version: 1.0.0
 ---
 

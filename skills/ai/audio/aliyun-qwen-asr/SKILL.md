@@ -1,6 +1,6 @@
 ---
 name: aliyun-qwen-asr
-description: Transcribe non-realtime speech with Alibaba Cloud Model Studio Qwen ASR models (`qwen3-asr-flash`, `qwen-audio-asr`, `qwen3-asr-flash-filetrans`). Use when converting recorded audio files to text, generating transcripts with timestamps, or documenting DashScope/OpenAI-compatible ASR request and response fields.
+description: Use when transcribing non-realtime speech with Alibaba Cloud Model Studio Qwen ASR models (`qwen3-asr-flash`, `qwen-audio-asr`, `qwen3-asr-flash-filetrans`). Use when converting recorded audio files to text, generating transcripts with timestamps, or documenting DashScope/OpenAI-compatible ASR request and response fields.
 version: 1.0.0
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: aliyun-wan-video
-description: Generate videos with Model Studio DashScope SDK using Wan video generation models (wan2.6-t2v, wan2.6-i2v-flash, wan2.6-i2v and regional variants). Use when implementing or documenting video.generate requests/responses, mapping prompt/negative_prompt/duration/fps/size/seed/reference_image/motion_strength, or integrating video generation into the video-agent pipeline.
+description: Use when generating videos with Model Studio DashScope SDK using Wan video generation models (wan2.6-t2v, wan2.6-i2v-flash, wan2.6-i2v and regional variants). Use when implementing or documenting video.generate requests/responses, mapping prompt/negative_prompt/duration/fps/size/seed/reference_image/motion_strength, or integrating video generation into the video-agent pipeline.
 version: 1.0.0
 ---
 

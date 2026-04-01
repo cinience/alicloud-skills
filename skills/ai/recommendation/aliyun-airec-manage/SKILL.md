@@ -1,6 +1,6 @@
 ---
 name: aliyun-airec-manage
-description: Manage Alibaba Cloud AIRec (Airec) via OpenAPI/SDK. Use whenever the user needs recommendation-engine resource operations in Alibaba Cloud, including list/create/update flows, status inspection, and troubleshooting AIRec configuration or runtime issues.
+description: Use when managing Alibaba Cloud AIRec (Airec) via OpenAPI/SDK, including the user needs recommendation-engine resource operations in Alibaba Cloud, including list/create/update flows, status inspection, and troubleshooting AIRec configuration or runtime issues.
 version: 1.0.0
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: aliyun-devops-manage
-description: Manage Alibaba Cloud DevOps (Yunxiao 2020) via OpenAPI/SDK. Use for project/repository/pipeline resource discovery, read-only inspection, and safe change planning before mutating operations.
+description: Use when managing Alibaba Cloud DevOps (Yunxiao 2020) via OpenAPI/SDK, including project/repository/pipeline resource discovery, read-only inspection, and safe change planning before mutating operations.
 version: 1.0.0
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: aliyun-emoji
-description: Generate template-driven emoji videos with Alibaba Cloud Model Studio Emoji (`emoji-v1`) from a detected portrait image. Use when producing fixed-style meme or emoji motion clips from a single face image and a selected template ID.
+description: Use when generating template-driven emoji videos with Alibaba Cloud Model Studio Emoji (`emoji-v1`) from a detected portrait image. Use when producing fixed-style meme or emoji motion clips from a single face image and a selected template ID.
 version: 1.0.0
 ---
 

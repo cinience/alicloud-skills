@@ -1,6 +1,6 @@
 ---
 name: aliyun-sls-log-query
-description: Query and troubleshoot logs in Alibaba Cloud Log Service (SLS) using query|analysis syntax and the Python SDK. Use for time-bounded log search, error investigation, and root-cause analysis workflows.
+description: Use when querying or troubleshooting logs in Alibaba Cloud Log Service (SLS) using query|analysis syntax and the Python SDK. Use for time-bounded log search, error investigation, and root-cause analysis workflows.
 version: 1.0.0
 ---
 
