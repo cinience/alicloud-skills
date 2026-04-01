@@ -6,8 +6,8 @@
 
 ## 提示词样例
 
-用 `alicloud-compute-fc-serverless-devs` 初始化 FC 3.0 Python 项目并部署到指定 Region。
+用 `aliyun-fc-serverless-devs` 初始化 FC 3.0 Python 项目并部署到指定 Region。
 
-用 `alicloud-compute-fc-agentrun` 创建 runtime 并查询状态。
+用 `aliyun-fc-agentrun` 创建 runtime 并查询状态。
 
-用 `alicloud-observability-sls-log-query` 查询该函数最近 30 分钟错误日志并输出摘要。
+用 `aliyun-sls-log-query` 查询该函数最近 30 分钟错误日志并输出摘要。

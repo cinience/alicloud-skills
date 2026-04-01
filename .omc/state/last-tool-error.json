@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"bash scripts/rename_skills.sh\",\"timeout\":300000,\"description\":\"Execute the skill rename script\"}",
+  "error": "Exit code 1\n=== Phase 1: Rename directories + create symlinks ===\nRENAMED: skills/ai/audio/alicloud-ai-audio-asr -> skills/ai/audio/aliyun-modelstudio-asr (symlink created)",
+  "timestamp": "2026-04-01T12:05:54.606Z",
+  "retry_count": 1
+}

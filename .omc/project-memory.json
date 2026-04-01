@@ -1,0 +1,226 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1775044189752,
+  "projectRoot": "/home/vipas/workspace/saker-ai/alicloud-skills",
+  "techStack": {
+    "languages": [
+      {
+        "name": "C/C++",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "Makefile"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "make build",
+    "testCommand": "make test",
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs",
+      "examples",
+      "scripts",
+      "tests"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "aliases": {
+      "path": "aliases",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1775044189748,
+      "keyFiles": []
+    },
+    "apps": {
+      "path": "apps",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1775044189749,
+      "keyFiles": [
+        "README.md",
+        "README.zh-CN.md",
+        "go.mod",
+        "go.sum"
+      ]
+    },
+    "build": {
+      "path": "build",
+      "purpose": "Build output",
+      "fileCount": 0,
+      "lastAccessed": 1775044189750,
+      "keyFiles": []
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 1,
+      "lastAccessed": 1775044189750,
+      "keyFiles": [
+        "INDEX.md"
+      ]
+    },
+    "examples": {
+      "path": "examples",
+      "purpose": "Example code",
+      "fileCount": 2,
+      "lastAccessed": 1775044189750,
+      "keyFiles": [
+        "cli-testing-plan.md",
+        "industry-use-cases.md"
+      ]
+    },
+    "other": {
+      "path": "other",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1775044189750,
+      "keyFiles": []
+    },
+    "output": {
+      "path": "output",
+      "purpose": null,
+      "fileCount": 14,
+      "lastAccessed": 1775044189750,
+      "keyFiles": [
+        "alicloud-ai-audio-cosyvoice-voice-clone-review.html",
+        "alicloud-ai-audio-cosyvoice-voice-design-review.html",
+        "alicloud-model-studio-models-summary.md",
+        "alicloud-model-studio-models.json",
+        "alicloud-model-studio-skill-scan.md"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 20,
+      "lastAccessed": 1775044189751,
+      "keyFiles": [
+        "__init__.py",
+        "analyze_products_vs_skills.py",
+        "apis_from_openapi_meta.py",
+        "generate_readme_skill_sections.py",
+        "generate_skill_index.py"
+      ]
+    },
+    "skills": {
+      "path": "skills",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1775044189751,
+      "keyFiles": []
+    },
+    "tests": {
+      "path": "tests",
+      "purpose": "Test files",
+      "fileCount": 0,
+      "lastAccessed": 1775044189751,
+      "keyFiles": []
+    },
+    "apps/build": {
+      "path": "apps/build",
+      "purpose": "Build output",
+      "fileCount": 0,
+      "lastAccessed": 1775044189752,
+      "keyFiles": []
+    },
+    "apps/docs": {
+      "path": "apps/docs",
+      "purpose": "Documentation",
+      "fileCount": 2,
+      "lastAccessed": 1775044189752,
+      "keyFiles": [
+        "CLI_GUIDE.zh-CN.md",
+        "HALLUCINATION_MITIGATION_PLAN.zh-CN.md"
+      ]
+    },
+    "build/bin": {
+      "path": "build/bin",
+      "purpose": "Executable scripts",
+      "fileCount": 2,
+      "lastAccessed": 1775044189752,
+      "keyFiles": [
+        "alicloud-skills",
+        "alicloud-skills-desktop"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "skills",
+      "accessCount": 4,
+      "lastAccessed": 1775044851816,
+      "type": "directory"
+    },
+    {
+      "path": "",
+      "accessCount": 3,
+      "lastAccessed": 1775044558193,
+      "type": "directory"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 2,
+      "lastAccessed": 1775044798126,
+      "type": "file"
+    },
+    {
+      "path": "scripts/rename_skills.sh",
+      "accessCount": 2,
+      "lastAccessed": 1775045166667,
+      "type": "file"
+    },
+    {
+      "path": "skills/platform/docs/alicloud-platform-docs-api-review/SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1775044586839,
+      "type": "file"
+    },
+    {
+      "path": "aliases/modelstudio/README.md",
+      "accessCount": 1,
+      "lastAccessed": 1775044586846,
+      "type": "file"
+    },
+    {
+      "path": "skills/compute/ecs/alicloud-compute-ecs/SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1775044586856,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/audio/alicloud-ai-audio-asr/SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1775044586908,
+      "type": "file"
+    },
+    {
+      "path": "examples",
+      "accessCount": 1,
+      "lastAccessed": 1775044798074,
+      "type": "directory"
+    }
+  ],
+  "userDirectives": []
+}
