@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Network VPC"
+  short_description: "VPC, VSwitch, route table, NAT gateway, and EIP management workflows"
+  default_prompt: "Use $alicloud-network-vpc to complete this VPC task on Alibaba Cloud."

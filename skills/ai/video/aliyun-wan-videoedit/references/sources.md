@@ -1,0 +1,6 @@
+# Sources
+
+- [万相-视频编辑2.7 API参考](https://help.aliyun.com/zh/model-studio/wan-video-editing-api-reference) — Official API documentation
+- [视频生成模型概览](https://help.aliyun.com/zh/model-studio/use-video-generation) — Model overview and selection guide
+- [模型价格](https://help.aliyun.com/zh/model-studio/model-pricing#e715eca061ba4) — Pricing details
+- [上传文件获取临时URL](https://help.aliyun.com/zh/model-studio/get-temporary-file-url) — File upload for OSS temporary URLs

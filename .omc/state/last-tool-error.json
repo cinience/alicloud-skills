@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"# Final verification\\nremaining=$(find skills -name SKILL.md -not -type l | while read f; do\\n  desc=$(grep '^description:' \\\"$f\\\" | sed 's/^description: //')\\n  echo \\\"$desc\\\" | grep -qvi...",
-  "error": "Exit code 1\nRemaining non-'Use when': 0\n0",
-  "timestamp": "2026-04-01T12:22:24.844Z",
-  "retry_count": 1
-}

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1775044189752,
+  "lastScanned": 1775199557738,
   "projectRoot": "/home/vipas/workspace/saker-ai/alicloud-skills",
   "techStack": {
     "languages": [
@@ -50,14 +50,14 @@
       "path": "aliases",
       "purpose": null,
       "fileCount": 0,
-      "lastAccessed": 1775044189748,
+      "lastAccessed": 1775199557734,
       "keyFiles": []
     },
     "apps": {
       "path": "apps",
       "purpose": null,
       "fileCount": 4,
-      "lastAccessed": 1775044189749,
+      "lastAccessed": 1775199557735,
       "keyFiles": [
         "README.md",
         "README.zh-CN.md",
@@ -69,14 +69,14 @@
       "path": "build",
       "purpose": "Build output",
       "fileCount": 0,
-      "lastAccessed": 1775044189750,
+      "lastAccessed": 1775199557735,
       "keyFiles": []
     },
     "docs": {
       "path": "docs",
       "purpose": "Documentation",
       "fileCount": 1,
-      "lastAccessed": 1775044189750,
+      "lastAccessed": 1775199557736,
       "keyFiles": [
         "INDEX.md"
       ]
@@ -85,7 +85,7 @@
       "path": "examples",
       "purpose": "Example code",
       "fileCount": 2,
-      "lastAccessed": 1775044189750,
+      "lastAccessed": 1775199557736,
       "keyFiles": [
         "cli-testing-plan.md",
         "industry-use-cases.md"
@@ -95,14 +95,14 @@
       "path": "other",
       "purpose": null,
       "fileCount": 0,
-      "lastAccessed": 1775044189750,
+      "lastAccessed": 1775199557737,
       "keyFiles": []
     },
     "output": {
       "path": "output",
       "purpose": null,
       "fileCount": 14,
-      "lastAccessed": 1775044189750,
+      "lastAccessed": 1775199557737,
       "keyFiles": [
         "alicloud-ai-audio-cosyvoice-voice-clone-review.html",
         "alicloud-ai-audio-cosyvoice-voice-design-review.html",
@@ -114,42 +114,42 @@
     "scripts": {
       "path": "scripts",
       "purpose": "Build/utility scripts",
-      "fileCount": 20,
-      "lastAccessed": 1775044189751,
+      "fileCount": 24,
+      "lastAccessed": 1775199557737,
       "keyFiles": [
         "__init__.py",
         "analyze_products_vs_skills.py",
         "apis_from_openapi_meta.py",
-        "generate_readme_skill_sections.py",
-        "generate_skill_index.py"
+        "batch_publish.sh",
+        "generate_readme_skill_sections.py"
       ]
     },
     "skills": {
       "path": "skills",
       "purpose": null,
       "fileCount": 0,
-      "lastAccessed": 1775044189751,
+      "lastAccessed": 1775199557737,
       "keyFiles": []
     },
     "tests": {
       "path": "tests",
       "purpose": "Test files",
       "fileCount": 0,
-      "lastAccessed": 1775044189751,
+      "lastAccessed": 1775199557737,
       "keyFiles": []
     },
     "apps/build": {
       "path": "apps/build",
       "purpose": "Build output",
       "fileCount": 0,
-      "lastAccessed": 1775044189752,
+      "lastAccessed": 1775199557737,
       "keyFiles": []
     },
     "apps/docs": {
       "path": "apps/docs",
       "purpose": "Documentation",
       "fileCount": 2,
-      "lastAccessed": 1775044189752,
+      "lastAccessed": 1775199557737,
       "keyFiles": [
         "CLI_GUIDE.zh-CN.md",
         "HALLUCINATION_MITIGATION_PLAN.zh-CN.md"
@@ -159,7 +159,7 @@
       "path": "build/bin",
       "purpose": "Executable scripts",
       "fileCount": 2,
-      "lastAccessed": 1775044189752,
+      "lastAccessed": 1775199557737,
       "keyFiles": [
         "alicloud-skills",
         "alicloud-skills-desktop"
@@ -168,63 +168,261 @@
   },
   "hotPaths": [
     {
+      "path": "skills/ai/image/aliyun-wan-image/SKILL.md",
+      "accessCount": 3,
+      "lastAccessed": 1775201238522,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-video/SKILL.md",
+      "accessCount": 3,
+      "lastAccessed": 1775201246477,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/image/aliyun-wan-image/references/api_reference.md",
+      "accessCount": 3,
+      "lastAccessed": 1775201246490,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-edit/SKILL.md",
+      "accessCount": 3,
+      "lastAccessed": 1775201263818,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-r2v/SKILL.md",
+      "accessCount": 3,
+      "lastAccessed": 1775201263869,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-i2v/SKILL.md",
+      "accessCount": 3,
+      "lastAccessed": 1775203580082,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-i2v/references/api_reference.md",
+      "accessCount": 3,
+      "lastAccessed": 1775203587808,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-i2v/scripts/generate_i2v.py",
+      "accessCount": 3,
+      "lastAccessed": 1775203587819,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-i2v/references/sources.md",
+      "accessCount": 3,
+      "lastAccessed": 1775203587861,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-vidu-video/scripts/generate_vidu_video.py",
+      "accessCount": 3,
+      "lastAccessed": 1775203736360,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-video/references/api_reference.md",
+      "accessCount": 2,
+      "lastAccessed": 1775199712609,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-digital-human/SKILL.md",
+      "accessCount": 2,
+      "lastAccessed": 1775199721275,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-video/references/sources.md",
+      "accessCount": 2,
+      "lastAccessed": 1775200109121,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/image/aliyun-wan-image/references/sources.md",
+      "accessCount": 2,
+      "lastAccessed": 1775200109177,
+      "type": "file"
+    },
+    {
       "path": "skills",
-      "accessCount": 4,
-      "lastAccessed": 1775044851816,
+      "accessCount": 1,
+      "lastAccessed": 1775199620411,
       "type": "directory"
+    },
+    {
+      "path": "skills/ai/image/aliyun-wan-image/scripts/generate_image.py",
+      "accessCount": 1,
+      "lastAccessed": 1775199632031,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-video/scripts/generate_video.py",
+      "accessCount": 1,
+      "lastAccessed": 1775199632214,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-edit/references/sources.md",
+      "accessCount": 1,
+      "lastAccessed": 1775199732413,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-r2v/references/sources.md",
+      "accessCount": 1,
+      "lastAccessed": 1775199732424,
+      "type": "file"
     },
     {
       "path": "",
-      "accessCount": 3,
-      "lastAccessed": 1775044558193,
+      "accessCount": 1,
+      "lastAccessed": 1775199732455,
       "type": "directory"
     },
     {
-      "path": "README.md",
-      "accessCount": 2,
-      "lastAccessed": 1775044798126,
+      "path": "skills/ai/video/aliyun-wan-digital-human/references/sources.md",
+      "accessCount": 1,
+      "lastAccessed": 1775199732465,
       "type": "file"
     },
     {
-      "path": "scripts/rename_skills.sh",
-      "accessCount": 2,
-      "lastAccessed": 1775045166667,
+      "path": "output/alicloud-model-studio-models-summary.md",
+      "accessCount": 1,
+      "lastAccessed": 1775199742946,
       "type": "file"
     },
     {
-      "path": "skills/platform/docs/alicloud-platform-docs-api-review/SKILL.md",
+      "path": "skills/ai/misc/aliyun-modelstudio-crawl-and-skill/scripts/refresh_alicloud_skills.py",
       "accessCount": 1,
-      "lastAccessed": 1775044586839,
+      "lastAccessed": 1775200191696,
       "type": "file"
     },
     {
-      "path": "aliases/modelstudio/README.md",
+      "path": "skills/ai/video/aliyun-wan-videoedit/SKILL.md",
       "accessCount": 1,
-      "lastAccessed": 1775044586846,
+      "lastAccessed": 1775201363592,
       "type": "file"
     },
     {
-      "path": "skills/compute/ecs/alicloud-compute-ecs/SKILL.md",
+      "path": "skills/ai/video/aliyun-wan-videoedit/scripts/edit_video.py",
       "accessCount": 1,
-      "lastAccessed": 1775044586856,
+      "lastAccessed": 1775201412210,
       "type": "file"
     },
     {
-      "path": "skills/ai/audio/alicloud-ai-audio-asr/SKILL.md",
+      "path": "skills/ai/video/aliyun-wan-videoedit/references/sources.md",
       "accessCount": 1,
-      "lastAccessed": 1775044586908,
+      "lastAccessed": 1775201412470,
       "type": "file"
     },
     {
-      "path": "examples",
+      "path": "skills/ai/video/aliyun-wan-videoedit/references/api_reference.md",
       "accessCount": 1,
-      "lastAccessed": 1775044798074,
-      "type": "directory"
+      "lastAccessed": 1775201453769,
+      "type": "file"
     },
     {
-      "path": "scripts/rename_modelstudio_skills.sh",
+      "path": "skills/ai/video/aliyun-pixverse-generation/SKILL.md",
       "accessCount": 1,
-      "lastAccessed": 1775045617718,
+      "lastAccessed": 1775201576511,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-animate-move/SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1775203700939,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-animate-move/scripts/generate_animate_move.py",
+      "accessCount": 1,
+      "lastAccessed": 1775203701041,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-animate-move/references/api_reference.md",
+      "accessCount": 1,
+      "lastAccessed": 1775203701147,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-wan-animate-move/references/sources.md",
+      "accessCount": 1,
+      "lastAccessed": 1775203701259,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-video-style-repaint/SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1775203701372,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-video-style-repaint/scripts/repaint_video.py",
+      "accessCount": 1,
+      "lastAccessed": 1775203701479,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-video-style-repaint/references/api_reference.md",
+      "accessCount": 1,
+      "lastAccessed": 1775203701585,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-video-style-repaint/references/sources.md",
+      "accessCount": 1,
+      "lastAccessed": 1775203701689,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-vidu-video/SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1775203719620,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-vidu-video/references/api_reference.md",
+      "accessCount": 1,
+      "lastAccessed": 1775203719832,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-vidu-video/references/sources.md",
+      "accessCount": 1,
+      "lastAccessed": 1775203719933,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-kling-video/SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1775203919255,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-kling-video/scripts/generate_kling_video.py",
+      "accessCount": 1,
+      "lastAccessed": 1775203919398,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-kling-video/references/api_reference.md",
+      "accessCount": 1,
+      "lastAccessed": 1775203919548,
+      "type": "file"
+    },
+    {
+      "path": "skills/ai/video/aliyun-kling-video/references/sources.md",
+      "accessCount": 1,
+      "lastAccessed": 1775203919690,
       "type": "file"
     }
   ],
