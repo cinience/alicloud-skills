@@ -10,7 +10,7 @@ Category: test
 
 ## Prerequisites
 
-- 配置 `ALIBABA_CLOUD_ACCESS_KEY_ID`、`ALIBABA_CLOUD_ACCESS_KEY_SECRET`。
+- 配置 `ALIBABACLOUD_ACCESS_KEY_ID`、`ALIBABACLOUD_ACCESS_KEY_SECRET`。
 - 配置 `SLS_ENDPOINT`、`SLS_PROJECT`、`SLS_LOGSTORE`。
 - GoalsSkill: `skills/observability/sls/alicloud-observability-sls-log-query/`。
 

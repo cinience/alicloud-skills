@@ -17,9 +17,9 @@ def create_client(region_id: str) -> Ecs20140526Client:
         region_id=region_id,
         endpoint=f"ecs.{region_id}.aliyuncs.com",
     )
-    ak = os.getenv("ALICLOUD_ACCESS_KEY_ID") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_ID")
-    sk = os.getenv("ALICLOUD_ACCESS_KEY_SECRET") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET")
-    token = os.getenv("ALICLOUD_SECURITY_TOKEN") or os.getenv("ALIBABA_CLOUD_SECURITY_TOKEN")
+    ak = os.getenv("ALIBABACLOUD_ACCESS_KEY_ID") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_ID") or os.getenv("ALICLOUD_ACCESS_KEY_ID")
+    sk = os.getenv("ALIBABACLOUD_ACCESS_KEY_SECRET") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET") or os.getenv("ALICLOUD_ACCESS_KEY_SECRET")
+    token = os.getenv("ALIBABACLOUD_SECURITY_TOKEN") or os.getenv("ALIBABA_CLOUD_SECURITY_TOKEN") or os.getenv("ALICLOUD_SECURITY_TOKEN")
     if ak and sk:
         config.access_key_id = ak
         config.access_key_secret = sk

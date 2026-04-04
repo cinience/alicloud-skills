@@ -13,7 +13,7 @@ Submit video translation jobs via OpenAPI and poll results for subtitle-level, v
 ## Prerequisites
 
 - Prepare OSS input/output URIs (recommended to match API region).
-- Configure AK: `ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / `ALICLOUD_REGION_ID` (`ALICLOUD_REGION_ID` can be used as the default region; if unset, choose the most reasonable region and ask when unclear).
+- Configure AK: `ALIBABACLOUD_ACCESS_KEY_ID` / `ALIBABACLOUD_ACCESS_KEY_SECRET` / `ALIBABACLOUD_REGION_ID` (`ALIBABACLOUD_REGION_ID` can be used as the default region; if unset, choose the most reasonable region and ask when unclear).
 
 ## Workflow
 

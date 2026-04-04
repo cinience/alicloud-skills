@@ -20,8 +20,8 @@ python3 -m venv .venv
 python -m pip install -U aliyun-log-python-sdk
 ```
 - Configure environment variables:
-  - `ALIBABA_CLOUD_ACCESS_KEY_ID`
-  - `ALIBABA_CLOUD_ACCESS_KEY_SECRET`
+  - `ALIBABACLOUD_ACCESS_KEY_ID`
+  - `ALIBABACLOUD_ACCESS_KEY_SECRET`
   - `SLS_ENDPOINT` (e.g. `cn-hangzhou.log.aliyuncs.com`)
   - `SLS_PROJECT`
   - `SLS_LOGSTORE`(supports a single value or comma-separated values)
@@ -43,8 +43,8 @@ from aliyun.log import LogClient, GetLogsRequest
 
 client = LogClient(
     os.environ["SLS_ENDPOINT"],
-    os.environ["ALIBABA_CLOUD_ACCESS_KEY_ID"],
-    os.environ["ALIBABA_CLOUD_ACCESS_KEY_SECRET"],
+    os.environ["ALIBABACLOUD_ACCESS_KEY_ID"],
+    os.environ["ALIBABACLOUD_ACCESS_KEY_SECRET"],
 )
 
 project = os.environ["SLS_PROJECT"]

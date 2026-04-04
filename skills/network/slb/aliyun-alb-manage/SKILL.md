@@ -35,8 +35,8 @@ pip install alibabacloud_alb20200616 alibabacloud_tea_openapi alibabacloud_crede
 
 Credential priority:
 
-1. `ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET`
-2. Optional STS token: `ALICLOUD_SECURITY_TOKEN`
+1. `ALIBABACLOUD_ACCESS_KEY_ID` / `ALIBABACLOUD_ACCESS_KEY_SECRET`
+2. Optional STS token: `ALIBABACLOUD_SECURITY_TOKEN`
 3. Shared config: `~/.alibabacloud/credentials`
 
 ## Workflow

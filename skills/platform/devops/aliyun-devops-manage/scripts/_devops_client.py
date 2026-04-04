@@ -26,9 +26,9 @@ def create_client(region_id: str):
             "python -m pip install -U alibabacloud_devops20210625 alibabacloud_tea_openapi"
         ) from exc
 
-    ak = _get_env("ALICLOUD_ACCESS_KEY_ID", "ALIBABA_CLOUD_ACCESS_KEY_ID")
-    sk = _get_env("ALICLOUD_ACCESS_KEY_SECRET", "ALIBABA_CLOUD_ACCESS_KEY_SECRET")
-    token = _get_env("ALICLOUD_SECURITY_TOKEN", "ALIBABA_CLOUD_SECURITY_TOKEN")
+    ak = _get_env("ALIBABACLOUD_ACCESS_KEY_ID", "ALIBABA_CLOUD_ACCESS_KEY_ID", "ALICLOUD_ACCESS_KEY_ID")
+    sk = _get_env("ALIBABACLOUD_ACCESS_KEY_SECRET", "ALIBABA_CLOUD_ACCESS_KEY_SECRET", "ALICLOUD_ACCESS_KEY_SECRET")
+    token = _get_env("ALIBABACLOUD_SECURITY_TOKEN", "ALIBABA_CLOUD_SECURITY_TOKEN", "ALICLOUD_SECURITY_TOKEN")
 
     if not ak or not sk:
         raise RuntimeError(

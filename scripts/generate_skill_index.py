@@ -113,6 +113,46 @@ def _translate_description(desc: str, name: str, lang: str) -> str:
             "透過 Model Studio DashScope SDK 進行影片生成，支援時長、幀率、尺寸等參數控制。",
         ),
         (
+            "Generate videos with DashScope Vidu models.",
+            "使用 DashScope Vidu 模型生成视频，覆盖文生视频、首帧图生视频、首尾帧关键帧视频与参考图生视频。",
+            "使用 DashScope Vidu 模型生成影片，涵蓋文生影片、首幀圖生影片、首尾幀關鍵幀影片與參考圖生影片。",
+        ),
+        (
+            "Use when generating videos with Kling v3 models on DashScope",
+            "使用 DashScope Kling v3 模型生成视频，支持文生视频、图生视频、参考生视频、智能分镜与视频编辑。",
+            "使用 DashScope Kling v3 模型生成影片，支援文生影片、圖生影片、參考生影片、智慧分鏡與影片編輯。",
+        ),
+        (
+            "Use when generating videos with DashScope Vidu models.",
+            "使用 DashScope Vidu 模型生成视频，覆盖文生视频、首帧图生视频、首尾帧关键帧视频与参考图生视频。",
+            "使用 DashScope Vidu 模型生成影片，涵蓋文生影片、首幀圖生影片、首尾幀關鍵幀影片與參考圖生影片。",
+        ),
+        (
+            "Use when managing Alibaba Cloud Virtual Private Cloud (VPC) via OpenAPI/SDK",
+            "通过 OpenAPI/SDK 管理阿里云专有网络 VPC，支持 VPC 与 VSwitch 的查询、创建、删除、可用区查询及网络排障。",
+            "透過 OpenAPI/SDK 管理阿里雲專有網路 VPC，支援 VPC 與 VSwitch 的查詢、建立、刪除、可用區查詢及網路排障。",
+        ),
+        (
+            "Use when Alibaba Cloud Model Studio Wan image-to-video models are needed",
+            "使用阿里云 Model Studio Wan 图生视频模型，覆盖单图首帧图生视频、时长与尺寸控制以及异步任务轮询。",
+            "使用阿里雲 Model Studio Wan 圖生影片模型，涵蓋單圖首幀圖生影片、時長與尺寸控制以及非同步任務輪詢。",
+        ),
+        (
+            "Use when Alibaba Cloud Model Studio Wan video editing models are needed",
+            "使用阿里云 Model Studio Wan 视频编辑模型，覆盖重绘、首尾帧控制、局部编辑与动画重混等工作流。",
+            "使用阿里雲 Model Studio Wan 影片編輯模型，涵蓋重繪、首尾幀控制、局部編輯與動畫重混等工作流。",
+        ),
+        (
+            "Use when running Alibaba Cloud Model Studio Wan Animate-Move video generation workflows",
+            "运行阿里云 Model Studio Wan Animate-Move 视频生成工作流，用于驱动静态人物或物体产生动作动画。",
+            "執行阿里雲 Model Studio Wan Animate-Move 影片生成工作流，用於驅動靜態人物或物體產生活動動畫。",
+        ),
+        (
+            "Use when applying Alibaba Cloud Model Studio Wan video style repaint workflows",
+            "应用阿里云 Model Studio Wan 视频风格重绘工作流，用于保持视频结构的同时替换整体画风或视觉风格。",
+            "套用阿里雲 Model Studio Wan 影片風格重繪工作流，用於在保留影片結構的同時替換整體畫風或視覺風格。",
+        ),
+        (
             "Generate human-like speech audio with Model Studio DashScope Qwen TTS models",
             "使用 Model Studio DashScope Qwen TTS 模型生成人声语音，适用于文本转语音与配音场景。",
             "使用 Model Studio DashScope Qwen TTS 模型生成人聲語音，適用於文字轉語音與配音場景。",

@@ -8,12 +8,15 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from aliyun.log import LogClient, GetLogsRequest
 
 
-def get_env(name: str, default: str | None = None) -> str:
-    value = os.getenv(name, default)
-    if not value:
-        print(f"Missing env var: {name}", file=sys.stderr)
-        sys.exit(1)
-    return value
+def get_env(*names: str, default: str | None = None) -> str:
+    for name in names:
+        value = os.getenv(name)
+        if value:
+            return value
+    if default is not None:
+        return default
+    print(f"Missing env var: {' / '.join(names)}", file=sys.stderr)
+    sys.exit(1)
 
 
 def parse_args() -> argparse.Namespace:
@@ -95,8 +98,8 @@ def main() -> None:
 
     client = LogClient(
         endpoint,
-        get_env("ALIBABA_CLOUD_ACCESS_KEY_ID"),
-        get_env("ALIBABA_CLOUD_ACCESS_KEY_SECRET"),
+        get_env("ALIBABACLOUD_ACCESS_KEY_ID", "ALIBABA_CLOUD_ACCESS_KEY_ID", "ALICLOUD_ACCESS_KEY_ID"),
+        get_env("ALIBABACLOUD_ACCESS_KEY_SECRET", "ALIBABA_CLOUD_ACCESS_KEY_SECRET", "ALICLOUD_ACCESS_KEY_SECRET"),
     )
 
     max_workers = max(1, min(args.parallel, len(logstores)))

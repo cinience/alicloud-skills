@@ -13,7 +13,7 @@ Use SWAS-OPEN OpenAPI to manage full SAS resources: instances, disks, snapshots,
 ## Prerequisites
 
 - Prepare AccessKey with least-privilege RAM user/role.
-- Choose correct region and matching endpoint (public/VPC).`ALICLOUD_REGION_ID` can be used as default region; if unset choose the most reasonable region, ask user if unclear.
+- Choose correct region and matching endpoint (public/VPC).`ALIBABACLOUD_REGION_ID` can be used as default region; if unset choose the most reasonable region, ask user if unclear.
 - This OpenAPI uses RPC signing; prefer Python SDK or OpenAPI Explorer instead of manual signing.
 
 ## SDK Priority
@@ -44,8 +44,16 @@ def create_client(region_id: str) -> SwasClient:
         region_id=region_id,
         endpoint=f"swas.{region_id}.aliyuncs.com",
     )
-    ak = os.getenv("ALICLOUD_ACCESS_KEY_ID") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_ID")
-    sk = os.getenv("ALICLOUD_ACCESS_KEY_SECRET") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET")
+    ak = (
+        os.getenv("ALIBABACLOUD_ACCESS_KEY_ID")
+        or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_ID")
+        or os.getenv("ALICLOUD_ACCESS_KEY_ID")
+    )
+    sk = (
+        os.getenv("ALIBABACLOUD_ACCESS_KEY_SECRET")
+        or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET")
+        or os.getenv("ALICLOUD_ACCESS_KEY_SECRET")
+    )
     if ak and sk:
         config.access_key_id = ak
         config.access_key_secret = sk
@@ -144,7 +152,7 @@ Pass criteria: command exits 0 and `output/aliyun-swas-manage/validate.txt` is g
 ## Prerequisites
 
 - Configure least-privilege Alibaba Cloud credentials before execution.
-- Prefer environment variables: `ALICLOUD_ACCESS_KEY_ID`, `ALICLOUD_ACCESS_KEY_SECRET`, optional `ALICLOUD_REGION_ID`.
+- Prefer environment variables: `ALIBABACLOUD_ACCESS_KEY_ID`, `ALIBABACLOUD_ACCESS_KEY_SECRET`, optional `ALIBABACLOUD_REGION_ID`.
 - If region is unclear, ask the user before running mutating operations.
 
 ## Workflow

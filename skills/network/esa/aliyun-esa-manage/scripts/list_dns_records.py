@@ -21,9 +21,9 @@ def create_client() -> Esa20240910Client:
         region_id="cn-hangzhou",
         endpoint="esa.cn-hangzhou.aliyuncs.com",
     )
-    ak = os.getenv("ALICLOUD_ACCESS_KEY_ID") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_ID")
-    sk = os.getenv("ALICLOUD_ACCESS_KEY_SECRET") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET")
-    token = os.getenv("ALICLOUD_SECURITY_TOKEN") or os.getenv("ALIBABA_CLOUD_SECURITY_TOKEN")
+    ak = os.getenv("ALIBABACLOUD_ACCESS_KEY_ID") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_ID") or os.getenv("ALICLOUD_ACCESS_KEY_ID")
+    sk = os.getenv("ALIBABACLOUD_ACCESS_KEY_SECRET") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET") or os.getenv("ALICLOUD_ACCESS_KEY_SECRET")
+    token = os.getenv("ALIBABACLOUD_SECURITY_TOKEN") or os.getenv("ALIBABA_CLOUD_SECURITY_TOKEN") or os.getenv("ALICLOUD_SECURITY_TOKEN")
     if ak and sk:
         config.access_key_id = ak
         config.access_key_secret = sk

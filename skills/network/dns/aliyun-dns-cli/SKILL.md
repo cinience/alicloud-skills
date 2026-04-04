@@ -107,7 +107,7 @@ Pass criteria: command exits 0 and `output/aliyun-dns-cli/validate.txt` is gener
 ## Prerequisites
 
 - Configure least-privilege Alibaba Cloud credentials before execution.
-- Prefer environment variables: `ALICLOUD_ACCESS_KEY_ID`, `ALICLOUD_ACCESS_KEY_SECRET`, optional `ALICLOUD_REGION_ID`.
+- Prefer environment variables: `ALIBABACLOUD_ACCESS_KEY_ID`, `ALIBABACLOUD_ACCESS_KEY_SECRET`, optional `ALIBABACLOUD_REGION_ID`.
 - If region is unclear, ask the user before running mutating operations.
 
 ## Workflow

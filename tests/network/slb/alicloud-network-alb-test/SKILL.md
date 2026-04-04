@@ -10,7 +10,7 @@ Category: test
 
 ## Prerequisites
 
-- AK/SK configured via environment variables (`ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET`).
+- AK/SK configured via environment variables (`ALIBABACLOUD_ACCESS_KEY_ID` / `ALIBABACLOUD_ACCESS_KEY_SECRET`).
 - SDK installed: `pip install alibabacloud_alb20200616 alibabacloud_tea_openapi alibabacloud_credentials`.
 - Target skill: `skills/network/slb/alicloud-network-alb/`.
 

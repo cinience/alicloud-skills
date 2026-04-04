@@ -5,8 +5,8 @@ ESA 数据分析统一查询脚本
 支持所有维度和指标的灵活查询。
 
 使用前请配置凭证:
-  export ALIBABA_CLOUD_ACCESS_KEY_ID="your-ak"
-  export ALIBABA_CLOUD_ACCESS_KEY_SECRET="your-sk"
+  export ALIBABACLOUD_ACCESS_KEY_ID="your-ak"
+  export ALIBABACLOUD_ACCESS_KEY_SECRET="your-sk"
 
 示例:
   # 查询 Top 维度数据
@@ -121,10 +121,26 @@ STATUS_CODE_INFO = {
 # ESA 客户端
 # ============================================================================
 
+
+def first_env(*names: str) -> str | None:
+    for name in names:
+        value = os.environ.get(name)
+        if value:
+            return value
+    return None
+
 def create_client() -> EsaClient:
     """创建 ESA 客户端"""
-    access_key_id = os.environ.get("ALIBABA_CLOUD_ACCESS_KEY_ID")
-    access_key_secret = os.environ.get("ALIBABA_CLOUD_ACCESS_KEY_SECRET")
+    access_key_id = first_env(
+        "ALIBABACLOUD_ACCESS_KEY_ID",
+        "ALIBABA_CLOUD_ACCESS_KEY_ID",
+        "ALICLOUD_ACCESS_KEY_ID",
+    )
+    access_key_secret = first_env(
+        "ALIBABACLOUD_ACCESS_KEY_SECRET",
+        "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
+        "ALICLOUD_ACCESS_KEY_SECRET",
+    )
 
     if not access_key_id or not access_key_secret:
         cred_path = os.path.expanduser("~/.alibabacloud/credentials")
@@ -137,14 +153,18 @@ def create_client() -> EsaClient:
 
     if not access_key_id or not access_key_secret:
         print("错误: 请配置凭证", file=sys.stderr)
-        print("  export ALIBABA_CLOUD_ACCESS_KEY_ID='your-ak'", file=sys.stderr)
-        print("  export ALIBABA_CLOUD_ACCESS_KEY_SECRET='your-sk'", file=sys.stderr)
+        print("  export ALIBABACLOUD_ACCESS_KEY_ID='your-ak'", file=sys.stderr)
+        print("  export ALIBABACLOUD_ACCESS_KEY_SECRET='your-sk'", file=sys.stderr)
         sys.exit(1)
 
     config = open_api_models.Config(
         access_key_id=access_key_id,
         access_key_secret=access_key_secret,
-        region_id=os.environ.get("ALIBABA_CLOUD_REGION_ID", "cn-hangzhou"),
+        region_id=first_env(
+            "ALIBABACLOUD_REGION_ID",
+            "ALIBABA_CLOUD_REGION_ID",
+            "ALICLOUD_REGION_ID",
+        ) or "cn-hangzhou",
         endpoint="esa.cn-hangzhou.aliyuncs.com",
     )
     return EsaClient(config)

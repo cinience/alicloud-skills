@@ -5,8 +5,8 @@
 
 前置假设
 --------
-- 优先使用环境变量获取 AK/SK（`ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET`）。
-- 如果 `ALICLOUD_REGION_ID` 未设置，优先选择最合理 Region；无法判断时可询问用户，或在合适场景下执行全地域查询。
+- 优先使用环境变量获取 AK/SK（`ALIBABACLOUD_ACCESS_KEY_ID` / `ALIBABACLOUD_ACCESS_KEY_SECRET`）。
+- 如果 `ALIBABACLOUD_REGION_ID` 未设置，优先选择最合理 Region；无法判断时可询问用户，或在合适场景下执行全地域查询。
 
 策略建议
 --------

@@ -33,6 +33,9 @@ Web 相关命令：
 
 ```bash
 pnpm --dir apps/web install --frozen-lockfile --ignore-scripts
+pnpm --dir apps/web lint
 pnpm --dir apps/web build
+pnpm --dir apps/web test:e2e
 ```
 
+前端应用的细节说明见 [apps/web/README.md](/home/vipas/workspace/saker-ai/alicloud-skills/apps/web/README.md)。

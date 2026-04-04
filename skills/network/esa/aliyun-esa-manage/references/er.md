@@ -34,7 +34,7 @@ Manage Edge Routine via Python SDK calling ESA OpenAPI.
 
 | API | Description | Key Parameters |
 |-----|-------------|----------------|
-| `CreateRoutineRoute` | Create route | `SiteId`(required), `Route`(path, e.g. `test.example.com/*`), `RoutineName`(required), `RouteName`(required), `RouteEnable`("on"/"off"), `Bypass`("on"/"off") |
+| `CreateRoutineRoute` | Create route | `SiteId`(required), `Rule`(ESA rule expression, e.g. `(http.host eq "test.example.com")`), `RoutineName`(required), `RouteName`(required), `RouteEnable`("on"/"off"), `Bypass`("on"/"off"). **Note**: SDK parameter is `rule` (not `route`). Use ESA rule expression syntax. |
 | `UpdateRoutineRoute` | Update route configuration | `SiteId`(required), `ConfigId`(required), `RouteName`(required), `RouteEnable`(required), `Rule`(required), `RoutineName`(required), `Bypass`(required) |
 | `DeleteRoutineRoute` | Delete route | `SiteId`(required), `ConfigId`(required) |
 | `GetRoutineRoute` | Get route details | `SiteId`(required), `ConfigId`(required) |

@@ -10,7 +10,7 @@ Category: test
 
 ## Prerequisites
 
-- Configure credentials with least privilege (`ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / optional `ALICLOUD_REGION_ID`).
+- Configure credentials with least privilege (`ALIBABACLOUD_ACCESS_KEY_ID` / `ALIBABACLOUD_ACCESS_KEY_SECRET` / optional `ALIBABACLOUD_REGION_ID`).
 - Target skill: `skills/media/ice/alicloud-media-ice/`.
 
 ## Test Steps

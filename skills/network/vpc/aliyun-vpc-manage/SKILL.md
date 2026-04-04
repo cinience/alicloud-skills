@@ -186,8 +186,8 @@ if __name__ == "__main__":
 
 ## AccessKey priority (must follow, align with README)
 
-1) Environment variables: `ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / `ALICLOUD_REGION_ID`
-Region policy: `ALICLOUD_REGION_ID` is an optional default. If unset, decide the most reasonable region for the task; if unclear, ask the user.
+1) Environment variables: `ALIBABACLOUD_ACCESS_KEY_ID` / `ALIBABACLOUD_ACCESS_KEY_SECRET` / `ALIBABACLOUD_REGION_ID`
+Region policy: `ALIBABACLOUD_REGION_ID` is an optional default. If unset, decide the most reasonable region for the task; if unclear, ask the user.
 2) Shared config file: `~/.alibabacloud/credentials` (region still from env)
 
 ### Auth setup (README-aligned)
@@ -195,9 +195,9 @@ Region policy: `ALICLOUD_REGION_ID` is an optional default. If unset, decide the
 Environment variables:
 
 ```bash
-export ALICLOUD_ACCESS_KEY_ID="your-ak"
-export ALICLOUD_ACCESS_KEY_SECRET="your-sk"
-export ALICLOUD_REGION_ID="cn-hangzhou"
+export ALIBABACLOUD_ACCESS_KEY_ID="your-ak"
+export ALIBABACLOUD_ACCESS_KEY_SECRET="your-sk"
+export ALIBABACLOUD_REGION_ID="cn-hangzhou"
 ```
 
 Also supported by the Alibaba Cloud SDKs:
@@ -205,6 +205,13 @@ Also supported by the Alibaba Cloud SDKs:
 ```bash
 export ALIBABA_CLOUD_ACCESS_KEY_ID="your-ak"
 export ALIBABA_CLOUD_ACCESS_KEY_SECRET="your-sk"
+```
+
+Legacy compatibility:
+
+```bash
+export ALICLOUD_ACCESS_KEY_ID="your-ak"
+export ALICLOUD_ACCESS_KEY_SECRET="your-sk"
 ```
 
 Shared config file:

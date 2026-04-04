@@ -19,8 +19,8 @@ Use Alibaba Cloud OpenAPI (RPC) with official SDKs or OpenAPI Explorer to manage
 
 ## AccessKey priority (must follow)
 
-1) Environment variables: `ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / `ALICLOUD_REGION_ID`
-Region policy: `ALICLOUD_REGION_ID` is an optional default. If unset, decide the most reasonable region for the task; if unclear, ask the user.
+1) Environment variables: `ALIBABACLOUD_ACCESS_KEY_ID` / `ALIBABACLOUD_ACCESS_KEY_SECRET` / `ALIBABACLOUD_REGION_ID`
+Region policy: `ALIBABACLOUD_REGION_ID` is an optional default. If unset, decide the most reasonable region for the task; if unclear, ask the user.
 2) Shared config file: `~/.alibabacloud/credentials`
 
 ## API discovery
@@ -76,7 +76,7 @@ Pass criteria: command exits 0 and `output/aliyun-ccc-manage/validate.txt` is ge
 ## Prerequisites
 
 - Configure least-privilege Alibaba Cloud credentials before execution.
-- Prefer environment variables: `ALICLOUD_ACCESS_KEY_ID`, `ALICLOUD_ACCESS_KEY_SECRET`, optional `ALICLOUD_REGION_ID`.
+- Prefer environment variables: `ALIBABACLOUD_ACCESS_KEY_ID`, `ALIBABACLOUD_ACCESS_KEY_SECRET`, optional `ALIBABACLOUD_REGION_ID`.
 - If region is unclear, ask the user before running mutating operations.
 
 ## References

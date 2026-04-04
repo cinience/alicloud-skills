@@ -27,9 +27,9 @@ def create_client(region_id: str) -> EcsClient:
         region_id=region_id,
         endpoint=f"ecs.{region_id}.aliyuncs.com",
     )
-    ak = os.getenv("ALICLOUD_ACCESS_KEY_ID") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_ID")
-    sk = os.getenv("ALICLOUD_ACCESS_KEY_SECRET") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET")
-    token = os.getenv("ALICLOUD_SECURITY_TOKEN") or os.getenv("ALIBABA_CLOUD_SECURITY_TOKEN")
+    ak = os.getenv("ALIBABACLOUD_ACCESS_KEY_ID") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_ID") or os.getenv("ALICLOUD_ACCESS_KEY_ID")
+    sk = os.getenv("ALIBABACLOUD_ACCESS_KEY_SECRET") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET") or os.getenv("ALICLOUD_ACCESS_KEY_SECRET")
+    token = os.getenv("ALIBABACLOUD_SECURITY_TOKEN") or os.getenv("ALIBABA_CLOUD_SECURITY_TOKEN") or os.getenv("ALICLOUD_SECURITY_TOKEN")
     if ak and sk:
         config.access_key_id = ak
         config.access_key_secret = sk
@@ -63,7 +63,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--instance-id", required=True)
     parser.add_argument("--command", required=True, help="Shell command text, e.g. 'ps -ef'")
-    parser.add_argument("--region-id", default=os.getenv("ALICLOUD_REGION_ID", "cn-hangzhou"))
+    parser.add_argument("--region-id", default=os.getenv("ALIBABACLOUD_REGION_ID") or os.getenv("ALIBABA_CLOUD_REGION_ID") or os.getenv("ALICLOUD_REGION_ID") or "cn-hangzhou")
     parser.add_argument("--name", default="codex-remote-command")
     parser.add_argument("--command-type", default="RunShellScript", choices=["RunShellScript", "RunPowerShellScript"])
     parser.add_argument("--timeout", type=int, default=120, help="RunCommand timeout seconds")

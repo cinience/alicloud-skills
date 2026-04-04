@@ -29,16 +29,18 @@ python -m pip install -U alibabacloud_devops20210625 alibabacloud_tea_openapi
 ```
 
 - Prefer environment variables:
-  - `ALICLOUD_ACCESS_KEY_ID`
-  - `ALICLOUD_ACCESS_KEY_SECRET`
-  - optional `ALICLOUD_REGION_ID`
+  - `ALIBABACLOUD_ACCESS_KEY_ID`
+  - `ALIBABACLOUD_ACCESS_KEY_SECRET`
+  - optional `ALIBABACLOUD_REGION_ID`
 
 ## AccessKey Priority
 
-1) Environment variables: `ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / `ALICLOUD_REGION_ID`  
+1) Environment variables: `ALIBABACLOUD_ACCESS_KEY_ID` / `ALIBABACLOUD_ACCESS_KEY_SECRET` / `ALIBABACLOUD_REGION_ID`  
 2) Shared credentials file: `~/.alibabacloud/credentials`
 
 If region/environment is unclear, confirm with user before mutating operations.
+
+Compatibility note: runtime scripts also accept `ALIBABA_CLOUD_*` and `ALICLOUD_*` aliases, but `ALIBABACLOUD_*` is the preferred prefix for new examples and automation.
 
 ## Workflow
 

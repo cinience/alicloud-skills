@@ -10,7 +10,7 @@ Category: test
 
 ## Prerequisites
 
-- Configure credentials with least privilege (`ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / optional `ALICLOUD_REGION_ID`) if you plan to execute real PTS APIs.
+- Configure credentials with least privilege (`ALIBABACLOUD_ACCESS_KEY_ID` / `ALIBABACLOUD_ACCESS_KEY_SECRET` / optional `ALIBABACLOUD_REGION_ID`) if you plan to execute real PTS APIs.
 - Target skill: `skills/observability/pts/alicloud-observability-pts/`.
 - Optional online SDK test dependency:
 
@@ -54,7 +54,7 @@ Run one bounded read-only scene query:
 
 ```bash
 python3 skills/observability/pts/alicloud-observability-pts/scripts/list_pts_scenes.py \
-  --region "${ALICLOUD_REGION_ID:-cn-hangzhou}" \
+  --region "${ALIBABACLOUD_REGION_ID:-cn-hangzhou}" \
   --page-number 1 \
   --page-size 10 \
   --json \

@@ -292,6 +292,167 @@ url = deploy_folder("my-app", "/path/to/dist")
 print(f"Access URL: {url}")
 ```
 
+## Bind Custom Domain (CNAME-Access Sites)
+
+After deploying to Pages, the routine gets a default domain like `{name}.{hash}.er.aliyun-esa.net`. To use a custom domain (e.g. `agent.example.com`) on a **CNAME-access** ESA site, follow this flow:
+
+### Flow
+
+```
+1. CreateRecord(A/AAAA, proxied=true)     → Register domain in ESA CDN, get record_cname
+2. CreateRoutineRoute(rule expression)     → Route matching traffic to Edge Routine
+3. External DNS: CNAME → record_cname      → Point domain to ESA CDN
+4. ApplyCertificate(lets_encrypt)          → Provision SSL certificate
+5. Wait for certificate status → OK        → HTTPS ready
+```
+
+### Step-by-Step
+
+#### 1. Create ESA DNS Record
+
+Create an A/AAAA record with proxy enabled so ESA CDN accepts traffic for this domain:
+
+```python
+data_obj = esa_models.CreateRecordRequestData(value="<any-origin-ip>")
+req = esa_models.CreateRecordRequest(
+    site_id=SITE_ID,
+    record_name="agent.example.com",  # Must be full domain name
+    type="A/AAAA",
+    data=data_obj,
+    ttl=1,
+    proxied=True,
+    biz_name="web",
+)
+resp = client.create_record_with_options(req, runtime)
+# resp.body.record_id → save for reference
+```
+
+After creation, list records to get the `record_cname` (e.g. `agent.example.com.a1.initaf.com`):
+
+```python
+records = client.list_records(esa_models.ListRecordsRequest(site_id=SITE_ID))
+for r in records.body.records:
+    print(f"{r.record_name} → CNAME: {r.record_cname}")
+```
+
+#### 2. Create Edge Routine Route
+
+Create a route that intercepts traffic for this domain and forwards it to the Edge Routine:
+
+```python
+req = esa_models.CreateRoutineRouteRequest(
+    site_id=SITE_ID,
+    rule='(http.host eq "agent.example.com")',  # ESA rule expression
+    routine_name="my-routine",
+    route_name="agent-route",
+    route_enable="on",
+    bypass="off",
+)
+resp = client.create_routine_route(req)
+# resp.body.config_id → save for reference
+```
+
+**Important**: The parameter is `rule` (ESA rule expression), NOT `route`. Use `(http.host eq "domain")` syntax.
+
+#### 3. Update External DNS
+
+At your DNS provider (e.g. Alibaba Cloud DNS / alidns), add a CNAME record:
+
+```
+agent  CNAME  agent.example.com.a1.initaf.com
+```
+
+The CNAME target follows the pattern: `{record_name}.{cname_zone}` — get the exact value from `record_cname` in step 1.
+
+If a wildcard A record (`* → some-ip`) exists, add an explicit CNAME record for the subdomain to override it.
+
+```python
+# Example using alidns SDK
+from alibabacloud_alidns20150109.client import Client as DnsClient
+from alibabacloud_alidns20150109 import models as dns_models
+
+dns_client = DnsClient(config)
+dns_client.add_domain_record(dns_models.AddDomainRecordRequest(
+    domain_name="example.com",
+    rr="agent",
+    type="CNAME",
+    value="agent.example.com.a1.initaf.com",
+))
+```
+
+#### 4. Apply SSL Certificate
+
+ESA does **not** auto-provision SSL certificates for new records. You must request one:
+
+```python
+resp = client.apply_certificate(esa_models.ApplyCertificateRequest(
+    site_id=SITE_ID,
+    domains="agent.example.com",
+    type="lets_encrypt",
+))
+```
+
+Certificate provisioning takes 1-5 minutes. Check status:
+
+```python
+certs = client.list_certificates(esa_models.ListCertificatesRequest(site_id=SITE_ID))
+for c in certs.body.result:
+    print(f"{c.common_name} status={c.status}")
+# status: Applying → OK
+```
+
+**During provisioning, HTTPS returns TLS internal error. HTTP works immediately.**
+
+### Key Gotchas
+
+1. **Do NOT use `CreateRoutineRelatedRecord` for CNAME-access sites** — it creates an internal binding but does NOT create a visible DNS record in ESA, so CDN cannot match the domain and falls back to origin.
+2. **You need BOTH an ESA DNS record AND a Route** — the DNS record makes CDN accept traffic; the Route redirects it to the Edge Routine instead of origin.
+3. **`CreateRoutineRoute` uses `rule` parameter** (ESA rule expression like `(http.host eq "domain")`), not `route`. The SDK model parameter is `rule`, not `route`.
+4. **SSL certificate must be manually applied** — unlike some CDN services, ESA does not auto-provision certs for new DNS records.
+5. **DNS record conflicts** — if you create both a regular DNS record and a related record for the same domain, you get `DependedByOthers` error. Delete one before creating the other.
+6. **Route propagation delay** — routes may take 3-5 minutes to propagate to all edge nodes. During this time, traffic still goes to origin. HTTP verification may show `Server: ESA` before HTTPS works.
+
+### Complete Example
+
+```python
+def bind_custom_domain(client, site_id, routine_name, domain, route_name):
+    """Bind a custom domain to an ESA Pages/ER routine (CNAME-access site)"""
+    from alibabacloud_tea_util import models as util_models
+    runtime = util_models.RuntimeOptions()
+
+    # 1. Create ESA DNS record
+    data_obj = esa_models.CreateRecordRequestData(value="127.0.0.1")
+    client.create_record_with_options(
+        esa_models.CreateRecordRequest(
+            site_id=site_id, record_name=domain,
+            type="A/AAAA", data=data_obj, ttl=1,
+            proxied=True, biz_name="web",
+        ), runtime,
+    )
+
+    # 2. Create route
+    client.create_routine_route(esa_models.CreateRoutineRouteRequest(
+        site_id=site_id,
+        rule=f'(http.host eq "{domain}")',
+        routine_name=routine_name,
+        route_name=route_name,
+        route_enable="on", bypass="off",
+    ))
+
+    # 3. Apply SSL certificate
+    client.apply_certificate(esa_models.ApplyCertificateRequest(
+        site_id=site_id, domains=domain, type="lets_encrypt",
+    ))
+
+    # 4. Get CNAME target for external DNS
+    records = client.list_records(esa_models.ListRecordsRequest(
+        site_id=site_id, record_name=domain.split(".")[0],
+    ))
+    for r in (records.body.records or []):
+        if r.record_name == domain:
+            return r.record_cname  # → set this as CNAME in external DNS
+```
+
 ## Notes
 
 1. **Function name rules**: Only lowercase letters, numbers, hyphens; must start with lowercase letter; length >= 2
@@ -301,3 +462,4 @@ print(f"Access URL: {url}")
 5. **Static directory deployment**: Directory cannot be empty; files in zip are placed under `assets/` prefix
 6. **HTML escaping**: When wrapping as ER code, escape backticks and `$` symbols
 7. **Assets deployment**: `CreateRoutineWithAssetsCodeVersion` and `CreateRoutineCodeDeployment` need to be called via `callApi` method (not directly wrapped by SDK)
+8. **callApi runtime parameter**: Must pass `util_models.RuntimeOptions()` object, NOT an empty dict `{}`. Using `{}` causes `AttributeError: 'dict' object has no attribute 'key'`

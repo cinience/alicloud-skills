@@ -5,7 +5,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const fileUrl = process.env.DOCMIND_FILE_URL;
 const fileName = process.env.DOCMIND_FILE_NAME || 'example.pdf';
-const regionId = process.env.ALICLOUD_REGION_ID || 'cn-hangzhou';
+const regionId = process.env.ALIBABACLOUD_REGION_ID || process.env.ALIBABA_CLOUD_REGION_ID || process.env.ALICLOUD_REGION_ID || 'cn-hangzhou';
 const pollIntervalMs = Number(process.env.DOCMIND_POLL_INTERVAL_MS || 10000);
 const maxPolls = Number(process.env.DOCMIND_MAX_POLLS || 120);
 

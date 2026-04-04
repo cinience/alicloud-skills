@@ -37,8 +37,8 @@ python skills/compute/fc/aliyun-fc-agentrun/scripts/quickstart.py
 Environment variables:
 
 - `AGENTRUN_ENDPOINT`
-- `ALICLOUD_ACCESS_KEY_ID`
-- `ALICLOUD_ACCESS_KEY_SECRET`
+- `ALIBABACLOUD_ACCESS_KEY_ID`
+- `ALIBABACLOUD_ACCESS_KEY_SECRET`
 - `OUTPUT_DIR` (optional)
 
 ## Runtime flow script
@@ -52,8 +52,8 @@ python skills/compute/fc/aliyun-fc-agentrun/scripts/runtime_flow.py
 Environment variables:
 
 - `AGENTRUN_ENDPOINT`
-- `ALICLOUD_ACCESS_KEY_ID`
-- `ALICLOUD_ACCESS_KEY_SECRET`
+- `ALIBABACLOUD_ACCESS_KEY_ID`
+- `ALIBABACLOUD_ACCESS_KEY_SECRET`
 - `AGENTRUN_RUNTIME_NAME`
 - `AGENTRUN_RUNTIME_ENDPOINT_NAME`
 - `AGENTRUN_RUNTIME_DESC` (optional)
@@ -70,8 +70,8 @@ python skills/compute/fc/aliyun-fc-agentrun/scripts/cleanup_runtime.py
 Environment variables:
 
 - `AGENTRUN_ENDPOINT`
-- `ALICLOUD_ACCESS_KEY_ID`
-- `ALICLOUD_ACCESS_KEY_SECRET`
+- `ALIBABACLOUD_ACCESS_KEY_ID`
+- `ALIBABACLOUD_ACCESS_KEY_SECRET`
 - `AGENTRUN_RUNTIME_ID`
 - `AGENTRUN_RUNTIME_ENDPOINT_ID`
 - `OUTPUT_DIR` (optional)

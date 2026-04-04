@@ -258,3 +258,5 @@ apps/web/out/
 .zencoder/
 other/
 .omc/
+.omx/
+__pycache__/

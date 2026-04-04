@@ -4,12 +4,23 @@ from pathlib import Path
 import json
 
 
-def get_env(name: str, default: str | None = None) -> str:
-    value = os.getenv(name, default)
-    if not value:
-        print(f"Missing env var: {name}", file=sys.stderr)
-        sys.exit(1)
-    return value
+def get_env(*names: str, default: str | None = None) -> str:
+    for name in names:
+        value = os.getenv(name)
+        if value:
+            return value
+    if default is not None:
+        return default
+    print(f"Missing env var: {' / '.join(names)}", file=sys.stderr)
+    sys.exit(1)
+
+
+def get_optional_env(*names: str) -> str | None:
+    for name in names:
+        value = os.getenv(name)
+        if value:
+            return value
+    return None
 
 
 def main() -> None:
@@ -27,9 +38,21 @@ def main() -> None:
         sys.exit(1)
 
     endpoint = get_env("AGENTRUN_ENDPOINT")
-    access_key_id = get_env("ALICLOUD_ACCESS_KEY_ID")
-    access_key_secret = get_env("ALICLOUD_ACCESS_KEY_SECRET")
-    security_token = os.getenv("ALICLOUD_SECURITY_TOKEN") or os.getenv("ALIBABA_CLOUD_SECURITY_TOKEN")
+    access_key_id = get_env(
+        "ALIBABACLOUD_ACCESS_KEY_ID",
+        "ALIBABA_CLOUD_ACCESS_KEY_ID",
+        "ALICLOUD_ACCESS_KEY_ID",
+    )
+    access_key_secret = get_env(
+        "ALIBABACLOUD_ACCESS_KEY_SECRET",
+        "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
+        "ALICLOUD_ACCESS_KEY_SECRET",
+    )
+    security_token = get_optional_env(
+        "ALIBABACLOUD_SECURITY_TOKEN",
+        "ALIBABA_CLOUD_SECURITY_TOKEN",
+        "ALICLOUD_SECURITY_TOKEN",
+    )
 
     config = open_api_models.Config(
         access_key_id=access_key_id,

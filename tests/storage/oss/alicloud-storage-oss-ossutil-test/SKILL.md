@@ -61,5 +61,5 @@ cat /tmp/ossutil-test-down.txt
 
 ## 常见失败
 
-- Region 不匹配：确认 `ALICLOUD_REGION_ID` 或配置文件中的 region。
+- Region 不匹配：确认 `ALIBABACLOUD_REGION_ID` 或配置文件中的 region。
 - AK 无权限：确认 RAM 策略允许 `oss:*` 或最小读写权限。

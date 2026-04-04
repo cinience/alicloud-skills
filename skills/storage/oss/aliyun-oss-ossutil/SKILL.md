@@ -62,12 +62,12 @@ Use RAM users/roles with least privilege and avoid passing AK in plain text on c
 Recommended method (environment variables):
 
 ```bash
-export ALICLOUD_ACCESS_KEY_ID="<your-ak>"
-export ALICLOUD_ACCESS_KEY_SECRET="<your-sk>"
-export ALICLOUD_REGION_ID="cn-beijing"
+export ALIBABACLOUD_ACCESS_KEY_ID="<your-ak>"
+export ALIBABACLOUD_ACCESS_KEY_SECRET="<your-sk>"
+export ALIBABACLOUD_REGION_ID="cn-beijing"
 ```
 
-`ALICLOUD_REGION_ID` can be used as default region; if unset choose the most reasonable region, ask user if unclear.
+`ALIBABACLOUD_REGION_ID` can be used as default region; if unset choose the most reasonable region, ask user if unclear.
 
 Or use the standard shared credentials file:
 
@@ -159,7 +159,7 @@ ossutil ls oss://your-bucket/some-prefix/ -r --short-format --region cn-shanghai
 ## Prerequisites
 
 - Configure least-privilege Alibaba Cloud credentials before execution.
-- Prefer environment variables: `ALICLOUD_ACCESS_KEY_ID`, `ALICLOUD_ACCESS_KEY_SECRET`, optional `ALICLOUD_REGION_ID`.
+- Prefer environment variables: `ALIBABACLOUD_ACCESS_KEY_ID`, `ALIBABACLOUD_ACCESS_KEY_SECRET`, optional `ALIBABACLOUD_REGION_ID`.
 - If region is unclear, ask the user before running mutating operations.
 
 ## Workflow

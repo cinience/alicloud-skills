@@ -2,10 +2,10 @@
 """Fetch products via BssOpenApi QueryProductList API.
 
 Requires:
-  - ALICLOUD_ACCESS_KEY_ID
-  - ALICLOUD_ACCESS_KEY_SECRET
+  - ALIBABACLOUD_ACCESS_KEY_ID (preferred; also accepts ALIBABA_CLOUD_ACCESS_KEY_ID / ALICLOUD_ACCESS_KEY_ID)
+  - ALIBABACLOUD_ACCESS_KEY_SECRET (preferred; also accepts ALIBABA_CLOUD_ACCESS_KEY_SECRET / ALICLOUD_ACCESS_KEY_SECRET)
 Optional:
-  - ALICLOUD_SECURITY_TOKEN / ALIBABA_CLOUD_SECURITY_TOKEN (STS session token)
+  - ALIBABACLOUD_SECURITY_TOKEN / ALIBABA_CLOUD_SECURITY_TOKEN / ALICLOUD_SECURITY_TOKEN (STS session token)
   - BSS_ENDPOINT (default: business.aliyuncs.com)
   - BSS_VERSION (default: 2017-12-14)
   - BSS_PAGE_SIZE (default: 50)
@@ -31,6 +31,25 @@ def get_int(name: str, default: int) -> int:
         sys.exit(1)
 
 
+def get_env(*names: str, default: str | None = None) -> str:
+    for name in names:
+        value = os.getenv(name)
+        if value:
+            return value
+    if default is not None:
+        return default
+    print(f"Missing env var: {' / '.join(names)}", file=sys.stderr)
+    sys.exit(1)
+
+
+def get_optional_env(*names: str) -> str | None:
+    for name in names:
+        value = os.getenv(name)
+        if value:
+            return value
+    return None
+
+
 def main() -> None:
     try:
         from aliyunsdkcore.client import AcsClient
@@ -39,12 +58,21 @@ def main() -> None:
         print("Missing SDK. Install: pip install aliyun-python-sdk-core", file=sys.stderr)
         sys.exit(1)
 
-    access_key_id = os.getenv("ALICLOUD_ACCESS_KEY_ID")
-    access_key_secret = os.getenv("ALICLOUD_ACCESS_KEY_SECRET")
-    security_token = os.getenv("ALICLOUD_SECURITY_TOKEN") or os.getenv("ALIBABA_CLOUD_SECURITY_TOKEN")
-    if not access_key_id or not access_key_secret:
-        print("Missing ALICLOUD_ACCESS_KEY_ID or ALICLOUD_ACCESS_KEY_SECRET", file=sys.stderr)
-        sys.exit(1)
+    access_key_id = get_env(
+        "ALIBABACLOUD_ACCESS_KEY_ID",
+        "ALIBABA_CLOUD_ACCESS_KEY_ID",
+        "ALICLOUD_ACCESS_KEY_ID",
+    )
+    access_key_secret = get_env(
+        "ALIBABACLOUD_ACCESS_KEY_SECRET",
+        "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
+        "ALICLOUD_ACCESS_KEY_SECRET",
+    )
+    security_token = get_optional_env(
+        "ALIBABACLOUD_SECURITY_TOKEN",
+        "ALIBABA_CLOUD_SECURITY_TOKEN",
+        "ALICLOUD_SECURITY_TOKEN",
+    )
 
     endpoint = os.getenv("BSS_ENDPOINT", "business.aliyuncs.com")
     version = os.getenv("BSS_VERSION", "2017-12-14")

@@ -33,7 +33,7 @@ def _render_table(scenes: list[dict], region: str, page_number: int, page_size: 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="List PTS scenes")
-    parser.add_argument("--region", default=os.getenv("ALICLOUD_REGION_ID", "cn-hangzhou"))
+    parser.add_argument("--region", default=os.getenv("ALIBABACLOUD_REGION_ID") or os.getenv("ALIBABA_CLOUD_REGION_ID") or os.getenv("ALICLOUD_REGION_ID") or "cn-hangzhou")
     parser.add_argument("--keyword", help="Search by scene name or scene id")
     parser.add_argument("--page-number", type=int, default=1)
     parser.add_argument("--page-size", type=int, default=10)

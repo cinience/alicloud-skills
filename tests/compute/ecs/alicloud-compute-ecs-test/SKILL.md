@@ -10,7 +10,7 @@ Category: test
 
 ## Prerequisites
 
-- 已配置 `ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / `ALICLOUD_REGION_ID`。
+- 已配置 `ALIBABACLOUD_ACCESS_KEY_ID` / `ALIBABACLOUD_ACCESS_KEY_SECRET` / `ALIBABACLOUD_REGION_ID`。
 - GoalsSkill: `skills/compute/ecs/alicloud-compute-ecs/`。
 
 ## Test Steps

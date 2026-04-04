@@ -56,7 +56,7 @@ s config add -a default --AccessKeyID <AK> --AccessKeySecret <SK> -f
 If using environment variables, inject them into the command (example):
 
 ```bash
-s config add -a default -kl AccessKeyID,AccessKeySecret -il ${ALIBABA_CLOUD_ACCESS_KEY_ID},${ALIBABA_CLOUD_ACCESS_KEY_SECRET} -f
+s config add -a default -kl AccessKeyID,AccessKeySecret -il ${ALIBABACLOUD_ACCESS_KEY_ID},${ALIBABACLOUD_ACCESS_KEY_SECRET} -f
 ```
 
 Or use Serverless Devs convention JSON environment variable (example):
@@ -174,7 +174,7 @@ Pass criteria: command exits 0 and `output/aliyun-fc-serverless-devs/validate.tx
 ## Prerequisites
 
 - Configure least-privilege Alibaba Cloud credentials before execution.
-- Prefer environment variables: `ALICLOUD_ACCESS_KEY_ID`, `ALICLOUD_ACCESS_KEY_SECRET`, optional `ALICLOUD_REGION_ID`.
+- Prefer environment variables: `ALIBABACLOUD_ACCESS_KEY_ID`, `ALIBABACLOUD_ACCESS_KEY_SECRET`, optional `ALIBABACLOUD_REGION_ID`.
 - If region is unclear, ask the user before running mutating operations.
 
 ## Workflow

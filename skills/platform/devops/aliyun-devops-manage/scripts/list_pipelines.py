@@ -32,7 +32,7 @@ def _to_table(pipelines: list[dict], org_id: str) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser(description="List DevOps pipelines")
     parser.add_argument("--organization-id", required=True)
-    parser.add_argument("--region", default=os.getenv("ALICLOUD_REGION_ID", "cn-hangzhou"))
+    parser.add_argument("--region", default=os.getenv("ALIBABACLOUD_REGION_ID") or os.getenv("ALIBABA_CLOUD_REGION_ID") or os.getenv("ALICLOUD_REGION_ID") or "cn-hangzhou")
     parser.add_argument("--pipeline-name")
     parser.add_argument("--status-list", help="comma-separated status values")
     parser.add_argument("--max-results", type=int, default=20)

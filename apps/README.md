@@ -33,6 +33,9 @@ Web commands:
 
 ```bash
 pnpm --dir apps/web install --frozen-lockfile --ignore-scripts
+pnpm --dir apps/web lint
 pnpm --dir apps/web build
+pnpm --dir apps/web test:e2e
 ```
 
+See [apps/web/README.md](/home/vipas/workspace/saker-ai/alicloud-skills/apps/web/README.md) for app-specific frontend notes.

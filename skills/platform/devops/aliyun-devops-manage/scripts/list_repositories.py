@@ -33,7 +33,7 @@ def _to_table(repositories: list[dict], org_id: str) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser(description="List DevOps repositories")
     parser.add_argument("--organization-id", required=True)
-    parser.add_argument("--region", default=os.getenv("ALICLOUD_REGION_ID", "cn-hangzhou"))
+    parser.add_argument("--region", default=os.getenv("ALIBABACLOUD_REGION_ID") or os.getenv("ALIBABA_CLOUD_REGION_ID") or os.getenv("ALICLOUD_REGION_ID") or "cn-hangzhou")
     parser.add_argument("--page", type=int, default=1)
     parser.add_argument("--per-page", type=int, default=20)
     parser.add_argument("--search")

@@ -7,8 +7,8 @@
 ```bash
 export PROJECT="<your-project>"
 export LOGSTORE="<your-logstore>"
-export ALIBABA_CLOUD_ACCESS_KEY_ID="<your-ak>"
-export ALIBABA_CLOUD_ACCESS_KEY_SECRET="<your-sk>"
+export ALIBABACLOUD_ACCESS_KEY_ID="<your-ak>"
+export ALIBABACLOUD_ACCESS_KEY_SECRET="<your-sk>"
 export ALIYUN_UID="<your-aliyun-uid>"
 CONFIG_NAME="openclaw-audit_${LOGSTORE}"
 ```

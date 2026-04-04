@@ -34,9 +34,9 @@ def create_client(region_id: str) -> CmsClient:
         region_id=region_id,
         endpoint="metrics.aliyuncs.com",
     )
-    ak = os.getenv("ALICLOUD_ACCESS_KEY_ID") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_ID")
-    sk = os.getenv("ALICLOUD_ACCESS_KEY_SECRET") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET")
-    token = os.getenv("ALICLOUD_SECURITY_TOKEN") or os.getenv("ALIBABA_CLOUD_SECURITY_TOKEN")
+    ak = os.getenv("ALIBABACLOUD_ACCESS_KEY_ID") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_ID") or os.getenv("ALICLOUD_ACCESS_KEY_ID")
+    sk = os.getenv("ALIBABACLOUD_ACCESS_KEY_SECRET") or os.getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET") or os.getenv("ALICLOUD_ACCESS_KEY_SECRET")
+    token = os.getenv("ALIBABACLOUD_SECURITY_TOKEN") or os.getenv("ALIBABA_CLOUD_SECURITY_TOKEN") or os.getenv("ALICLOUD_SECURITY_TOKEN")
     if ak and sk:
         config.access_key_id = ak
         config.access_key_secret = sk
@@ -87,7 +87,7 @@ def summarize(points: list[dict[str, Any]]) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--instance-id", required=True)
-    parser.add_argument("--region-id", default=os.getenv("ALICLOUD_REGION_ID", "cn-hangzhou"))
+    parser.add_argument("--region-id", default=os.getenv("ALIBABACLOUD_REGION_ID") or os.getenv("ALIBABA_CLOUD_REGION_ID") or os.getenv("ALICLOUD_REGION_ID") or "cn-hangzhou")
     parser.add_argument("--hours", type=float, default=1.0, help="Lookback window in hours")
     parser.add_argument("--period", type=int, default=300, help="Metric period in seconds")
     parser.add_argument("--namespace", default="acs_ecs_dashboard")

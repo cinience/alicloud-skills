@@ -42,7 +42,7 @@ Prefer metadata-first API discovery before mutate operations.
 
 ## AccessKey Priority
 
-1) Environment variables: `ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / `ALICLOUD_REGION_ID`.
+1) Environment variables: `ALIBABACLOUD_ACCESS_KEY_ID` / `ALIBABACLOUD_ACCESS_KEY_SECRET` / `ALIBABACLOUD_REGION_ID`.
 2) Shared config file: `~/.alibabacloud/credentials`.
 
 If region is ambiguous, ask before write operations.

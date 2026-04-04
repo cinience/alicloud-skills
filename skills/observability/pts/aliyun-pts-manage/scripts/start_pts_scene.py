@@ -20,7 +20,7 @@ RUNNING_STATES = {"RUNNING", "DEBUGGING"}
 def main() -> int:
     parser = argparse.ArgumentParser(description="Start a PTS scene")
     parser.add_argument("--scene-id", required=True)
-    parser.add_argument("--region", default=os.getenv("ALICLOUD_REGION_ID", "cn-hangzhou"))
+    parser.add_argument("--region", default=os.getenv("ALIBABACLOUD_REGION_ID") or os.getenv("ALIBABA_CLOUD_REGION_ID") or os.getenv("ALICLOUD_REGION_ID") or "cn-hangzhou")
     parser.add_argument("--wait", action="store_true", help="Poll running status after start")
     parser.add_argument("--poll-interval", type=float, default=3.0)
     parser.add_argument("--max-wait", type=int, default=120)

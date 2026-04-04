@@ -44,12 +44,12 @@ Required:
 - `LOGSTORE`: SLS logstore name
 
 Read from environment variables:
-- `ALIBABA_CLOUD_ACCESS_KEY_ID`
-- `ALIBABA_CLOUD_ACCESS_KEY_SECRET`
+- `ALIBABACLOUD_ACCESS_KEY_ID`
+- `ALIBABACLOUD_ACCESS_KEY_SECRET`
 - `ALIYUN_UID` (used for the local UID file under `/etc/ilogtail/users`)
 
 Recommended optional:
-- `ALIBABA_CLOUD_REGION_ID` (auto-resolved from `PROJECT` when not set)
+- `ALIBABACLOUD_REGION_ID` (auto-resolved from `PROJECT` when not set)
 
 > If you use different AK/SK variable names, export them to these standard names first.
 
@@ -80,8 +80,8 @@ set -euo pipefail
 # ===== User inputs =====
 : "${PROJECT:?Please export PROJECT}"
 : "${LOGSTORE:?Please export LOGSTORE}"
-: "${ALIBABA_CLOUD_ACCESS_KEY_ID:?Please export ALIBABA_CLOUD_ACCESS_KEY_ID}"
-: "${ALIBABA_CLOUD_ACCESS_KEY_SECRET:?Please export ALIBABA_CLOUD_ACCESS_KEY_SECRET}"
+: "${ALIBABACLOUD_ACCESS_KEY_ID:?Please export ALIBABACLOUD_ACCESS_KEY_ID}"
+: "${ALIBABACLOUD_ACCESS_KEY_SECRET:?Please export ALIBABACLOUD_ACCESS_KEY_SECRET}"
 : "${ALIYUN_UID:?Please export ALIYUN_UID}"
 
 MACHINE_GROUP="openclaw-sls-collector"
@@ -105,8 +105,8 @@ if ! command -v aliyun >/dev/null 2>&1; then
 fi
 
 # Export auth variables for aliyun CLI
-export ALIBABA_CLOUD_ACCESS_KEY_ID
-export ALIBABA_CLOUD_ACCESS_KEY_SECRET
+export ALIBABACLOUD_ACCESS_KEY_ID
+export ALIBABACLOUD_ACCESS_KEY_SECRET
 
 is_loong_running() {
   if sudo /etc/init.d/loongcollectord status 2>/dev/null | grep -qi "running"; then
@@ -119,12 +119,12 @@ is_loong_running() {
 }
 
 # 2) Resolve region and install LoongCollector (skip when already running)
-REGION_ID="${ALIBABA_CLOUD_REGION_ID:-}"
+REGION_ID="${ALIBABACLOUD_REGION_ID:-}"
 if [ -z "$REGION_ID" ]; then
   REGION_ID="$(aliyun sls GetProject --project "$PROJECT" --cli-query 'region' --quiet 2>/dev/null | tr -d '\"' || true)"
 fi
 if [ -z "$REGION_ID" ]; then
-  echo "Cannot resolve region from project: $PROJECT. Please set ALIBABA_CLOUD_REGION_ID." >&2
+  echo "Cannot resolve region from project: $PROJECT. Please set ALIBABACLOUD_REGION_ID." >&2
   exit 1
 fi
 

@@ -24,8 +24,8 @@ Manage RDS Supabase app instances and related configurations via RDS AI Service 
 
 ## AccessKey Priority (Required)
 
-1) Environment variables (preferred):`ALICLOUD_ACCESS_KEY_ID` / `ALICLOUD_ACCESS_KEY_SECRET` / `ALICLOUD_REGION_ID`
-Region policy: `ALICLOUD_REGION_ID` is optional default; if unset choose the most reasonable region and ask when unclear.  
+1) Environment variables (preferred):`ALIBABACLOUD_ACCESS_KEY_ID` / `ALIBABACLOUD_ACCESS_KEY_SECRET` / `ALIBABACLOUD_REGION_ID`
+Region policy: `ALIBABACLOUD_REGION_ID` is optional default; if unset choose the most reasonable region and ask when unclear.  
 2) Standard credentials file:`~/.alibabacloud/credentials`
 
 ## Default Region Strategy
@@ -70,7 +70,7 @@ Pass criteria: command exits 0 and `output/aliyun-rds-supabase/validate.txt` is 
 ## Prerequisites
 
 - Configure least-privilege Alibaba Cloud credentials before execution.
-- Prefer environment variables: `ALICLOUD_ACCESS_KEY_ID`, `ALICLOUD_ACCESS_KEY_SECRET`, optional `ALICLOUD_REGION_ID`.
+- Prefer environment variables: `ALIBABACLOUD_ACCESS_KEY_ID`, `ALIBABACLOUD_ACCESS_KEY_SECRET`, optional `ALIBABACLOUD_REGION_ID`.
 - If region is unclear, ask the user before running mutating operations.
 
 ## Workflow
