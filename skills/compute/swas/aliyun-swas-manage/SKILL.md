@@ -1,6 +1,6 @@
 ---
 name: aliyun-swas-manage
-description: Use when managing Alibaba Cloud Simple Application Server (SWAS OpenAPI 2020-06-01) resources end-to-end, including querying instances, starting/stopping/rebooting, executing commands (cloud assistant), managing disks/snapshots/images, firewall rules/templates, key pairs, tags, monitoring, and lightweight database operations.
+description: Use when managing Alibaba Cloud Simple Application Server (SWAS OpenAPI 2020-06-01) resources end-to-end, including querying instances, starting/stopping/rebooting, executing commands (cloud assistant), managing disks/snapshots/images, firewall rules/templates, key pairs, tags, monitoring, lightweight database operations, and deploying application binaries with systemd service management and ESA CDN integration.
 version: 1.0.0
 ---
 
@@ -111,6 +111,42 @@ if __name__ == "__main__":
 - Firewall:`ListFirewallRules`/`CreateFirewallRule(s)`/`ModifyFirewallRule`/`EnableFirewallRule`/`DisableFirewallRule`  
 - Snapshot/disk/image:`CreateSnapshot`、`ResetDisk`、`CreateCustomImage` etc.  
 
+## Application Deployment Best Practices
+
+### Binary Update Workflow
+
+部署二进制到 SWAS 服务器的正确流程（避免 "text file busy" 错误）：
+
+```
+1. 交叉编译 (GOOS=linux GOARCH=amd64)
+2. SSH 停止远端服务 (systemctl stop)
+3. SCP 上传二进制
+4. SSH 重启服务 (systemctl start)
+5. 验证服务状态
+```
+
+**关键**: 必须先停止服务再上传，否则覆盖运行中的二进制报 "text file busy"。
+
+### Systemd Service Management
+
+```bash
+# 创建服务文件: /etc/systemd/system/myapp.service
+# 启用开机自启: systemctl enable myapp
+# 修改 .service 后: systemctl daemon-reload
+# 查看日志: journalctl -u myapp -f
+```
+
+### ESA CDN Integration
+
+将 SWAS 应用通过 ESA CDN 暴露为 HTTPS 服务：
+1. ESA DNS 添加 A 记录 (proxied=true)
+2. ESA 申请 SSL 证书
+3. ESA 创建 Origin Rule (回源 HTTP + 指定端口)
+
+流量路径: `客户端 HTTPS → ESA (SSL 终止) → HTTP 回源 → SWAS 应用端口`
+
+Detailed reference: `references/deploy-workflow.md`
+
 ## Cloud Assistant Execution Notes
 
 - Target instance must be in Running state.
@@ -167,4 +203,5 @@ Pass criteria: command exits 0 and `output/aliyun-swas-manage/validate.txt` is g
 - API overview and operation groups:`references/api_overview.md`
 - Endpoints and integration:`references/endpoints.md`
 - Cloud Assistant highlights:`references/command-assistant.md`
+- **Application deployment workflow**: `references/deploy-workflow.md`
 - Official source list:`references/sources.md`

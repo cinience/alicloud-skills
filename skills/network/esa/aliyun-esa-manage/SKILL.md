@@ -1,6 +1,6 @@
 ---
 name: aliyun-esa-manage
-description: Use when managing Alibaba Cloud ESA — deploy HTML/static sites via Pages, manage Edge Routines (ER) for serverless edge functions, use Edge KV for distributed key-value storage, handle site management, DNS records, cache rules, and query traffic analytics via OpenAPI/SDK. Use when working with ESA, edge deployment, edge functions, Pages, ER, KV storage, DNS, cache, site configuration, traffic analytics, bandwidth trends, or top-N rankings.
+description: Use when managing Alibaba Cloud ESA — deploy HTML/static sites via Pages, manage Edge Routines (ER) for serverless edge functions, use Edge KV for distributed key-value storage, configure Origin Rules for CDN proxy and origin routing, handle site management, DNS records, cache rules, and query traffic analytics via OpenAPI/SDK. Use when working with ESA, edge deployment, edge functions, Pages, ER, KV storage, DNS, cache, origin rules, CDN proxy, site configuration, traffic analytics, bandwidth trends, or top-N rankings.
 ---
 
 Category: service
@@ -262,6 +262,38 @@ Query Top-N ranking data by various dimensions.
 
 Detailed reference: `references/time-series.md`, `references/top-data.md`, `references/fields.md`
 
+## Origin Rules — CDN 代理回源
+
+Origin Rules 控制 ESA CDN 如何回源到源站。当需要将子域名通过 ESA CDN 代理到后端服务器时使用。
+
+### CDN 代理回源工作流
+
+```
+CreateRecord(A, proxied=true) → ApplyCertificate → CreateOriginRule → 验证
+```
+
+### API Summary
+
+- **Origin Rule 管理**: `CreateOriginRule`, `ListOriginRules`, `GetOriginRule`, `UpdateOriginRule`, `DeleteOriginRule`
+
+### Key Parameters
+
+| 参数 | 说明 |
+|------|------|
+| `rule` | 匹配条件，如 `(http.host eq "sub.example.com")` |
+| `origin_scheme` | 回源协议：`http` 或 `https`（**默认 https**） |
+| `origin_port` | 回源端口 |
+| `dns_record` | 回源目标 DNS 记录名（**必须是 ESA DNS 记录名，不能是 IP**） |
+
+### Critical Gotchas
+
+1. **`dns_record` 必须是 ESA DNS 记录名**（如 `agent.example.com`），不能用原始 IP（如 `1.2.3.4`），否则报 `destination_not_found`。
+2. **`origin_scheme` 默认 HTTPS**：源站只监听 HTTP 时必须显式设为 `http`，否则 502。
+3. **DNS 记录必须 proxied=true**：否则流量不经 CDN，Origin Rule 不生效。
+4. **Edge Routine Route 优先级高于 Origin Rule**：同域名有 ER route 时会拦截请求，需先删除 route。
+
+Detailed reference: `references/origin-rules.md`
+
 ## Common operation mapping
 
 ### Site Management
@@ -464,6 +496,9 @@ If you need to save responses or generated artifacts, write them under:
 - **Pages Deployment Reference**: `references/pages.md`
 - **Edge Routine Reference**: `references/er.md`
 - **Edge KV Storage Reference**: `references/kv.md`
+
+### Origin Rules
+- **Origin Rule configuration & troubleshooting**: `references/origin-rules.md`
 
 ### Site Management
 - API overview: `references/api_overview.md`
