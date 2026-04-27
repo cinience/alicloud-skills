@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Entry Modelstudio Test"
   short_description: "Model Studio minimal test matrix"
-  default_prompt: "Use $alicloud-ai-entry-modelstudio-test to complete this ai/entry task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-modelstudio-entry-test to complete this ai/entry task on Alibaba Cloud."

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Executable smoke test for alicloud-ai-multimodal-qwen-vl."""
+"""Executable smoke test for aliyun-qwen-vl."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from pathlib import Path
 def load_analyze_module(repo_root: Path):
     module_path = (
         repo_root
-        / "skills/ai/multimodal/alicloud-ai-multimodal-qwen-vl/scripts/analyze_image.py"
+        / "skills/ai/multimodal/aliyun-qwen-vl/scripts/analyze_image.py"
     )
     spec = importlib.util.spec_from_file_location("analyze_image", module_path)
     if spec is None or spec.loader is None:

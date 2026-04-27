@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-video-wan-video-test
+name: aliyun-wan-video-test
 description: Minimal video generation smoke test for Model Studio Wan Video.
 version: 1.0.0
 ---
@@ -16,7 +16,7 @@ Category: test
 ## Prerequisites
 
 - Prepare authentication and region settings based on the skill instructions.
-- Target skill: skills/ai/video/alicloud-ai-video-wan-video
+- Target skill: skills/ai/video/aliyun-wan-video
 
 ## Test Steps (Minimal)
 
@@ -27,6 +27,6 @@ Category: test
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: skills/ai/video/alicloud-ai-video-wan-video
+- Skill: skills/ai/video/aliyun-wan-video
 - Conclusion: pass / fail
 - Notes:

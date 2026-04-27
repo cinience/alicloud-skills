@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Video AnimateAnyone"
   short_description: "Dance and motion-transfer video generation"
-  default_prompt: "Use $alicloud-ai-video-animate-anyone to complete this ai/video AnimateAnyone task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-animate-anyone to complete this ai/video AnimateAnyone task on Alibaba Cloud."

@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Video Wan R2V"
   short_description: "Wan reference-to-video workflows"
-  default_prompt: "Use $alicloud-ai-video-wan-r2v to complete this ai/video reference-based generation task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-wan-r2v to complete this ai/video reference-based generation task on Alibaba Cloud."

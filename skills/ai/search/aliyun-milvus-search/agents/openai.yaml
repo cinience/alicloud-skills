@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Search Milvus"
   short_description: "Milvus collection and vector query"
-  default_prompt: "Use $alicloud-ai-search-milvus to complete this ai/search task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-milvus-search to complete this ai/search task on Alibaba Cloud."

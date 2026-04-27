@@ -1,6 +1,6 @@
 ---
-name: alicloud-skill-creator-test
-description: Smoke test for alicloud-skill-creator. Validate repository path conventions, frontmatter quality, script compilation, and README index refresh workflow.
+name: aliyun-skill-creator-test
+description: Smoke test for aliyun-skill-creator. Validate repository path conventions, frontmatter quality, script compilation, and README index refresh workflow.
 version: 1.0.0
 ---
 
@@ -10,7 +10,7 @@ Category: test
 
 ## Prerequisites
 
-- Target skill path: `skills/platform/skills/alicloud-skill-creator/`
+- Target skill path: `skills/platform/skills/aliyun-skill-creator/`
 - Python 3
 
 ## Test Steps
@@ -19,8 +19,8 @@ Category: test
 
 ```bash
 python3 tests/common/compile_skill_scripts.py \
-  --skill-path skills/platform/skills/alicloud-skill-creator \
-  --output output/alicloud-skill-creator-test/compile-check.json
+  --skill-path skills/platform/skills/aliyun-skill-creator \
+  --output output/aliyun-skill-creator-test/compile-check.json
 ```
 
 2) Check frontmatter fields exist in target `SKILL.md`:
@@ -32,21 +32,21 @@ python3 tests/common/compile_skill_scripts.py \
 
 ```bash
 scripts/update_skill_index.sh
-rg -n "alicloud-skill-creator|platform/skills" README.md README.zh-CN.md README.zh-TW.md
+rg -n "aliyun-skill-creator|platform/skills" README.md README.zh-CN.md README.zh-TW.md
 ```
 
-4) Save command outputs under `output/alicloud-skill-creator-test/`.
+4) Save command outputs under `output/aliyun-skill-creator-test/`.
 
 ## Pass Criteria
 
 - Compilation check passes (`compile-check.json.status=pass`).
 - `SKILL.md` contains required frontmatter.
-- README skill index includes `alicloud-skill-creator` with `platform/skills` category.
-- Evidence exists in `output/alicloud-skill-creator-test/`.
+- README skill index includes `aliyun-skill-creator` with `platform/skills` category.
+- Evidence exists in `output/aliyun-skill-creator-test/`.
 
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: skills/platform/skills/alicloud-skill-creator
+- Skill: skills/platform/skills/aliyun-skill-creator
 - Conclusion: pass / fail
 - Notes:

@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud Skill Creator"
   short_description: "Create, migrate, and optimize repository skills"
-  default_prompt: "Use $alicloud-skill-creator to create, migrate, or improve a skill in this alicloud-skills repository."
+  default_prompt: "Use $aliyun-skill-creator to create, migrate, or improve a skill in this alicloud-skills repository."

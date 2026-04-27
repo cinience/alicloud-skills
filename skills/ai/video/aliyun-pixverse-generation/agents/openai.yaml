@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Video Aishi Generation"
   short_description: "Non-Wan video generation with PixVerse models"
-  default_prompt: "Use $alicloud-ai-video-aishi-generation to complete this ai/video PixVerse task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-pixverse-generation to complete this ai/video PixVerse task on Alibaba Cloud."

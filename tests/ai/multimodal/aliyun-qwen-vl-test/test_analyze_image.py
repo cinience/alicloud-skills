@@ -11,7 +11,7 @@ from pathlib import Path
 
 def _load_module():
     root = Path(__file__).resolve().parents[4]
-    module_path = root / "skills/ai/multimodal/alicloud-ai-multimodal-qwen-vl/scripts/analyze_image.py"
+    module_path = root / "skills/ai/multimodal/aliyun-qwen-vl/scripts/analyze_image.py"
     spec = importlib.util.spec_from_file_location("analyze_image", module_path)
     if spec is None or spec.loader is None:
         raise RuntimeError("Cannot load analyze_image module")

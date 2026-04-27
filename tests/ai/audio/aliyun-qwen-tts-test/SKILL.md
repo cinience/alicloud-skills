@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-audio-tts-test
+name: aliyun-qwen-tts-test
 description: Minimal TTS smoke test for Model Studio Qwen TTS.
 version: 1.0.0
 ---
@@ -16,7 +16,7 @@ Category: test
 ## Prerequisites
 
 - Prepare authentication and region settings based on the skill instructions.
-- Target skill: skills/ai/audio/alicloud-ai-audio-tts
+- Target skill: skills/ai/audio/aliyun-qwen-tts
 
 ## Test Steps (Minimal)
 
@@ -27,6 +27,6 @@ Category: test
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: skills/ai/audio/alicloud-ai-audio-tts
+- Skill: skills/ai/audio/aliyun-qwen-tts
 - Conclusion: pass / fail
 - Notes:

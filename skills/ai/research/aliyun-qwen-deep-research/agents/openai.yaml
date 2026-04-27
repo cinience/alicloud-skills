@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Research Qwen Deep Research"
   short_description: "Structured multi-step research with Qwen Deep Research"
-  default_prompt: "Use $alicloud-ai-research-qwen-deep-research to complete this ai/research task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qwen-deep-research to complete this ai/research task on Alibaba Cloud."

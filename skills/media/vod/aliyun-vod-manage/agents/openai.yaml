@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud Media VOD"
   short_description: "Manage ApsaraVideo VOD APIs and media workflows"
-  default_prompt: "Use $alicloud-media-vod to complete this Alibaba Cloud VOD media task."
+  default_prompt: "Use $aliyun-vod-manage to complete this Alibaba Cloud VOD media task."

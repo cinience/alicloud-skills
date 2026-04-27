@@ -1,5 +1,5 @@
 ---
-name: alicloud-observability-sls-log-query-test
+name: aliyun-sls-log-query-test
 description: Minimal smoke test for SLS log query skill. Validate SDK auth and one bounded query.
 version: 1.0.0
 ---
@@ -12,7 +12,7 @@ Category: test
 
 - 配置 `ALIBABACLOUD_ACCESS_KEY_ID`、`ALIBABACLOUD_ACCESS_KEY_SECRET`。
 - 配置 `SLS_ENDPOINT`、`SLS_PROJECT`、`SLS_LOGSTORE`。
-- GoalsSkill: `skills/observability/sls/alicloud-observability-sls-log-query/`。
+- GoalsSkill: `skills/observability/sls/aliyun-sls-log-query/`。
 
 ## Test Steps
 

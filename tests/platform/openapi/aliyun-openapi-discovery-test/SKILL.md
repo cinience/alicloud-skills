@@ -1,5 +1,5 @@
 ---
-name: alicloud-platform-openapi-product-api-discovery-test
+name: aliyun-openapi-discovery-test
 description: Minimal smoke test for product API discovery skill. Validate product pull, merge, and one metadata fetch.
 version: 1.0.0
 ---
@@ -11,7 +11,7 @@ Category: test
 ## Prerequisites
 
 - AK/SK is configured.
-- GoalsSkill: `skills/platform/openapi/alicloud-platform-openapi-product-api-discovery/`。
+- GoalsSkill: `skills/platform/openapi/aliyun-openapi-discovery/`。
 
 ## Test Steps
 

@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-video-retalk-test
+name: aliyun-videoretalk-test
 description: Minimal lip-sync replacement smoke test for Model Studio VideoRetalk.
 version: 1.0.0
 ---
@@ -10,16 +10,16 @@ Category: test
 
 ## Prerequisites
 
-- Target skill: `skills/ai/video/alicloud-ai-video-retalk`
+- Target skill: `skills/ai/video/aliyun-videoretalk`
 
 ## Executable Example
 
 ```bash
-.venv/bin/python skills/ai/video/alicloud-ai-video-retalk/scripts/prepare_retalk_request.py \
+.venv/bin/python skills/ai/video/aliyun-videoretalk/scripts/prepare_retalk_request.py \
   --video-url "https://example.com/talking-head.mp4" \
   --audio-url "https://example.com/new-voice.wav" \
   --video-extension
 ```
 
-Pass criteria: script returns `{"ok": true, ...}` and writes `output/alicloud-ai-video-retalk/request.json`.
+Pass criteria: script returns `{"ok": true, ...}` and writes `output/aliyun-videoretalk/request.json`.
 

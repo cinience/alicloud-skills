@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Search Text Embedding"
   short_description: "Text embeddings from Model Studio embedding models"
-  default_prompt: "Use $alicloud-ai-search-text-embedding to complete this ai/search embedding task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qwen-text-embedding to complete this ai/search embedding task on Alibaba Cloud."

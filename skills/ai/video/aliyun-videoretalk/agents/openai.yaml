@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Video Retalk"
   short_description: "Lip-sync replacement with VideoRetalk"
-  default_prompt: "Use $alicloud-ai-video-retalk to complete this ai/video retalk task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-videoretalk to complete this ai/video retalk task on Alibaba Cloud."

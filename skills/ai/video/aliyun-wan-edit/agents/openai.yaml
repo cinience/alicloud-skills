@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Video Wan Edit"
   short_description: "Video editing with Wan edit models"
-  default_prompt: "Use $alicloud-ai-video-wan-edit to complete this ai/video editing task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-wan-edit to complete this ai/video editing task on Alibaba Cloud."

@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud Network ESA"
   short_description: "Edge security acceleration workflows"
-  default_prompt: "Use $alicloud-network-esa to complete this network/esa task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-esa-manage to complete this network/esa task on Alibaba Cloud."

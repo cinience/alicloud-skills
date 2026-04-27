@@ -1,5 +1,5 @@
 ---
-name: alicloud-security-cloudfw-test
+name: aliyun-cloudfw-manage-test
 description: Minimal smoke test for Cloud Firewall skill. Validate read-only inventory query path.
 version: 1.0.0
 ---
@@ -11,7 +11,7 @@ Category: test
 ## Prerequisites
 
 - AK/SK and region are configured.
-- GoalsSkill: `skills/security/firewall/alicloud-security-cloudfw/`。
+- GoalsSkill: `skills/security/firewall/aliyun-cloudfw-manage/`。
 
 ## Test Steps
 

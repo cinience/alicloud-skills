@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Content Aimiaobi"
   short_description: "QuanMiao creative content workflows"
-  default_prompt: "Use $alicloud-ai-content-aimiaobi to complete this ai/content task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-aimiaobi-generate to complete this ai/content task on Alibaba Cloud."

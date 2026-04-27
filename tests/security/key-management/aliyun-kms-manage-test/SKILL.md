@@ -1,5 +1,5 @@
 ---
-name: alicloud-security-kms-test
+name: aliyun-kms-manage-test
 description: Minimal smoke test for KMS skill. Validate auth and read-only key listing path.
 version: 1.0.0
 ---
@@ -11,7 +11,7 @@ Category: test
 ## Prerequisites
 
 - AK/SK and region are configured.
-- GoalsSkill: `skills/security/key-management/alicloud-security-kms/`。
+- GoalsSkill: `skills/security/key-management/aliyun-kms-manage/`。
 
 ## Test Steps
 

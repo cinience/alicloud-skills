@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Search OpenSearch"
   short_description: "OpenSearch vector indexing and query"
-  default_prompt: "Use $alicloud-ai-search-opensearch to complete this ai/search task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-opensearch-search to complete this ai/search task on Alibaba Cloud."

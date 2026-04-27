@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-misc-crawl-and-skill-test
+name: aliyun-modelstudio-crawl-and-skill-test
 description: Minimal validation for crawl-and-skill workflow readiness.
 version: 1.0.0
 ---
@@ -16,7 +16,7 @@ Category: test
 ## Prerequisites
 
 - Prepare authentication and region settings based on the skill instructions.
-- Target skill: skills/ai/misc/alicloud-ai-misc-crawl-and-skill
+- Target skill: skills/ai/misc/aliyun-modelstudio-crawl-and-skill
 
 ## Test Steps (Minimal)
 
@@ -27,6 +27,6 @@ Category: test
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: skills/ai/misc/alicloud-ai-misc-crawl-and-skill
+- Skill: skills/ai/misc/aliyun-modelstudio-crawl-and-skill
 - Conclusion: pass / fail
 - Notes:

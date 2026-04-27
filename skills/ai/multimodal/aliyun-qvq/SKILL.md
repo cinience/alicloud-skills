@@ -15,7 +15,7 @@ mkdir -p output/aliyun-qvq
 python -m py_compile skills/ai/multimodal/aliyun-qvq/scripts/prepare_qvq_request.py && echo "py_compile_ok" > output/aliyun-qvq/validate.txt
 ```
 
-Pass criteria: command exits 0 and `output/alicloud-ai-multimodal-qwen-vqv/validate.txt` is generated.
+Pass criteria: command exits 0 and `output/aliyun-qvq/validate.txt` is generated.
 
 ## Critical model names
 

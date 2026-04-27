@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-audio-tts-realtime-test
+name: aliyun-qwen-tts-realtime-test
 description: Minimal realtime TTS smoke test for Model Studio Qwen TTS Realtime.
 version: 1.0.0
 ---
@@ -16,7 +16,7 @@ Category: test
 ## Prerequisites
 
 - Prepare authentication and region settings based on the skill instructions.
-- Target skill: skills/ai/audio/alicloud-ai-audio-tts-realtime
+- Target skill: skills/ai/audio/aliyun-qwen-tts-realtime
 
 ## Test Steps (Minimal)
 
@@ -27,7 +27,7 @@ Category: test
 可执行示例（兼容性探测 + 可选降级）：
 
 ```bash
-.venv/bin/python skills/ai/audio/alicloud-ai-audio-tts-realtime/scripts/realtime_tts_demo.py \
+.venv/bin/python skills/ai/audio/aliyun-qwen-tts-realtime/scripts/realtime_tts_demo.py \
   --text "realtime test" \
   --fallback
 ```
@@ -35,7 +35,7 @@ Category: test
 Strict mode (CI):
 
 ```bash
-.venv/bin/python skills/ai/audio/alicloud-ai-audio-tts-realtime/scripts/realtime_tts_demo.py \
+.venv/bin/python skills/ai/audio/aliyun-qwen-tts-realtime/scripts/realtime_tts_demo.py \
   --text "realtime test" \
   --strict
 ```
@@ -47,6 +47,6 @@ Pass criteria:
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: skills/ai/audio/alicloud-ai-audio-tts-realtime
+- Skill: skills/ai/audio/aliyun-qwen-tts-realtime
 - Conclusion: pass / fail
 - Notes:

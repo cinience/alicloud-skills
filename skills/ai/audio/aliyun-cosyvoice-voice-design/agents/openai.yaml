@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Audio CosyVoice Voice Design"
   short_description: "CosyVoice custom voice design from prompt text"
-  default_prompt: "Use $alicloud-ai-audio-cosyvoice-voice-design to complete this ai/audio CosyVoice voice design task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-cosyvoice-voice-design to complete this ai/audio CosyVoice voice design task on Alibaba Cloud."

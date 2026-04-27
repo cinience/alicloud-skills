@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Contactcenter AI"
   short_description: "ContactCenterAI agent workflows"
-  default_prompt: "Use $alicloud-ai-contactcenter-ai to complete this ai/service task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-ccai-manage to complete this ai/service task on Alibaba Cloud."

@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Video EMO"
   short_description: "Expressive portrait video generation with EMO"
-  default_prompt: "Use $alicloud-ai-video-emo to complete this ai/video EMO task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-emo to complete this ai/video EMO task on Alibaba Cloud."

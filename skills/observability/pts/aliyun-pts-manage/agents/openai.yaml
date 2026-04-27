@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud Observability PTS"
   short_description: "PTS API discovery and safe operation workflows"
-  default_prompt: "Use $alicloud-observability-pts to complete this observability/pts task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-pts-manage to complete this observability/pts task on Alibaba Cloud."

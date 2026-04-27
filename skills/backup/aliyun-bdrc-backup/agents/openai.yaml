@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud Backup BDRC"
   short_description: "BDRC disaster recovery orchestration"
-  default_prompt: "Use $alicloud-backup-bdrc to complete this backup task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-bdrc-backup to complete this backup task on Alibaba Cloud."

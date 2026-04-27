@@ -10,8 +10,8 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[4]
-SKILL_DIR = REPO_ROOT / "skills" / "solutions" / "alicloud-solution-content-article-illustrator"
-OUTPUT_ROOT = REPO_ROOT / "output" / "alicloud-solution-content-article-illustrator-test"
+SKILL_DIR = REPO_ROOT / "skills" / "solutions" / "aliyun-solution-article-illustrator"
+OUTPUT_ROOT = REPO_ROOT / "output" / "aliyun-solution-article-illustrator-test"
 WORKFLOW_DIR = OUTPUT_ROOT / "workflow-sample"
 PREFS_DIR = OUTPUT_ROOT / "prefs-sample"
 
@@ -67,7 +67,7 @@ def main() -> None:
         sys.executable,
         "tests/common/compile_skill_scripts.py",
         "--skill-path",
-        "skills/solutions/alicloud-solution-content-article-illustrator",
+        "skills/solutions/aliyun-solution-article-illustrator",
         "--output",
         str(OUTPUT_ROOT / "compile-check.json"),
     ])
@@ -142,8 +142,8 @@ def main() -> None:
             SKILL_DIR / "SKILL.md",
             [
                 "## Two Dimensions",
-                "Recommend `alicloud-ai-image-qwen-image` by default.",
-                "Recommend `alicloud-ai-image-qwen-image-edit` by default.",
+                "Recommend `aliyun-qwen-image` by default.",
+                "Recommend `aliyun-qwen-image-edit` by default.",
             ],
             "skill_contract",
         ),

@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Audio CosyVoice Voice Clone"
   short_description: "CosyVoice custom voice enrollment from reference audio"
-  default_prompt: "Use $alicloud-ai-audio-cosyvoice-voice-clone to complete this ai/audio CosyVoice voice clone task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-cosyvoice-voice-clone to complete this ai/audio CosyVoice voice clone task on Alibaba Cloud."

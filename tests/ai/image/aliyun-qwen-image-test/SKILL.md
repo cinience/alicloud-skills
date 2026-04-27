@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-image-qwen-image-test
+name: aliyun-qwen-image-test
 description: Minimal image generation smoke test for Model Studio Qwen image.
 version: 1.0.0
 ---
@@ -16,7 +16,7 @@ Category: test
 ## Prerequisites
 
 - Prepare authentication and region settings based on the skill instructions.
-- Target skill: skills/ai/image/alicloud-ai-image-qwen-image
+- Target skill: skills/ai/image/aliyun-qwen-image
 
 ## Test Steps (Minimal)
 
@@ -27,6 +27,6 @@ Category: test
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: skills/ai/image/alicloud-ai-image-qwen-image
+- Skill: skills/ai/image/aliyun-qwen-image
 - Conclusion: pass / fail
 - Notes:

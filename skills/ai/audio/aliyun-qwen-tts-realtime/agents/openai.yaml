@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Audio TTS Realtime"
   short_description: "Qwen realtime TTS workflows"
-  default_prompt: "Use $alicloud-ai-audio-tts-realtime to complete this ai/audio realtime synthesis task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qwen-tts-realtime to complete this ai/audio realtime synthesis task on Alibaba Cloud."

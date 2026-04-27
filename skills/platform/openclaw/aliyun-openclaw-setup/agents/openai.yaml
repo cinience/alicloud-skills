@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud Platform OpenClaw Setup"
   short_description: "Install OpenClaw channels with auto-discovery from official docs"
-  default_prompt: "Use $alicloud-platform-openclaw-setup to install, configure, and troubleshoot OpenClaw channels (DingTalk/Feishu/Discord and others discovered from docs.openclaw.ai/channels) on Linux hosts."
+  default_prompt: "Use $aliyun-openclaw-setup to install, configure, and troubleshoot OpenClaw channels (DingTalk/Feishu/Discord and others discovered from docs.openclaw.ai/channels) on Linux hosts."

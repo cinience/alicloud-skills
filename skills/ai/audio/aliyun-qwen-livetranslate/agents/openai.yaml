@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Audio LiveTranslate"
   short_description: "Realtime speech translation with Qwen LiveTranslate"
-  default_prompt: "Use $alicloud-ai-audio-livetranslate to complete this ai/audio translation task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qwen-livetranslate to complete this ai/audio translation task on Alibaba Cloud."

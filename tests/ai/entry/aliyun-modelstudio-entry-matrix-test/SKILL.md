@@ -1,6 +1,6 @@
 ---
-name: alicloud-ai-entry-modelstudio-matrix-test
-description: Minimal matrix test wrapper for alicloud-ai-entry-modelstudio-test.
+name: aliyun-modelstudio-entry-matrix-test
+description: Minimal matrix test wrapper for aliyun-modelstudio-entry-test.
 version: 1.0.0
 ---
 
@@ -16,7 +16,7 @@ Category: test
 ## Prerequisites
 
 - Prepare authentication and region settings based on the skill instructions.
-- Target skill: skills/ai/entry/alicloud-ai-entry-modelstudio-test
+- Target skill: skills/ai/entry/aliyun-modelstudio-entry-test
 
 ## Test Steps (Minimal)
 
@@ -27,6 +27,6 @@ Category: test
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: skills/ai/entry/alicloud-ai-entry-modelstudio-test
+- Skill: skills/ai/entry/aliyun-modelstudio-entry-test
 - Conclusion: pass / fail
 - Notes:

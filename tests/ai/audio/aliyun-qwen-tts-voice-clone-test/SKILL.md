@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-audio-tts-voice-clone-test
+name: aliyun-qwen-tts-voice-clone-test
 description: Minimal voice cloning TTS smoke test for Model Studio Qwen TTS VC.
 version: 1.0.0
 ---
@@ -16,7 +16,7 @@ Category: test
 ## Prerequisites
 
 - Prepare authentication and region settings based on the skill instructions.
-- Target skill: skills/ai/audio/alicloud-ai-audio-tts-voice-clone
+- Target skill: skills/ai/audio/aliyun-qwen-tts-voice-clone
 
 ## Test Steps (Minimal)
 
@@ -27,7 +27,7 @@ Category: test
 Executable example:
 
 ```bash
-.venv/bin/python skills/ai/audio/alicloud-ai-audio-tts-voice-clone/scripts/prepare_voice_clone_request.py \
+.venv/bin/python skills/ai/audio/aliyun-qwen-tts-voice-clone/scripts/prepare_voice_clone_request.py \
   --text "voice clone test" \
   --voice-sample "https://example.com/sample.wav"
 ```
@@ -37,6 +37,6 @@ Pass criteria:脚本返回 `{"ok": true, ...}` 且生成 `output/ai-audio-tts-vo
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: skills/ai/audio/alicloud-ai-audio-tts-voice-clone
+- Skill: skills/ai/audio/aliyun-qwen-tts-voice-clone
 - Conclusion: pass / fail
 - Notes:

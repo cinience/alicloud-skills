@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud Media Live"
   short_description: "Manage ApsaraVideo Live APIs and workflows"
-  default_prompt: "Use $alicloud-media-live to complete this Alibaba Cloud live media task."
+  default_prompt: "Use $aliyun-live-manage to complete this Alibaba Cloud live media task."

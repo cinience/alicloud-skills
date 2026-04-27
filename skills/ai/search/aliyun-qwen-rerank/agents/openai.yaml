@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Search Rerank"
   short_description: "Candidate reranking with Model Studio rerank models"
-  default_prompt: "Use $alicloud-ai-search-rerank to complete this ai/search rerank task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qwen-rerank to complete this ai/search rerank task on Alibaba Cloud."

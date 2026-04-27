@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-image-qwen-image-edit-test
+name: aliyun-qwen-image-edit-test
 description: Minimal image editing smoke test for Model Studio Qwen Image Edit.
 version: 1.0.0
 ---
@@ -16,7 +16,7 @@ Category: test
 ## Prerequisites
 
 - Prepare authentication and region settings based on the skill instructions.
-- Target skill: skills/ai/image/alicloud-ai-image-qwen-image-edit
+- Target skill: skills/ai/image/aliyun-qwen-image-edit
 
 ## Test Steps (Minimal)
 
@@ -27,7 +27,7 @@ Category: test
 Executable example:
 
 ```bash
-.venv/bin/python skills/ai/image/alicloud-ai-image-qwen-image-edit/scripts/prepare_edit_request.py \
+.venv/bin/python skills/ai/image/aliyun-qwen-image-edit/scripts/prepare_edit_request.py \
   --prompt "Replace background with sunrise" \
   --image "https://example.com/input.png"
 ```
@@ -37,6 +37,6 @@ Pass criteria:脚本返回 `{"ok": true, ...}` 且生成 `output/ai-image-qwen-i
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: skills/ai/image/alicloud-ai-image-qwen-image-edit
+- Skill: skills/ai/image/aliyun-qwen-image-edit
 - Conclusion: pass / fail
 - Notes:

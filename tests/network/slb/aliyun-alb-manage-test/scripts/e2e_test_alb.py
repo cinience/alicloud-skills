@@ -46,8 +46,8 @@ from pathlib import Path
 from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[5]
-SCRIPTS_DIR = REPO_ROOT / "skills" / "network" / "slb" / "alicloud-network-alb" / "scripts"
-OUTPUT_DIR = REPO_ROOT / "output" / "alicloud-network-alb-e2e"
+SCRIPTS_DIR = REPO_ROOT / "skills" / "network" / "slb" / "aliyun-alb-manage" / "scripts"
+OUTPUT_DIR = REPO_ROOT / "output" / "aliyun-alb-manage-e2e"
 
 
 class TestContext:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Executable smoke test for alicloud-network-alb skill."""
+"""Executable smoke test for aliyun-alb-manage skill."""
 
 from __future__ import annotations
 
@@ -10,9 +10,9 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[5]
-SKILL_DIR = REPO_ROOT / "skills" / "network" / "slb" / "alicloud-network-alb"
+SKILL_DIR = REPO_ROOT / "skills" / "network" / "slb" / "aliyun-alb-manage"
 SCRIPTS_DIR = SKILL_DIR / "scripts"
-OUTPUT_DIR = REPO_ROOT / "output" / "alicloud-network-alb-test"
+OUTPUT_DIR = REPO_ROOT / "output" / "aliyun-alb-manage-test"
 
 
 def run_script(script_name: str, args: list[str], label: str) -> dict:

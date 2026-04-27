@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud Platform DevOps"
   short_description: "Yunxiao OpenAPI discovery and workflow guidance"
-  default_prompt: "Use $alicloud-platform-devops to complete this platform/devops task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-devops-manage to complete this platform/devops task on Alibaba Cloud."

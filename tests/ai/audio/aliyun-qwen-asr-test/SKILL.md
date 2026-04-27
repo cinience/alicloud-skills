@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-audio-asr-test
+name: aliyun-qwen-asr-test
 description: Minimal non-realtime ASR smoke test for Model Studio Qwen ASR.
 version: 1.0.0
 ---
@@ -16,7 +16,7 @@ Category: test
 ## Prerequisites
 
 - Prepare authentication and region settings based on the skill instructions.
-- Target skill: `skills/ai/audio/alicloud-ai-audio-asr`
+- Target skill: `skills/ai/audio/aliyun-qwen-asr`
 
 ## Test Steps (Minimal)
 
@@ -27,7 +27,7 @@ Category: test
 ## 推荐最小命令
 
 ```bash
-python skills/ai/audio/alicloud-ai-audio-asr/scripts/transcribe_audio.py \
+python skills/ai/audio/aliyun-qwen-asr/scripts/transcribe_audio.py \
   --audio "https://dashscope.oss-cn-beijing.aliyuncs.com/audios/welcome.mp3" \
   --model qwen3-asr-flash \
   --print-response
@@ -36,6 +36,6 @@ python skills/ai/audio/alicloud-ai-audio-asr/scripts/transcribe_audio.py \
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: `skills/ai/audio/alicloud-ai-audio-asr`
+- Skill: `skills/ai/audio/aliyun-qwen-asr`
 - Conclusion: pass / fail
 - Notes:

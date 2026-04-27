@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-video-wan-r2v-test
+name: aliyun-wan-r2v-test
 description: Minimal reference-to-video smoke test for Model Studio Wan R2V.
 version: 1.0.0
 ---
@@ -16,7 +16,7 @@ Category: test
 ## Prerequisites
 
 - Prepare authentication and region settings based on the skill instructions.
-- Target skill: skills/ai/video/alicloud-ai-video-wan-r2v
+- Target skill: skills/ai/video/aliyun-wan-r2v
 
 ## Test Steps (Minimal)
 
@@ -27,7 +27,7 @@ Category: test
 Executable example:
 
 ```bash
-.venv/bin/python skills/ai/video/alicloud-ai-video-wan-r2v/scripts/prepare_r2v_request.py \
+.venv/bin/python skills/ai/video/aliyun-wan-r2v/scripts/prepare_r2v_request.py \
   --prompt "Generate a short montage" \
   --reference-video "https://example.com/ref.mp4"
 ```
@@ -37,6 +37,6 @@ Pass criteria:脚本返回 `{"ok": true, ...}` 且生成 `output/ai-video-wan-r2
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: skills/ai/video/alicloud-ai-video-wan-r2v
+- Skill: skills/ai/video/aliyun-wan-r2v
 - Conclusion: pass / fail
 - Notes:

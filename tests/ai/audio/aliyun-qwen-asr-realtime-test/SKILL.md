@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-audio-asr-realtime-test
+name: aliyun-qwen-asr-realtime-test
 description: Minimal realtime ASR smoke test for Model Studio Qwen ASR Realtime.
 version: 1.0.0
 ---
@@ -14,11 +14,11 @@ Category: test
 
 ## Prerequisites
 
-- Target skill: `skills/ai/audio/alicloud-ai-audio-asr-realtime`
+- Target skill: `skills/ai/audio/aliyun-qwen-asr-realtime`
 
 ## Recommended check
 
 ```bash
-python skills/ai/audio/alicloud-ai-audio-asr-realtime/scripts/prepare_realtime_asr_request.py \
-  --output output/alicloud-ai-audio-asr-realtime/request.json
+python skills/ai/audio/aliyun-qwen-asr-realtime/scripts/prepare_realtime_asr_request.py \
+  --output output/aliyun-qwen-asr-realtime/request.json
 ```

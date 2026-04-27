@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Multimodal Qwen Omni"
   short_description: "All-in-one multimodal interaction with Qwen Omni"
-  default_prompt: "Use $alicloud-ai-multimodal-qwen-omni to complete this ai/multimodal omni task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qwen-omni to complete this ai/multimodal omni task on Alibaba Cloud."

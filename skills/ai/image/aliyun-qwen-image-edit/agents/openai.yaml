@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Image Qwen Image Edit"
   short_description: "Qwen Image Edit (Max) workflows"
-  default_prompt: "Use $alicloud-ai-image-qwen-image-edit to complete this ai/image editing task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qwen-image-edit to complete this ai/image editing task on Alibaba Cloud."

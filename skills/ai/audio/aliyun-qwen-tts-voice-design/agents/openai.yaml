@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Audio TTS Voice Design"
   short_description: "Qwen voice design workflows"
-  default_prompt: "Use $alicloud-ai-audio-tts-voice-design to complete this ai/audio voice design task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qwen-tts-voice-design to complete this ai/audio voice design task on Alibaba Cloud."

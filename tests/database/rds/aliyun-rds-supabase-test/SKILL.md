@@ -1,5 +1,5 @@
 ---
-name: alicloud-database-rds-supabase-test
+name: aliyun-rds-supabase-test
 description: Minimal smoke test for RDS Supabase skill. Validate endpoint reachability and one list/detail API.
 version: 1.0.0
 ---
@@ -11,7 +11,7 @@ Category: test
 ## Prerequisites
 
 - AK/SK and region are configured.
-- GoalsSkill: `skills/database/rds/alicloud-database-rds-supabase/`。
+- GoalsSkill: `skills/database/rds/aliyun-rds-supabase/`。
 
 ## Test Steps
 

@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-video-emo-test
+name: aliyun-emo-test
 description: Minimal expressive portrait smoke test for Model Studio EMO.
 version: 1.0.0
 ---
@@ -10,12 +10,12 @@ Category: test
 
 ## Prerequisites
 
-- Target skill: `skills/ai/video/alicloud-ai-video-emo`
+- Target skill: `skills/ai/video/aliyun-emo`
 
 ## Executable Example
 
 ```bash
-.venv/bin/python skills/ai/video/alicloud-ai-video-emo/scripts/prepare_emo_request.py \
+.venv/bin/python skills/ai/video/aliyun-emo/scripts/prepare_emo_request.py \
   --image-url "https://example.com/portrait.png" \
   --audio-url "https://example.com/speech.mp3" \
   --face-bbox 302,286,610,593 \
@@ -23,5 +23,5 @@ Category: test
   --style-level active
 ```
 
-Pass criteria: script returns `{"ok": true, ...}` and writes `output/alicloud-ai-video-emo/request.json`.
+Pass criteria: script returns `{"ok": true, ...}` and writes `output/aliyun-emo/request.json`.
 

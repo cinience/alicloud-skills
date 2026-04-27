@@ -1,5 +1,5 @@
 ---
-name: alicloud-platform-openclaw-setup-test
+name: aliyun-openclaw-setup-test
 description: Minimal smoke test for OpenClaw setup skill. Validate official channel discovery workflow, DingTalk/Feishu integrations, Discord token configuration, and gateway health checks with non-destructive commands.
 version: 1.0.0
 ---
@@ -13,7 +13,7 @@ Category: test
 - Target host has Node.js 20+ installed.
 - `openclaw` command is available.
 - DashScope API key and DingTalk/Feishu app credentials or Discord bot token are prepared (masked placeholders are acceptable).
-- Target skill: `skills/platform/openclaw/alicloud-platform-openclaw-setup/`.
+- Target skill: `skills/platform/openclaw/aliyun-openclaw-setup/`.
 
 ## Test Steps
 
@@ -35,4 +35,4 @@ Category: test
 
 ## Evidence Storage
 
-- Save command outputs to: `output/alicloud-platform-openclaw-setup-test/`.
+- Save command outputs to: `output/aliyun-openclaw-setup-test/`.

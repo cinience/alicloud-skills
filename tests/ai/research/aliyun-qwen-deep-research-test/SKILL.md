@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-research-qwen-deep-research-test
+name: aliyun-qwen-deep-research-test
 description: Minimal deep-research smoke test for Model Studio Qwen Deep Research.
 version: 1.0.0
 ---
@@ -10,14 +10,14 @@ Category: test
 
 ## Prerequisites
 
-- Target skill: `skills/ai/research/alicloud-ai-research-qwen-deep-research`
+- Target skill: `skills/ai/research/aliyun-qwen-deep-research`
 
 ## Executable Example
 
 ```bash
-.venv/bin/python skills/ai/research/alicloud-ai-research-qwen-deep-research/scripts/prepare_deep_research_request.py \
+.venv/bin/python skills/ai/research/aliyun-qwen-deep-research/scripts/prepare_deep_research_request.py \
   --topic "Compare speech recognition options for meeting transcription." \
   --disable-feedback
 ```
 
-Pass criteria: script returns `{"ok": true, ...}` and writes `output/alicloud-ai-research-qwen-deep-research/requests/request.json`.
+Pass criteria: script returns `{"ok": true, ...}` and writes `output/aliyun-qwen-deep-research/requests/request.json`.

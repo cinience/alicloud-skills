@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Cloud Call Center"
   short_description: "CCC seat and call-flow operations"
-  default_prompt: "Use $alicloud-ai-cloud-call-center to complete this ai/service task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-ccc-manage to complete this ai/service task on Alibaba Cloud."

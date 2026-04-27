@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud Platform Aliyun Cli"
   short_description: "Generic aliyun CLI operations"
-  default_prompt: "Use $alicloud-platform-aliyun-cli to complete this platform/cli task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-cli-manage to complete this platform/cli task on Alibaba Cloud."

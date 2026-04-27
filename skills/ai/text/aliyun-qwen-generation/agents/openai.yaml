@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Text Qwen Generation"
   short_description: "General text generation and reasoning with Qwen flagship models"
-  default_prompt: "Use $alicloud-ai-text-qwen-generation to complete this ai/text generation task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qwen-generation to complete this ai/text generation task on Alibaba Cloud."

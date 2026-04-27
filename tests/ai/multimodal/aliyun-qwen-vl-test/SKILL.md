@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-multimodal-qwen-vl-test
+name: aliyun-qwen-vl-test
 description: Minimal image-understanding smoke test for Model Studio Qwen VL.
 version: 1.0.0
 ---
@@ -16,7 +16,7 @@ Category: test
 ## Prerequisites
 
 - Prepare authentication and region settings based on the skill instructions.
-- Target skill: skills/ai/multimodal/alicloud-ai-multimodal-qwen-vl
+- Target skill: skills/ai/multimodal/aliyun-qwen-vl
 
 ## Test Steps (Minimal)
 
@@ -27,7 +27,7 @@ Category: test
 推荐直接运行：
 
 ```bash
-python tests/ai/multimodal/alicloud-ai-multimodal-qwen-vl-test/scripts/smoke_test_qwen_vl.py \
+python tests/ai/multimodal/aliyun-qwen-vl-test/scripts/smoke_test_qwen_vl.py \
   --image output/ai-image-qwen-image/images/vl_test_cat.png
 ```
 
@@ -40,6 +40,6 @@ Pass criteria:
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: skills/ai/multimodal/alicloud-ai-multimodal-qwen-vl
+- Skill: skills/ai/multimodal/aliyun-qwen-vl
 - Conclusion: pass / fail
 - Notes:

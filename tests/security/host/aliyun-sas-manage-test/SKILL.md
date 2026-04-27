@@ -1,5 +1,5 @@
 ---
-name: alicloud-security-center-sas-test
+name: aliyun-sas-manage-test
 description: Minimal smoke test for Security Center SAS skill. Validate read-only query flow.
 version: 1.0.0
 ---
@@ -11,7 +11,7 @@ Category: test
 ## Prerequisites
 
 - AK/SK and region are configured.
-- GoalsSkill: `skills/security/host/alicloud-security-center-sas/`。
+- GoalsSkill: `skills/security/host/aliyun-sas-manage/`。
 
 ## Test Steps
 

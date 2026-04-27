@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-search-multimodal-embedding-test
+name: aliyun-qwen-multimodal-embedding-test
 description: Minimal multimodal embedding smoke test for Model Studio VL embedding models.
 version: 1.0.0
 ---
@@ -10,16 +10,16 @@ Category: test
 
 ## Prerequisites
 
-- Target skill: `skills/ai/search/alicloud-ai-search-multimodal-embedding`
+- Target skill: `skills/ai/search/aliyun-qwen-multimodal-embedding`
 
 ## Executable Example
 
 ```bash
-.venv/bin/python skills/ai/search/alicloud-ai-search-multimodal-embedding/scripts/prepare_multimodal_embedding_request.py \
+.venv/bin/python skills/ai/search/aliyun-qwen-multimodal-embedding/scripts/prepare_multimodal_embedding_request.py \
   --text "A cat sitting on a red chair" \
   --image "https://example.com/cat.jpg" \
   --dimension 1024
 ```
 
-Pass criteria: script returns `{"ok": true, ...}` and writes `output/alicloud-ai-search-multimodal-embedding/request.json`.
+Pass criteria: script returns `{"ok": true, ...}` and writes `output/aliyun-qwen-multimodal-embedding/request.json`.
 

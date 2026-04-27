@@ -1,5 +1,5 @@
 ---
-name: alicloud-ai-audio-livetranslate-test
+name: aliyun-qwen-livetranslate-test
 description: Minimal live speech translation smoke test for Model Studio Qwen LiveTranslate.
 version: 1.0.0
 ---
@@ -14,11 +14,11 @@ Category: test
 
 ## Prerequisites
 
-- Target skill: `skills/ai/audio/alicloud-ai-audio-livetranslate`
+- Target skill: `skills/ai/audio/aliyun-qwen-livetranslate`
 
 ## Recommended check
 
 ```bash
-python skills/ai/audio/alicloud-ai-audio-livetranslate/scripts/prepare_livetranslate_request.py \
-  --output output/alicloud-ai-audio-livetranslate/request.json
+python skills/ai/audio/aliyun-qwen-livetranslate/scripts/prepare_livetranslate_request.py \
+  --output output/aliyun-qwen-livetranslate/request.json
 ```

@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Content Aicontent"
   short_description: "AIContent generation and policy workflows"
-  default_prompt: "Use $alicloud-ai-content-aicontent to complete this ai/content task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-aicontent-generate to complete this ai/content task on Alibaba Cloud."

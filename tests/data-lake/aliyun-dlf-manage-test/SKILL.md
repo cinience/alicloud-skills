@@ -1,5 +1,5 @@
 ---
-name: alicloud-data-lake-dlf-test
+name: aliyun-dlf-manage-test
 description: Minimal smoke test for DataLake skill. Validate metadata discovery and one read-only API call.
 version: 1.0.0
 ---
@@ -11,13 +11,13 @@ Category: test
 ## Prerequisites
 
 - AK/SK and region are configured.
-- GoalsSkill: `skills/data-lake/alicloud-data-lake-dlf/`。
+- GoalsSkill: `skills/data-lake/aliyun-dlf-manage/`。
 
 ## Test Steps
 
 1) Run `python scripts/list_openapi_meta_apis.py`.
 2) Select one read-only API and run a minimal request.
-3) Save outputs under `output/alicloud-data-lake-dlf-test/`。
+3) Save outputs under `output/aliyun-dlf-manage-test/`。
 
 ## Expected Results
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Audio TTS Voice Clone"
   short_description: "Qwen voice cloning workflows"
-  default_prompt: "Use $alicloud-ai-audio-tts-voice-clone to complete this ai/audio voice cloning task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qwen-tts-voice-clone to complete this ai/audio voice cloning task on Alibaba Cloud."

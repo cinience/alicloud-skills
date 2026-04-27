@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Video LivePortrait"
   short_description: "Lightweight portrait video generation with LivePortrait"
-  default_prompt: "Use $alicloud-ai-video-liveportrait to complete this ai/video LivePortrait task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-liveportrait to complete this ai/video LivePortrait task on Alibaba Cloud."

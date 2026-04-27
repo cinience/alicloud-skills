@@ -1,6 +1,6 @@
 ---
-name: alicloud-ai-entry-modelstudio-test
-description: Minimal routing smoke test for alicloud-ai-entry-modelstudio entry skill.
+name: aliyun-modelstudio-entry-test
+description: Minimal routing smoke test for aliyun-modelstudio-entry entry skill.
 version: 1.0.0
 ---
 
@@ -18,7 +18,7 @@ Category: test
 - Prepare authentication and region settings based on the skill instructions.
 - 安装 DashScope SDK：`python -m pip install dashscope`
 - 配置 `DASHSCOPE_API_KEY`（建议使用环境变量或 .env）。
-- Target skill: skills/ai/entry/alicloud-ai-entry-modelstudio
+- Target skill: skills/ai/entry/aliyun-modelstudio-entry
 
 ## Test Steps (Minimal)
 
@@ -28,11 +28,11 @@ Category: test
 
 ## 输出建议
 
-- 将结果保存为 `output/alicloud-ai-entry-modelstudio-test-results.md`。
+- 将结果保存为 `output/aliyun-modelstudio-entry-test-results.md`。
 
 ## Result Template
 
 - Date: YYYY-MM-DD
-- Skill: skills/ai/entry/alicloud-ai-entry-modelstudio
+- Skill: skills/ai/entry/aliyun-modelstudio-entry
 - Conclusion: pass / fail
 - Notes:

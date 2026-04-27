@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Audio ASR Realtime"
   short_description: "Realtime speech recognition with Qwen ASR Realtime"
-  default_prompt: "Use $alicloud-ai-audio-asr-realtime to complete this ai/audio realtime ASR task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qwen-asr-realtime to complete this ai/audio realtime ASR task on Alibaba Cloud."

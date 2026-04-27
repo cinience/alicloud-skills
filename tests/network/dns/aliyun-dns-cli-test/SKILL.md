@@ -1,5 +1,5 @@
 ---
-name: alicloud-network-dns-cli-test
+name: aliyun-dns-cli-test
 description: Minimal smoke test for Alibaba Cloud DNS CLI skill. Validate aliyun-cli auth and describe-subdomain flow.
 version: 1.0.0
 ---
@@ -12,7 +12,7 @@ Category: test
 
 - `aliyun` CLI is installed and configured.
 - AK/SK is configured.
-- GoalsSkill: `skills/network/dns/alicloud-network-dns-cli/`。
+- GoalsSkill: `skills/network/dns/aliyun-dns-cli/`。
 
 ## Test Steps
 

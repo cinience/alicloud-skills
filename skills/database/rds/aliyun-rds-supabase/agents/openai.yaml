@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud Database RDS Supabase"
   short_description: "RDS instance and database workflows"
-  default_prompt: "Use $alicloud-database-rds-supabase to complete this database/rds task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-rds-supabase to complete this database/rds task on Alibaba Cloud."

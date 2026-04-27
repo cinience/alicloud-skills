@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Multimodal Qwen VL"
   short_description: "Image understanding with latest Qwen VL models"
-  default_prompt: "Use $alicloud-ai-multimodal-qwen-vl to complete this ai/multimodal task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qwen-vl to complete this ai/multimodal task on Alibaba Cloud."

@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud AI Multimodal QVQ"
   short_description: "Visual reasoning with QVQ models"
-  default_prompt: "Use $alicloud-ai-multimodal-qvq to complete this ai/multimodal visual reasoning task on Alibaba Cloud."
+  default_prompt: "Use $aliyun-qvq to complete this ai/multimodal visual reasoning task on Alibaba Cloud."

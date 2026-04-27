@@ -1,4 +1,4 @@
 interface:
   display_name: "Alibaba Cloud Media MPS"
   short_description: "Manage ApsaraVideo for Media Processing APIs and workflows"
-  default_prompt: "Use $alicloud-media-mps to complete this Alibaba Cloud MPS media processing task."
+  default_prompt: "Use $aliyun-mps-manage to complete this Alibaba Cloud MPS media processing task."
