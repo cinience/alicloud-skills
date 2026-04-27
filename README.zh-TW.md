@@ -309,6 +309,10 @@ dashscope_api_key = 你的DashScope API Key
 | ai/video | aliyun-animate-anyone | 技能 `aliyun-animate-anyone` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-animate-anyone` |
 | ai/video | aliyun-emo | 技能 `aliyun-emo` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-emo` |
 | ai/video | aliyun-emoji | 技能 `aliyun-emoji` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-emoji` |
+| ai/video | aliyun-happyhorse-i2v | 使用 DashScope HappyHorse 1.0 圖生影片模型（happyhorse-1.0-i2v）從單張首幀圖像生成影片，輸出寬高比自動跟隨首幀。 | `skills/ai/video/aliyun-happyhorse-i2v` |
+| ai/video | aliyun-happyhorse-r2v | 使用 DashScope HappyHorse 1.0 參考生影片模型（happyhorse-1.0-r2v）融合 1-9 張參考圖像生成影片，prompt 中以 character1..N 引用素材。 | `skills/ai/video/aliyun-happyhorse-r2v` |
+| ai/video | aliyun-happyhorse-t2v | 使用 DashScope HappyHorse 1.0 文生影片模型（happyhorse-1.0-t2v）從文字提示生成影片，涵蓋解析度、寬高比、時長等參數與非同步任務輪詢。 | `skills/ai/video/aliyun-happyhorse-t2v` |
+| ai/video | aliyun-happyhorse-videoedit | 使用 DashScope HappyHorse 1.0 影片編輯模型（happyhorse-1.0-video-edit）依指令進行風格變換或局部替換，可附帶 0-5 張參考圖像與音訊保留控制。 | `skills/ai/video/aliyun-happyhorse-videoedit` |
 | ai/video | aliyun-kling-video | 使用 DashScope Kling v3 模型生成影片，支援文生影片、圖生影片、參考生影片、智慧分鏡與影片編輯。 | `skills/ai/video/aliyun-kling-video` |
 | ai/video | aliyun-liveportrait | 技能 `aliyun-liveportrait` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-liveportrait` |
 | ai/video | aliyun-pixverse-generation | 技能 `aliyun-pixverse-generation` 的能力說明，詳見對應 SKILL.md。 | `skills/ai/video/aliyun-pixverse-generation` |

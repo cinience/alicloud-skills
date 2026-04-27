@@ -153,6 +153,26 @@ def _translate_description(desc: str, name: str, lang: str) -> str:
             "套用阿里雲 Model Studio Wan 影片風格重繪工作流，用於在保留影片結構的同時替換整體畫風或視覺風格。",
         ),
         (
+            "Use when generating videos from text prompts with DashScope HappyHorse 1.0 text-to-video model",
+            "使用 DashScope HappyHorse 1.0 文生视频模型（happyhorse-1.0-t2v）从文本提示生成视频，覆盖分辨率、宽高比、时长等参数与异步任务轮询。",
+            "使用 DashScope HappyHorse 1.0 文生影片模型（happyhorse-1.0-t2v）從文字提示生成影片，涵蓋解析度、寬高比、時長等參數與非同步任務輪詢。",
+        ),
+        (
+            "Use when generating videos from a single first-frame image with DashScope HappyHorse 1.0 image-to-video model",
+            "使用 DashScope HappyHorse 1.0 图生视频模型（happyhorse-1.0-i2v）从单张首帧图像生成视频，输出宽高比自动跟随首帧。",
+            "使用 DashScope HappyHorse 1.0 圖生影片模型（happyhorse-1.0-i2v）從單張首幀圖像生成影片，輸出寬高比自動跟隨首幀。",
+        ),
+        (
+            "Use when generating videos that fuse 1-9 reference images with DashScope HappyHorse 1.0 reference-to-video model",
+            "使用 DashScope HappyHorse 1.0 参考生视频模型（happyhorse-1.0-r2v）融合 1-9 张参考图像生成视频，prompt 中以 character1..N 引用素材。",
+            "使用 DashScope HappyHorse 1.0 參考生影片模型（happyhorse-1.0-r2v）融合 1-9 張參考圖像生成影片，prompt 中以 character1..N 引用素材。",
+        ),
+        (
+            "Use when editing videos with DashScope HappyHorse 1.0 video editing model",
+            "使用 DashScope HappyHorse 1.0 视频编辑模型（happyhorse-1.0-video-edit）按指令进行风格变换或局部替换，可附带 0-5 张参考图像与音频保留控制。",
+            "使用 DashScope HappyHorse 1.0 影片編輯模型（happyhorse-1.0-video-edit）依指令進行風格變換或局部替換，可附帶 0-5 張參考圖像與音訊保留控制。",
+        ),
+        (
             "Generate human-like speech audio with Model Studio DashScope Qwen TTS models",
             "使用 Model Studio DashScope Qwen TTS 模型生成人声语音，适用于文本转语音与配音场景。",
             "使用 Model Studio DashScope Qwen TTS 模型生成人聲語音，適用於文字轉語音與配音場景。",
