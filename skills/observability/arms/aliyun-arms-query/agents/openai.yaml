@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Observability ARMS Query"
+  short_description: "Trace search and metrics query workflows"
+  default_prompt: "Use $aliyun-arms-query to complete this observability/arms task on Alibaba Cloud."
