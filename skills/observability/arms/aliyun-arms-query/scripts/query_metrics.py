@@ -36,7 +36,6 @@ def main() -> None:
     dimensions = [d.strip() for d in args.dimensions.split(",")]
 
     request = models.QueryMetricByPageRequest(
-        region_id=args.region,
         metric=args.metric,
         start_time=start_ms,
         end_time=end_ms,

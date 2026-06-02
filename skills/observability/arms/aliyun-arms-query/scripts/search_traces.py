@@ -25,6 +25,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--page", type=int, default=1)
     parser.add_argument("--page-size", type=int, default=20)
     parser.add_argument("--reverse", action="store_true", help="sort by time descending")
+    parser.add_argument("--tree", action="store_true", help="auto-fetch first trace and render span tree")
     return parser.parse_args()
 
 
@@ -99,6 +100,21 @@ def main() -> None:
         })
 
     print(json.dumps(result, ensure_ascii=False, indent=2))
+
+    if args.tree and result["traces"]:
+        trace_id = result["traces"][0]["trace_id"]
+        print(f"\n--- Auto-fetching trace detail for {trace_id} ---\n")
+        from get_trace_detail import parse_span, render_tree
+
+        detail_req = models.GetTraceRequest(
+            trace_id=trace_id,
+            region_id=args.region,
+            start_time=start_ms,
+            end_time=end_ms,
+        )
+        detail_resp = client.get_trace(detail_req)
+        spans = [parse_span(s) for s in (detail_resp.body.spans or [])]
+        render_tree(spans)
 
 
 if __name__ == "__main__":
