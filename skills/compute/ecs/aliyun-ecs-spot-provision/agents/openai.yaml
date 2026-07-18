@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alibaba Cloud Spot ECS Provisioning"
+  short_description: "Safely plan and provision spot ECS instances"
+  default_prompt: "Use $aliyun-ecs-spot-provision to plan and provision a verified Alibaba Cloud spot ECS instance."

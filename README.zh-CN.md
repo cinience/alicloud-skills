@@ -331,6 +331,7 @@ dashscope_api_key = 你的DashScope API Key
 | backup/aliyun-bdrc-backup | aliyun-bdrc-backup | 通过 OpenAPI/SDK 管理 Alibaba Cloud Backup and Disaster Recovery Center (BDRC)，用于资源查询、创建或更新配置、状态查询与故障排查。 | `skills/backup/aliyun-bdrc-backup` |
 | backup/aliyun-hbr-backup | aliyun-hbr-backup | 通过 OpenAPI/SDK 管理 Alibaba Cloud Cloud Backup (hbr)，用于资源查询、创建或更新配置、状态查询与故障排查。 | `skills/backup/aliyun-hbr-backup` |
 | compute/ecs | aliyun-ecs-manage | 技能 `aliyun-ecs-manage` 的能力说明，详见对应 SKILL.md。 | `skills/compute/ecs/aliyun-ecs-manage` |
+| compute/ecs | aliyun-ecs-spot-provision | 技能 `aliyun-ecs-spot-provision` 的能力说明，详见对应 SKILL.md。 | `skills/compute/ecs/aliyun-ecs-spot-provision` |
 | compute/fc | aliyun-fc-agentrun | 通过 OpenAPI 管理 Function Compute AgentRun 资源，支持运行时、端点与状态查询。 | `skills/compute/fc/aliyun-fc-agentrun` |
 | compute/fc | aliyun-fc-serverless-devs | 技能 `aliyun-fc-serverless-devs` 的能力说明，详见对应 SKILL.md。 | `skills/compute/fc/aliyun-fc-serverless-devs` |
 | compute/swas | aliyun-swas-manage | 技能 `aliyun-swas-manage` 的能力说明，详见对应 SKILL.md。 | `skills/compute/swas/aliyun-swas-manage` |
@@ -349,6 +350,7 @@ dashscope_api_key = 你的DashScope API Key
 | network/esa | aliyun-esa-manage | 技能 `aliyun-esa-manage` 的能力说明，详见对应 SKILL.md。 | `skills/network/esa/aliyun-esa-manage` |
 | network/slb | aliyun-alb-manage | 管理和排障阿里云 ALB（应用型负载均衡）。覆盖实例、监听、服务器组、转发规则、证书、ACL、安全策略、健康检查及异步任务轮询的全生命周期管理，包含 28 个 CLI 脚本。 | `skills/network/slb/aliyun-alb-manage` |
 | network/vpc | aliyun-vpc-manage | 通过 OpenAPI/SDK 管理阿里云专有网络 VPC，支持 VPC 与 VSwitch 的查询、创建、删除、可用区查询及网络排障。 | `skills/network/vpc/aliyun-vpc-manage` |
+| observability/arms | aliyun-arms-query | 技能 `aliyun-arms-query` 的能力说明，详见对应 SKILL.md。 | `skills/observability/arms/aliyun-arms-query` |
 | observability/pts | aliyun-pts-manage | 技能 `aliyun-pts-manage` 的能力说明，详见对应 SKILL.md。 | `skills/observability/pts/aliyun-pts-manage` |
 | observability/sls | aliyun-sls-log-query | 技能 `aliyun-sls-log-query` 的能力说明，详见对应 SKILL.md。 | `skills/observability/sls/aliyun-sls-log-query` |
 | observability/sls | aliyun-sls-openclaw-integration | 技能 `aliyun-sls-openclaw-integration` 的能力说明，详见对应 SKILL.md。 | `skills/observability/sls/aliyun-sls-openclaw-integration` |
